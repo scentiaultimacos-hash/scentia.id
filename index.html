@@ -1,0 +1,3625 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#8e1c3c">
+<title>Scentia Ultimacos — Maklon Parfum CPKB Surabaya | By King Parfum</title>
+<meta name="description" content="Pabrik maklon parfum CPKB Surabaya. Satu pintu: konsultasi, produksi, legalitas. Bonus total Rp 2.750.000.">
+<link rel="icon" id="favicon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='72' font-size='80' font-weight='bold' fill='%238e1c3c' text-anchor='middle' font-family='sans-serif'>S</text></svg>">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root, [data-theme="burgundy"] { --primary:#8e1c3c; --primary-soft:#a83254; --dark:#5c0f28; --light:#e8c9d3; --pale:#f7eef1; --gold:#b8860b; --gold-soft:#d4a437; --gold-pale:#f5ecd4; --emerald:#2f6b4f; --charcoal:#2a2a2e; --ivory:#faf7f2; --line:#e8e3dc; }
+  [data-theme="midnight"] { --primary:#1e3a8a; --primary-soft:#3b5bdb; --dark:#0f1e4a; --light:#c7d2fe; --pale:#eef2ff; --gold:#b45309; --gold-soft:#d97706; --gold-pale:#fef3c7; --emerald:#047857; --charcoal:#1e293b; --ivory:#f8fafc; --line:#e2e8f0; }
+  [data-theme="emerald"] { --primary:#065f46; --primary-soft:#059669; --dark:#022c22; --light:#a7f3d0; --pale:#ecfdf5; --gold:#b45309; --gold-soft:#d97706; --gold-pale:#fef3c7; --emerald:#065f46; --charcoal:#1f2937; --ivory:#f9fafb; --line:#e5e7eb; }
+  [data-theme="royal"] { --primary:#6d28d9; --primary-soft:#7c3aed; --dark:#3b0764; --light:#ddd6fe; --pale:#f5f3ff; --gold:#b45309; --gold-soft:#d97706; --gold-pale:#fef3c7; --emerald:#047857; --charcoal:#1e1b4b; --ivory:#faf5ff; --line:#ede9fe; }
+  [data-theme="noir"] { --primary:#0f0f0f; --primary-soft:#333333; --dark:#000000; --light:#d4d4d4; --pale:#f5f5f5; --gold:#c9a227; --gold-soft:#d4af37; --gold-pale:#f5f0d8; --emerald:#166534; --charcoal:#171717; --ivory:#fafafa; --line:#e5e5e5; }
+  [data-theme="ocean"] { --primary:#0e7490; --primary-soft:#0891b2; --dark:#083344; --light:#a5f3fc; --pale:#ecfeff; --gold:#b45309; --gold-soft:#d97706; --gold-pale:#fef3c7; --emerald:#047857; --charcoal:#164e63; --ivory:#f0fdfa; --line:#cffafe; }
+  [data-theme="sunset"] { --primary:#9a3412; --primary-soft:#c2410c; --dark:#7c2d12; --light:#fed7aa; --pale:#fff7ed; --gold:#a16207; --gold-soft:#ca8a04; --gold-pale:#fef9c3; --emerald:#166534; --charcoal:#431407; --ivory:#fffbeb; --line:#fed7aa; }
+  [data-theme="sakura"] { --primary:#be185d; --primary-soft:#db2777; --dark:#831843; --light:#fbcfe8; --pale:#fdf2f8; --gold:#b45309; --gold-soft:#d97706; --gold-pale:#fef3c7; --emerald:#047857; --charcoal:#500724; --ivory:#fef2f8; --line:#fce7f3; }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    background:#fff;
+    color:var(--charcoal);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.65;
+    font-size:16px;
+  }
+  h1,h2,h3,h4,.font-display{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    line-height:1.2;
+    letter-spacing:-0.02em;
+    font-weight:700;
+  }
+  h1{font-weight:800;letter-spacing:-0.03em}
+  img{max-width:100%;display:block;height:auto}
+  button,input,select,textarea{font-family:inherit;font-size:inherit}
+  button{touch-action:manipulation}
+
+  @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .text-gradient{
+    background:linear-gradient(90deg,var(--gold),var(--gold-soft),var(--gold-pale),var(--gold-soft),var(--gold));
+    background-size:300% 100%;
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:gradientShift 7s ease infinite;
+  }
+
+  /* Animasi fade-up sederhana untuk headline */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .letters { display: inline-block; line-height: 1.15; }
+  .letters > span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeUp .7s cubic-bezier(.2,.8,.2,1) forwards;
+    will-change: transform, opacity;
+  }
+  .letters.text-gradient > span {
+    background: linear-gradient(90deg, var(--gold), var(--gold-soft), var(--gold-pale), var(--gold-soft), var(--gold));
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: fadeUp .7s cubic-bezier(.2,.8,.2,1) forwards, gradientShift 7s ease infinite;
+  }
+
+  @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+  .shimmer-text{
+    background:linear-gradient(90deg,var(--gold) 0%,var(--gold-pale) 50%,var(--gold) 100%);
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:shimmer 3.4s linear infinite;
+  }
+
+  @keyframes typing{from{width:0}to{width:100%}}
+  @keyframes caretBlink{50%{border-color:transparent}}
+  .typing{
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    border-right:2px solid var(--gold-soft);
+    width:0;
+    max-width:100%;
+    vertical-align:bottom;
+  }
+  .typing.done{border-right-color:transparent;animation:none;width:auto}
+
+  @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .floaty{animation:floatY 4s ease-in-out infinite;will-change:transform}
+
+  @keyframes marqueeX{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-50%,0,0)}}
+  .marquee-wrap{display:flex;width:max-content;animation:marqueeX 40s linear infinite;will-change:transform}
+  .marquee-wrap:hover{animation-play-state:paused}
+  @media (max-width:640px){.marquee-wrap{animation-duration:50s}}
+
+  .split-title{display:inline-block;overflow:hidden;vertical-align:top}
+  .split-title .word{
+    display:inline-block;
+    transform:translateY(100%);
+    opacity:0;
+    transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .7s ease;
+    will-change:transform,opacity;
+  }
+  .split-title.visible .word{transform:translateY(0);opacity:1}
+
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);
+    will-change:opacity,transform;
+  }
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;
+    }
+    .letters > span{opacity:1 !important;transform:none !important;filter:none !important}
+    .split-title .word{opacity:1 !important;transform:none !important}
+    .typing{width:auto !important;border:0 !important;white-space:normal !important;animation:none !important}
+    .reveal{opacity:1 !important;transform:none !important}
+    .marquee-wrap{animation:none !important}
+    .floaty{animation:none !important}
+  }
+
+  #scroll-progress{
+    position:fixed;
+    top:0;
+    left:0;
+    height:3px;
+    background:linear-gradient(90deg,var(--primary),var(--gold));
+    width:0;
+    z-index:9999;
+    transition:width .1s;
+  }
+
+  /* NAVBAR */
+  .navbar{
+    transition:background .3s,backdrop-filter .3s,box-shadow .3s;
+    background:transparent;
+    padding:.75rem 0;
+  }
+  @media (min-width:640px){.navbar{padding:1rem 0}}
+  .navbar.scrolled{
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    box-shadow:0 2px 20px rgba(42,42,46,.06);
+  }
+  .navbar.scrolled .nav-link{color:var(--charcoal)}
+  .navbar.scrolled .logo-text{color:var(--dark)}
+  .navbar.scrolled .logo-sub{color:var(--primary)}
+  .nav-link{
+    color:#fff;
+    font-weight:500;
+    font-size:.9rem;
+    position:relative;
+    transition:color .2s;
+    padding:.35rem 0;
+    text-shadow:0 1px 3px rgba(0,0,0,.4);
+    letter-spacing:-0.01em;
+  }
+  .navbar.scrolled .nav-link{text-shadow:none}
+  .nav-link:hover{color:var(--gold-soft)}
+  .nav-link::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-2px;
+    height:1.5px;
+    width:0;
+    background:var(--gold-soft);
+    transition:width .25s ease;
+  }
+  .nav-link:hover::after{width:100%}
+  @media (max-width:767px){.nav-link{display:none}}
+
+  .logo-wrapper{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+  .logo-img{display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;background:transparent;transition:width .3s,height .3s}
+  .logo-img img{width:100%;height:100%;object-fit:contain;background:transparent;filter:drop-shadow(0 1px 3px rgba(0,0,0,.3))}
+  .navbar.scrolled .logo-img img{filter:none}
+  .logo-fallback{
+    color:var(--gold-soft);
+    font-weight:800;
+    font-size:1.75rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-shadow:0 2px 8px rgba(0,0,0,.4);
+    font-family:'Inter',sans-serif;
+  }
+  .navbar.scrolled .logo-fallback{text-shadow:none}
+  .logo-text{
+    font-weight:700;
+    font-size:1.15rem;
+    color:#fff;
+    transition:color .3s;
+    line-height:1;
+    text-shadow:0 1px 4px rgba(0,0,0,.4);
+    letter-spacing:-0.02em;
+  }
+  @media (min-width:640px){.logo-text{font-size:1.25rem}}
+  .navbar.scrolled .logo-text{text-shadow:none}
+  .logo-sub{
+    font-size:9px;
+    color:rgba(255,255,255,.75);
+    letter-spacing:.25em;
+    margin-top:2px;
+    line-height:1;
+    transition:color .3s;
+    text-shadow:0 1px 3px rgba(0,0,0,.4);
+  }
+  .navbar.scrolled .logo-sub{text-shadow:none}
+  @media (min-width:640px){.logo-sub{font-size:10px}}
+
+  /* HERO */
+  .hero-section{
+    position:relative;
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:var(--charcoal);
+  }
+  .hero-image-layer{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    opacity:0;
+    transition:opacity .8s ease,filter .3s;
+    will-change:opacity,filter;
+  }
+  .hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+      180deg,
+      rgba(0,0,0,var(--hero-overlay-top,0.15)) 0%,
+      rgba(0,0,0,var(--hero-overlay-mid,0.25)) 50%,
+      rgba(0,0,0,var(--hero-overlay-bot,0.55)) 100%
+    );
+    pointer-events:none;
+  }
+  .hero-content{position:relative;z-index:10;width:100%}
+  .hero-text-shadow h1,
+  .hero-text-shadow p,
+  .hero-text-shadow span,
+  .hero-text-shadow a:not(.btn-gold):not(.btn-outline):not(.btn-primary){
+    text-shadow:0 1px 3px rgba(0,0,0,.5),0 4px 16px rgba(0,0,0,.35);
+  }
+  .hero-text-shadow .btn-gold,
+  .hero-text-shadow .btn-outline,
+  .hero-text-shadow .btn-primary{text-shadow:none}
+  .hero-no-shadow h1,
+  .hero-no-shadow p,
+  .hero-no-shadow span{text-shadow:none}
+
+  .hero-h1{
+    font-size:2.25rem;
+    line-height:1.15;
+    letter-spacing:-0.03em;
+    font-weight:800;
+    margin-bottom:1.25rem;
+  }
+  @media (min-width:640px){.hero-h1{font-size:3.25rem;line-height:1.1;margin-bottom:1.5rem}}
+  @media (min-width:768px){.hero-h1{font-size:4rem;line-height:1.08}}
+  @media (min-width:1024px){.hero-h1{font-size:4.75rem;line-height:1.05;letter-spacing:-0.035em}}
+
+  /* DRAWER MOBILE */
+  .mobile-drawer{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:85%;
+    max-width:340px;
+    height:100vh;
+    height:100dvh;
+    background:#fff;
+    z-index:10000;
+    transition:right .4s cubic-bezier(.2,.8,.2,1);
+    padding:1.5rem;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    box-shadow:-10px 0 40px rgba(42,42,46,.15);
+  }
+  .mobile-drawer.open{right:0}
+  .mobile-drawer nav a{
+    padding:.9rem 0;
+    font-size:1.05rem;
+    font-weight:500;
+    color:var(--charcoal);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    transition:color .2s,padding .2s;
+    min-height:48px;
+    display:flex;
+    align-items:center;
+  }
+  .mobile-drawer nav a:hover,.mobile-drawer nav a:active{color:var(--primary);padding-left:.5rem}
+  .overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(20,15,18,.5);
+    z-index:9999;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s;
+    backdrop-filter:blur(2px);
+    -webkit-backdrop-filter:blur(2px);
+  }
+  .overlay.active{opacity:1;pointer-events:auto}
+
+  /* BUTTONS */
+  .btn-primary,
+  .btn-gold,
+  .btn-outline{
+    padding:.9rem 1.6rem;
+    border-radius:10px;
+    font-weight:600;
+    font-size:.95rem;
+    transition:all .25s ease;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.5rem;
+    min-height:48px;
+    text-decoration:none;
+    cursor:pointer;
+    border:none;
+    -webkit-tap-highlight-color:transparent;
+    letter-spacing:-0.01em;
+  }
+  .btn-primary{
+    background:var(--primary);
+    color:#fff;
+    box-shadow:0 4px 14px -4px rgba(142,28,60,.4);
+  }
+  .btn-primary:hover{
+    background:var(--dark);
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px -4px rgba(142,28,60,.5);
+  }
+  .btn-gold{
+    background:var(--gold);
+    color:#fff;
+    box-shadow:0 4px 14px -4px rgba(184,134,11,.4);
+  }
+  .btn-gold:hover{
+    background:var(--gold-soft);
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px -4px rgba(184,134,11,.5);
+  }
+  .btn-outline{
+    background:rgba(255,255,255,.1);
+    color:#fff;
+    border:1.5px solid rgba(255,255,255,.7);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+  }
+  .btn-outline:hover{
+    background:#fff;
+    color:var(--primary);
+    border-color:#fff;
+    transform:translateY(-2px);
+  }
+  @media (min-width:640px){
+    .btn-primary,.btn-gold,.btn-outline{padding:1rem 2rem;font-size:1rem}
+  }
+
+  /* SECTIONS */
+  .section-py{padding:3rem 0}
+  @media (min-width:640px){.section-py{padding:4rem 0}}
+  @media (min-width:1024px){.section-py{padding:5rem 0}}
+  .container-x{padding-left:1rem;padding-right:1rem}
+  @media (min-width:640px){.container-x{padding-left:1.5rem;padding-right:1.5rem}}
+  @media (min-width:1024px){.container-x{padding-left:1.25rem;padding-right:1.25rem}}
+
+  /* STICKY CTA */
+  .sticky-cta{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:linear-gradient(90deg,var(--dark),var(--primary));
+    color:#fff;
+    z-index:9000;
+    transform:translateY(100%);
+    transition:transform .4s cubic-bezier(.2,.8,.2,1);
+    padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));
+    box-shadow:0 -8px 30px rgba(42,42,46,.2);
+    border-radius:16px 16px 0 0;
+  }
+  @media (min-width:640px){.sticky-cta{padding:.75rem 1rem calc(.75rem + env(safe-area-inset-bottom))}}
+  .sticky-cta.visible{transform:translateY(0)}
+
+  .slot-progress{width:100%;height:5px;background:rgba(255,255,255,.22);border-radius:99px;overflow:hidden}
+  .slot-progress-bar{
+    height:100%;
+    background:var(--gold-soft);
+    border-radius:99px;
+    width:40%;
+    transition:width .6s;
+    position:relative;
+    overflow:hidden;
+  }
+  .slot-progress-bar::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);
+    background-size:200% 100%;
+    animation:shimmer 2.4s linear infinite;
+  }
+
+  /* SOCIAL PROOF */
+  .social-proof{
+    position:fixed;
+    bottom:90px;
+    right:12px;
+    background:#fff;
+    border-radius:12px;
+    padding:.65rem .85rem;
+    box-shadow:0 8px 30px rgba(42,42,46,.15);
+    z-index:8000;
+    max-width:260px;
+    font-size:.8rem;
+    border-left:3px solid var(--primary);
+    transform:translateX(120%);
+    transition:transform .55s cubic-bezier(.2,.8,.2,1);
+    pointer-events:none;
+  }
+  @media (min-width:640px){.social-proof{bottom:100px;right:16px;max-width:280px;font-size:.85rem;padding:.75rem 1rem}}
+  .social-proof.show{transform:translateX(0)}
+
+  /* FAB WA */
+  .fab-wa{
+    position:fixed;
+    bottom:100px;
+    right:12px;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.5rem;
+    z-index:8500;
+    box-shadow:0 8px 24px rgba(37,211,102,.45);
+    cursor:pointer;
+    border:none;
+    transition:transform .3s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  @media (min-width:640px){.fab-wa{bottom:110px;right:16px;width:56px;height:56px;font-size:1.75rem}}
+  .fab-wa:hover{transform:scale(1.08)}
+  .fab-wa .quick-menu{
+    position:absolute;
+    bottom:62px;
+    right:0;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 8px 30px rgba(42,42,46,.2);
+    padding:.4rem;
+    min-width:200px;
+    display:none;
+    flex-direction:column;
+    gap:2px;
+  }
+  @media (min-width:640px){.fab-wa .quick-menu{bottom:70px;min-width:210px}}
+  .fab-wa .quick-menu.show{display:flex}
+  .fab-wa .quick-menu a{
+    padding:.6rem .9rem;
+    border-radius:8px;
+    color:var(--charcoal);
+    text-decoration:none;
+    font-size:.85rem;
+    transition:background .2s;
+    white-space:nowrap;
+    min-height:40px;
+    display:flex;
+    align-items:center;
+  }
+  .fab-wa .quick-menu a:hover{background:var(--pale)}
+
+  .back-top{
+    position:fixed;
+    bottom:165px;
+    right:12px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--dark);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:.9rem;
+    z-index:8400;
+    cursor:pointer;
+    border:none;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s,transform .3s;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
+  }
+  @media (min-width:640px){.back-top{bottom:180px;right:16px;width:44px;height:44px;font-size:1rem}}
+  .back-top.show{opacity:1;pointer-events:auto}
+
+  .quick-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#fff;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-around;
+    padding:.4rem 0 calc(.4rem + env(safe-area-inset-bottom));
+    z-index:9500;
+    box-shadow:0 -4px 20px rgba(42,42,46,.08);
+  }
+  .quick-nav a{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    font-size:.62rem;
+    color:#888;
+    text-decoration:none;
+    gap:2px;
+    padding:.35rem .25rem;
+    transition:color .2s;
+    min-width:56px;
+    min-height:48px;
+    justify-content:center;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .quick-nav a i{font-size:1.05rem}
+  .quick-nav a.active,.quick-nav a:hover,.quick-nav a:active{color:var(--primary)}
+  @media (min-width:768px){.quick-nav{display:none}}
+
+  .grid-cards-3{display:grid;gap:1rem;grid-template-columns:1fr}
+  @media (min-width:640px){.grid-cards-3{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:1024px){.grid-cards-3{grid-template-columns:repeat(3,1fr);gap:1.5rem}}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-question{
+    width:100%;
+    text-align:left;
+    padding:1rem 0;
+    background:none;
+    border:none;
+    font-weight:600;
+    font-size:.95rem;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:var(--charcoal);
+    transition:color .25s;
+    gap:1rem;
+    min-height:56px;
+  }
+  @media (min-width:640px){.faq-question{font-size:1rem;padding:1.25rem 0}}
+  .faq-question i{transition:transform .3s;color:var(--primary);flex-shrink:0}
+  .faq-item.open .faq-question i{transform:rotate(180deg)}
+  .faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .45s ease,padding .3s;
+    color:#555;
+    font-size:.9rem;
+    line-height:1.7;
+  }
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:1rem}
+
+  /* COMPARISON */
+  .comparison-table th,.comparison-table td{
+    padding:.65rem .75rem;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+    font-size:.85rem;
+  }
+  @media (min-width:640px){.comparison-table th,.comparison-table td{padding:.85rem 1rem;font-size:.9rem}}
+  .comparison-table th{background:var(--pale);font-weight:600;color:var(--dark)}
+
+  /* QUIZ */
+  .quiz-option{
+    padding:.9rem 1rem;
+    border:1.5px solid var(--line);
+    border-radius:12px;
+    cursor:pointer;
+    transition:.25s;
+    margin-bottom:.6rem;
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+    background:#fff;
+    min-height:52px;
+    font-size:.9rem;
+  }
+  .quiz-option:hover{border-color:var(--light);background:var(--pale)}
+  .quiz-option.selected{border-color:var(--primary);background:var(--pale)}
+
+  /* CALENDAR */
+  .calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+  .calendar-day{
+    padding:.4rem .25rem;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:.75rem;
+    transition:.2s;
+    min-height:48px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+  @media (min-width:640px){.calendar-day{padding:.5rem;font-size:.85rem}}
+  .calendar-day:hover,.calendar-day:active{background:var(--pale)}
+  .calendar-day.selected{background:var(--primary);color:#fff}
+  .calendar-day.disabled{color:#ccc;cursor:not-allowed;pointer-events:none}
+
+  .time-slot{
+    padding:.65rem .75rem;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    font-size:.85rem;
+    text-align:center;
+    background:#fff;
+    min-height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .time-slot:hover,.time-slot:active{border-color:var(--primary)}
+  .time-slot.selected{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+  /* EXIT MODAL */
+  .exit-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(42,42,46,.7);
+    z-index:12000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:1rem;
+  }
+  .exit-modal.open{display:flex}
+  .exit-content{
+    background:#fff;
+    border-radius:16px;
+    max-width:480px;
+    width:100%;
+    padding:1.5rem;
+    text-align:center;
+    position:relative;
+    animation:popIn .5s cubic-bezier(.2,.8,.2,1);
+    max-height:90vh;
+    overflow-y:auto;
+  }
+  @keyframes popIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+  /* PAKET CARD */
+  .paket-card{
+    border:1.5px solid var(--line);
+    border-radius:16px;
+    padding:1.25rem;
+    transition:.3s;
+    position:relative;
+    background:#fff;
+  }
+  @media (min-width:640px){.paket-card{padding:1.75rem}}
+  .paket-card:hover{border-color:var(--light);transform:translateY(-4px);box-shadow:0 22px 45px -22px rgba(0,0,0,.18)}
+  .paket-card.popular{border-color:var(--primary);box-shadow:0 22px 45px -18px rgba(0,0,0,.22)}
+
+  /* TRUST BADGE */
+  .trust-badge{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:.4rem;
+    padding:.75rem .5rem;
+    border-radius:12px;
+    background:#fff;
+    border:1.5px solid var(--line);
+    transition:.3s;
+    text-align:center;
+  }
+  @media (min-width:640px){.trust-badge{padding:1rem;gap:.5rem}}
+  .trust-badge:hover{border-color:var(--light);transform:translateY(-3px)}
+  .trust-badge i{font-size:1.25rem}
+  @media (min-width:640px){.trust-badge i{font-size:1.5rem}}
+  .trust-badge span{font-size:.68rem;font-weight:600}
+  @media (min-width:640px){.trust-badge span{font-size:.75rem}}
+
+  .counter{font-variant-numeric:tabular-nums}
+  .section-pale{background:var(--pale)}
+
+  /* BLOG */
+  .post-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    transition:.3s;
+    cursor:pointer;
+  }
+  .post-card:hover{transform:translateY(-4px);box-shadow:0 22px 45px -22px rgba(0,0,0,.22);border-color:var(--light)}
+  .post-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    transition:transform .6s;
+    background:linear-gradient(135deg,var(--light),var(--pale));
+  }
+  @media (min-width:640px){.post-card img{height:200px}}
+  .post-card:hover img{transform:scale(1.05)}
+  .post-content{font-size:1rem;line-height:1.8;color:#333}
+  @media (min-width:640px){.post-content{font-size:1.05rem;line-height:1.85}}
+  .post-content h2{font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;color:var(--dark);margin:1.5rem 0 .65rem;letter-spacing:-0.02em}
+  .post-content h3{font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:700;color:var(--dark);margin:1.25rem 0 .5rem;letter-spacing:-0.02em}
+  .post-content p{margin-bottom:1rem}
+  .post-content ul,.post-content ol{margin:0 0 1rem 1.5rem}
+  .post-content li{margin-bottom:.35rem}
+  .post-content blockquote{
+    border-left:3px solid var(--primary);
+    padding:.5rem 1rem;
+    background:var(--pale);
+    border-radius:8px;
+    margin:1.25rem 0;
+    font-style:italic;
+    color:#555;
+  }
+  .post-content img{border-radius:10px;margin:1.25rem 0}
+  .post-content a{color:var(--primary);text-decoration:underline}
+  .post-content strong{color:var(--dark)}
+
+  img[loading="lazy"]{
+    background:linear-gradient(90deg,var(--pale) 25%,var(--light) 50%,var(--pale) 75%);
+    background-size:200% 100%;
+    animation:shimmer 2s infinite;
+  }
+
+  /* ADMIN */
+  .admin-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(20,15,18,.75);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    z-index:20000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:.5rem;
+  }
+  @media (min-width:640px){.admin-overlay{padding:1rem}}
+  .admin-overlay.open{display:flex}
+  .admin-panel{
+    background:#fff;
+    border-radius:16px;
+    width:100%;
+    max-width:1200px;
+    max-height:95vh;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.4);
+    animation:popIn .4s;
+  }
+  @media (min-width:640px){.admin-panel{border-radius:20px;max-height:92vh}}
+  .admin-header{
+    padding:.75rem 1rem;
+    background:linear-gradient(135deg,var(--dark),var(--primary));
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-shrink:0;
+    gap:.5rem;
+    flex-wrap:wrap;
+  }
+  @media (min-width:640px){.admin-header{padding:1.25rem 1.5rem;gap:1rem}}
+  .admin-body{display:flex;flex:1;overflow:hidden;min-height:0;flex-direction:column}
+  @media (min-width:768px){.admin-body{flex-direction:row}}
+  .admin-tabs{
+    width:100%;
+    background:#faf7f2;
+    border-bottom:1px solid var(--line);
+    overflow-x:auto;
+    overflow-y:hidden;
+    flex-shrink:0;
+    padding:.4rem;
+    display:flex;
+    gap:.25rem;
+    -webkit-overflow-scrolling:touch;
+  }
+  @media (min-width:768px){
+    .admin-tabs{width:250px;border-right:1px solid var(--line);border-bottom:none;overflow-x:hidden;overflow-y:auto;flex-direction:column;padding:.5rem}
+  }
+  .admin-tab{
+    padding:.6rem .8rem;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:.8rem;
+    font-weight:500;
+    color:#555;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    transition:.2s;
+    flex-shrink:0;
+    white-space:nowrap;
+    min-height:42px;
+  }
+  @media (min-width:768px){.admin-tab{font-size:.85rem;padding:.7rem .9rem}}
+  .admin-tab:hover{background:#fff;color:var(--primary)}
+  .admin-tab.active{background:var(--primary);color:#fff}
+  .admin-content{
+    flex:1;
+    overflow-y:auto;
+    padding:1rem;
+    -webkit-overflow-scrolling:touch;
+    min-width:0;
+  }
+  @media (min-width:640px){.admin-content{padding:1.5rem}}
+  .admin-footer{
+    padding:.75rem 1rem;
+    background:#faf7f2;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    gap:.5rem;
+    flex-shrink:0;
+    flex-wrap:wrap;
+  }
+  @media (min-width:640px){.admin-footer{padding:1rem 1.5rem}}
+  .admin-input{
+    width:100%;
+    padding:.65rem .8rem;
+    border:1.5px solid var(--line);
+    border-radius:8px;
+    font-size:.9rem;
+    font-family:inherit;
+    transition:.2s;
+    outline:none;
+    background:#fff;
+    color:var(--charcoal);
+    -webkit-appearance:none;
+    min-height:44px;
+  }
+  .admin-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(142,28,60,.1)}
+  .admin-label{
+    display:block;
+    font-size:.72rem;
+    font-weight:600;
+    color:#666;
+    margin-bottom:.35rem;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+  }
+  .admin-field{margin-bottom:.85rem}
+  .admin-card{
+    background:#faf7f2;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:.85rem;
+    margin-bottom:.7rem;
+  }
+  @media (min-width:640px){.admin-card{padding:1rem}}
+  .admin-card-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:.5rem;
+    gap:.5rem;
+    flex-wrap:wrap;
+  }
+  .admin-card-title{
+    font-size:.75rem;
+    font-weight:700;
+    color:var(--dark);
+    letter-spacing:.05em;
+    text-transform:uppercase;
+  }
+  .admin-remove{
+    background:#fee;
+    color:#c00;
+    border:none;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:.75rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.2s;
+    flex-shrink:0;
+  }
+  .admin-remove:hover{background:#c00;color:#fff}
+  .admin-btn{
+    padding:.55rem .9rem;
+    border-radius:8px;
+    font-size:.8rem;
+    font-weight:600;
+    border:none;
+    cursor:pointer;
+    transition:.2s;
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    font-family:inherit;
+    min-height:38px;
+    white-space:nowrap;
+  }
+  @media (min-width:640px){.admin-btn{font-size:.85rem;padding:.55rem 1rem;min-height:40px}}
+  .admin-btn:disabled{opacity:.4;cursor:not-allowed}
+  .admin-btn-primary{background:var(--primary);color:#fff}
+  .admin-btn-primary:hover:not(:disabled){background:var(--dark)}
+  .admin-btn-gold{background:var(--gold);color:#fff}
+  .admin-btn-ghost{background:#fff;color:var(--charcoal);border:1.5px solid var(--line)}
+  .admin-btn-ghost:hover:not(:disabled){border-color:var(--primary);color:var(--primary)}
+  .admin-btn-danger{background:#fff;color:#c00;border:1.5px solid #fdd}
+  .admin-btn-danger:hover:not(:disabled){background:#c00;color:#fff;border-color:#c00}
+  .admin-btn-add{
+    background:transparent;
+    color:var(--primary);
+    border:1.5px dashed var(--primary);
+    width:100%;
+    padding:.6rem;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+    font-size:.85rem;
+  }
+  .admin-grid-2{display:grid;grid-template-columns:1fr;gap:.75rem}
+  @media (min-width:640px){.admin-grid-2{grid-template-columns:1fr 1fr}}
+  .admin-grid-3{display:grid;grid-template-columns:1fr;gap:.75rem}
+  @media (min-width:640px){.admin-grid-3{grid-template-columns:repeat(3,1fr)}}
+  .admin-login{
+    background:#fff;
+    border-radius:16px;
+    padding:1.5rem;
+    width:100%;
+    max-width:400px;
+    text-align:center;
+    animation:popIn .4s;
+  }
+  @media (min-width:640px){.admin-login{padding:2.5rem;border-radius:20px}}
+  .admin-toast{
+    position:fixed;
+    bottom:1.5rem;
+    left:50%;
+    transform:translateX(-50%) translateY(120px);
+    background:var(--charcoal);
+    color:#fff;
+    padding:.7rem 1.25rem;
+    border-radius:99px;
+    font-size:.85rem;
+    z-index:30000;
+    transition:transform .3s;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    max-width:90vw;
+    text-align:center;
+  }
+  .admin-toast.show{transform:translateX(-50%) translateY(0)}
+
+  /* IMG UPLOAD */
+  .img-upload{
+    position:relative;
+    border:2px dashed var(--line);
+    border-radius:12px;
+    padding:1rem;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+    background:#fff;
+  }
+  @media (min-width:640px){.img-upload{padding:1.25rem}}
+  .img-upload:hover,.img-upload.dragover{border-color:var(--primary);background:var(--pale)}
+  .img-upload input[type=file]{display:none}
+  .img-upload-preview{
+    width:100%;
+    height:auto;
+    max-height:220px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-bottom:.6rem;
+    background:#f5f5f5;
+  }
+  @media (min-width:640px){.img-upload-preview{max-height:280px}}
+  .img-upload-actions{display:flex;gap:.35rem;justify-content:center;margin-top:.6rem;flex-wrap:wrap}
+
+  /* MEDIA GRID */
+  .media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-top:.6rem}
+  @media (min-width:640px){.media-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}}
+  .media-item{
+    position:relative;
+    border-radius:8px;
+    overflow:hidden;
+    border:1.5px solid var(--line);
+    background:#faf7f2;
+    cursor:pointer;
+    aspect-ratio:1;
+    transition:.2s;
+  }
+  .media-item:hover{border-color:var(--primary)}
+  .media-item img{width:100%;height:100%;object-fit:cover;display:block}
+  .media-item .media-actions{
+    position:absolute;
+    top:.3rem;
+    right:.3rem;
+    display:flex;
+    gap:.25rem;
+    opacity:1;
+    transition:.2s;
+  }
+  @media (hover:hover){
+    .media-item .media-actions{opacity:0}
+    .media-item:hover .media-actions{opacity:1}
+  }
+  .media-item .media-btn{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,.95);
+    color:var(--charcoal);
+    cursor:pointer;
+    font-size:.7rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  .media-item .media-btn:hover{background:var(--primary);color:#fff}
+  .media-item .media-btn.danger:hover{background:#c00}
+  .media-item .media-label{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:linear-gradient(transparent,rgba(0,0,0,.75));
+    color:#fff;
+    padding:.4rem .35rem .3rem;
+    font-size:.55rem;
+    text-align:center;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+
+  .img-info{
+    font-size:.7rem;
+    color:#666;
+    margin-top:.4rem;
+    padding:.4rem .5rem;
+    background:var(--pale);
+    border-radius:6px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:.5rem;
+    flex-wrap:wrap;
+  }
+  .img-info strong{color:var(--emerald)}
+  .compress-badge{
+    display:inline-block;
+    background:var(--emerald);
+    color:#fff;
+    font-size:.6rem;
+    font-weight:700;
+    padding:.15rem .4rem;
+    border-radius:99px;
+    text-transform:uppercase;
+  }
+
+  /* THEME GRID */
+  .theme-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-top:.6rem}
+  @media (min-width:640px){.theme-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem}}
+  .theme-card{
+    border:2px solid var(--line);
+    border-radius:12px;
+    padding:.6rem;
+    cursor:pointer;
+    transition:.2s;
+    background:#fff;
+    text-align:center;
+    position:relative;
+  }
+  .theme-card:hover{border-color:var(--primary);transform:translateY(-2px)}
+  .theme-card.active{border-color:var(--primary);box-shadow:0 0 0 3px rgba(142,28,60,.2)}
+  .theme-swatches{display:flex;gap:.25rem;justify-content:center;margin-bottom:.4rem}
+  .theme-swatch{width:22px;height:22px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+  .theme-name{font-size:.75rem;font-weight:600;color:var(--charcoal)}
+  .theme-card.active .theme-name{color:var(--primary)}
+
+  /* LIGHTBOX */
+  .lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(42,42,46,.92);
+    z-index:11000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:1rem;
+  }
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:95%;max-height:85vh;border-radius:12px}
+  .lightbox-close{
+    position:absolute;
+    top:1rem;
+    right:1rem;
+    color:#fff;
+    font-size:1.75rem;
+    cursor:pointer;
+    background:rgba(0,0,0,.5);
+    border:none;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* POST MODAL */
+  .post-modal-panel{
+    background:#fff;
+    border-radius:16px;
+    width:100%;
+    max-width:900px;
+    max-height:95vh;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  @media (min-width:640px){.post-modal-panel{border-radius:20px;max-height:92vh}}
+  .post-modal-content{
+    flex:1;
+    overflow-y:auto;
+    padding:1.25rem;
+    -webkit-overflow-scrolling:touch;
+  }
+  @media (min-width:640px){.post-modal-content{padding:2.5rem}}
+
+  .line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .line-clamp-3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+  input[type=range]{
+    -webkit-appearance:none;
+    width:100%;
+    height:6px;
+    border-radius:3px;
+    background:var(--line);
+    outline:none;
+    margin:.5rem 0;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    appearance:none;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--primary);
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--primary);
+    cursor:pointer;
+    border:none;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<header class="navbar fixed top-0 left-0 w-full z-50" id="navbar">
+  <div class="max-w-7xl mx-auto container-x flex items-center justify-between">
+    <a href="#" class="logo-wrapper" id="logoTrigger">
+      <div class="logo-img" id="logoImgWrap"><span class="logo-fallback">S</span></div>
+      <div id="logoTextWrap">
+        <span class="logo-text font-display" id="brandNameNav">Scentia</span>
+        <span class="logo-sub block" id="brandSubNav">ULTIMACOS</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 lg:gap-8">
+      <a href="#kolaborasi" class="nav-link">Kolaborasi</a>
+      <a href="#fasilitas" class="nav-link">Fasilitas</a>
+      <a href="#proses" class="nav-link">Proses</a>
+      <a href="#katalog" class="nav-link">Katalog</a>
+      <a href="#blog" class="nav-link">Wawasan</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#booking" class="btn-primary" style="min-height:auto;padding:.55rem 1.15rem;font-size:.85rem">Booking</a>
+    </nav>
+    <button class="md:hidden text-white text-2xl w-11 h-11 flex items-center justify-center rounded-lg -mr-2" id="menu-toggle" aria-label="Menu" style="text-shadow:0 1px 4px rgba(0,0,0,.5)"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="flex justify-between items-center mb-6">
+    <span class="font-display font-bold text-xl" style="color:var(--dark)">Menu</span>
+    <button class="text-2xl text-gray-400 w-11 h-11 flex items-center justify-center rounded-lg -mr-2" id="closeDrawer"><i class="fas fa-times"></i></button>
+  </div>
+  <nav class="flex flex-col">
+    <a href="#kolaborasi" class="mobile-link">Kolaborasi</a>
+    <a href="#fasilitas" class="mobile-link">Fasilitas</a>
+    <a href="#proses" class="mobile-link">Proses</a>
+    <a href="#katalog" class="mobile-link">Katalog</a>
+    <a href="#blog" class="mobile-link">Wawasan Parfum</a>
+    <a href="#bonus" class="mobile-link">Bonus</a>
+    <a href="#testimoni" class="mobile-link">Testimoni</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#booking" class="mobile-link">Booking</a>
+    <a href="#kontak" class="btn-primary mt-5 justify-center"><i class="fas fa-headset"></i> Hubungi Kami</a>
+  </nav>
+</div>
+
+<section class="hero-section" id="heroSection">
+  <div id="heroImageLayer" class="hero-image-layer"></div>
+  <div class="hero-overlay" id="heroOverlay"></div>
+  <div class="hero-content hero-text-shadow" id="heroTextWrap">
+    <div class="max-w-5xl mx-auto container-x text-center text-white py-24 md:py-0">
+      <div class="inline-flex items-center gap-2 backdrop-blur-sm border rounded-full px-4 py-2 text-xs sm:text-sm mb-6 floaty" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)">
+        <i class="fas fa-certificate" style="color:var(--gold-soft)"></i>
+        <span class="text-white font-medium" id="heroBadge">CPKB Certified — BPOM</span>
+      </div>
+
+      <h1 class="hero-h1 font-display">
+        <span class="letters block" id="heroLine1"></span>
+        <span class="letters text-gradient block" id="heroLine2" data-delay="300"></span>
+        <span class="letters block" id="heroLine3" data-delay="600"></span>
+      </h1>
+
+      <p class="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 min-h-[3rem] sm:min-h-[3.5rem] px-2 font-normal leading-relaxed">
+        <span class="typing" id="heroTyping"></span>
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        <a href="#lead-magnet" class="btn-gold w-full sm:w-auto">
+          <i class="fas fa-gift"></i>
+          <span>Klaim Bonus <span id="heroBonus">Rp 2.750.000</span></span>
+        </a>
+        <a href="#kontak" class="btn-outline w-full sm:w-auto">
+          <i class="fas fa-comments"></i>
+          <span>Konsultasi Gratis</span>
+        </a>
+      </div>
+
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs sm:text-sm text-white/90 font-medium">
+        <span class="flex items-center gap-2">
+          <i class="fas fa-check-circle" style="color:var(--gold-soft)"></i>
+          Lab Fragrance Mandiri
+        </span>
+        <span class="flex items-center gap-2">
+          <i class="fas fa-check-circle" style="color:var(--gold-soft)"></i>
+          Smelling Room Eksklusif
+        </span>
+        <span class="flex items-center gap-2">
+          <i class="fas fa-check-circle" style="color:var(--gold-soft)"></i>
+          FREE Design Kemasan
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-3 overflow-hidden" style="background:var(--dark)">
+  <div class="marquee-wrap text-white/85 text-xs sm:text-sm font-medium tracking-wide" id="marqueeTrack"></div>
+</section>
+
+<section class="py-8 sm:py-10 shadow-sm relative z-20 bg-white">
+  <div class="max-w-6xl mx-auto container-x grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center" id="statsGrid"></div>
+</section>
+
+<section id="kolaborasi" class="section-py section-pale">
+  <div class="max-w-6xl mx-auto container-x">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--primary)">Kolaborasi</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mt-2" style="color:var(--dark)"><span class="split-title" data-split="King Parfum + Scentia"></span></h2>
+      <p class="text-gray-500 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base px-2">Sinergi pabrik dan marketing untuk hasil terbaik.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5 sm:gap-8 items-stretch">
+      <div class="reveal">
+        <div class="bg-white rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-lg transition-shadow h-full" style="border:1px solid var(--line)">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-5 floaty" style="background:linear-gradient(135deg,var(--primary),var(--dark))"><i class="fas fa-industry"></i></div>
+          <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3" style="color:var(--dark)" id="factoryName"></h3>
+          <p class="text-gray-600 leading-relaxed text-sm sm:text-base" id="factoryDesc"></p>
+        </div>
+      </div>
+      <div class="reveal delay-1">
+        <div class="bg-white rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-lg transition-shadow h-full" style="border:1px solid var(--line)">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-5 floaty" style="background:linear-gradient(135deg,var(--gold),var(--gold-soft));animation-delay:.5s"><i class="fas fa-bullhorn"></i></div>
+          <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3" style="color:var(--dark)" id="marketingName"></h3>
+          <p class="text-gray-600 leading-relaxed text-sm sm:text-base" id="marketingDesc"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-py bg-white overflow-hidden">
+  <div class="max-w-6xl mx-auto container-x">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--primary)">Brand Partner</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mt-2" style="color:var(--dark)"><span class="split-title" data-split="Dipercaya Brand Lokal & Nasional"></span></h2>
+      <p class="text-gray-500 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base px-2">Bergabunglah dengan brand yang telah tumbuh bersama kami.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4" id="brandGrid"></div>
+  </div>
+</section>
+
+<section id="fasilitas" class="section-py section-pale">
+  <div class="max-w-6xl mx-auto container-x">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--primary)">Fasilitas</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mt-2" style="color:var(--dark)"><span class="split-title" data-split="Lab & Fasilitas Unggulan"></span></h2>
+    </div>
+    <div class="grid-cards-3" id="facilityGrid"></div>
+  </div>
+</section>
+
+<section id="proses" class="section-py bg-white">
+  <div class="max-w-6xl mx-auto container-x">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--primary)">Alur Kerja</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mt-2" style="color:var(--dark)"><span class="split-title" data-split="4 Langkah Mudah"></span></h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6" id="processGrid"></div>
+  </div>
+</section>
+
+<section id="katalog" class="section-py section-pale">
+  <div class="max-w-6xl mx-auto container-x">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--primary)">Katalog</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mt-2" style="color:var(--dark)"><span class="split-title" data-split="Pilihan Kemasan"></span></h2>
+    </div>
+    <div class="grid-cards-3" id="catalogGrid"></div>
+  </div>
+</section>
+
+<section id="blog" class="section-py bg-white">
+  <div class="max-w-6xl mx-auto container-x">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--primary)">Wawasan Parfum</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mt-2" style="color:var(--dark)"><span class="split-title" data-split="Baca & Pelajari Dunia Parfum"></span></h2>
+      <p class="text-gray-500 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base px-2">Tips, panduan, dan wawasan seputar industri parfum.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6" id="blogGrid"></div>
+    <div class="text-center mt-8 sm:mt-10">
+      <button class="btn-outline" style="color:var(--primary);border-color:var(--primary);background:transparent;display:none" onclick="loadMorePosts()" id="loadMoreBtn"><i class="fas fa-plus-circle"></i> Muat Lebih Banyak</button>
+    </div>
+  </div>
+</section>
+
+<section id="bonus" class="section-py text-white" style="background:linear-gradient(135deg,var(--dark) 0%,var(--primary) 55%,var(--primary-soft) 100%)">
+  <div class="max-w-6xl mx-auto container-x">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--gold-soft)">Bonus Spesial</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mt-2"><span class="split-title shimmer-text" id="bonusTitle" data-split="Total Bonus Rp 2.750.000"></span></h2>
+    </div>
+    <div class="grid-cards-3" id="bonusGrid"></div>
+    <div class="text-center mt-8 sm:mt-10 reveal">
+      <div class="inline-block font-bold px-5 sm:px-6 py-3 rounded-full text-base sm:text-lg floaty" style="background:var(--gold);color:#fff" id="bonusTotal"></div>
+    </div>
+    <div class="mt-6 sm:mt-8 max-w-md mx-auto reveal">
+      <div class="flex justify-between text-xs sm:text-sm mb-2"><span>Slot Bonus Tersisa</span><span class="font-bold" style="color:var(--gold-soft)" id="slotText"></span></div>
+      <div class="slot-progress"><div class="slot-progress-bar" id="slotBar"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimoni" class="section-py bg-white overflow-hidden">
+  <div class="max-w-6xl mx-auto container-x">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--primary)">Testimoni</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mt-2" style="color:var(--dark)"><span class="split-title" data-split="Kata Brand Partner"></span></h2>
+    </div>
+  </div>
+  <div class="marquee-wrap gap-4 sm:gap-6 container-x" id="testimoniTrack"></div>
+</section>
+
+<section id="faq" class="section-py section-pale">
+  <div class="max-w-3xl mx-auto container-x">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--primary)">FAQ</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mt-2" style="color:var(--dark)"><span class="split-title" data-split="Pertanyaan Umum"></span></h2>
+    </div>
+    <div class="space-y-2" id="faqList"></div>
+  </div>
+</section>
+
+<section id="booking" class="section-py bg-white">
+  <div class="max-w-6xl mx-auto container-x">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--primary)">Booking</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mt-2" style="color:var(--dark)"><span class="split-title" data-split="Kunjungi Pabrik Kami"></span></h2>
+      <p class="text-gray-500 max-w-2xl mx-auto mt-3 sm:mt-4 text-sm sm:text-base px-2">Pilih tanggal dan waktu kunjungan Anda.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5 sm:gap-8">
+      <div class="reveal rounded-2xl p-4 sm:p-6" style="background:var(--pale);border:1px solid var(--line)">
+        <h3 class="font-display font-bold text-lg sm:text-xl mb-3 sm:mb-4" style="color:var(--dark)">Pilih Tanggal</h3>
+        <div class="calendar-grid" id="calendar"></div>
+      </div>
+      <div class="reveal delay-1 rounded-2xl p-4 sm:p-6" style="background:var(--pale);border:1px solid var(--line)">
+        <h3 class="font-display font-bold text-lg sm:text-xl mb-3 sm:mb-4" style="color:var(--dark)">Pilih Waktu</h3>
+        <div class="grid grid-cols-2 gap-2 sm:gap-3">
+          <div class="time-slot" data-time="09:00">09:00</div>
+          <div class="time-slot" data-time="10:00">10:00</div>
+          <div class="time-slot" data-time="13:00">13:00</div>
+          <div class="time-slot" data-time="15:00">15:00</div>
+        </div>
+        <button class="btn-primary w-full mt-5 sm:mt-6 justify-center" id="bookingBtn"><i class="fab fa-whatsapp"></i> Konfirmasi via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-py text-white" style="background:linear-gradient(135deg,var(--dark),var(--primary))">
+  <div class="max-w-4xl mx-auto container-x text-center reveal">
+    <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4"><span class="split-title" data-split="Siap Membangun Brand Parfum Anda?"></span></h2>
+    <p class="text-white/70 text-base sm:text-lg mb-6 sm:mb-8 px-2">Konsultasi gratis, klaim bonus, dan mulai produksi bersama Scentia Ultimacos.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+      <a href="#lead-magnet" class="btn-gold w-full sm:w-auto text-base sm:text-lg floaty"><i class="fas fa-gift"></i> Klaim Bonus Sekarang</a>
+      <a href="#" id="ctaWaLink" class="btn-outline w-full sm:w-auto text-base sm:text-lg"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer class="text-white pt-12 sm:pt-16 pb-28 md:pb-16" style="background:#1e1a1c">
+  <div class="max-w-6xl mx-auto container-x grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
+    <div>
+      <div class="logo-wrapper mb-4">
+        <div class="logo-img" id="logoImgWrapFooter"><span class="logo-fallback">S</span></div>
+        <div>
+          <span class="font-display font-bold text-xl" id="footerBrand">Scentia</span>
+          <span class="block text-[10px] text-white/50 -mt-1 tracking-[.25em]" id="footerSub">ULTIMACOS</span>
+        </div>
+      </div>
+      <p class="text-sm text-white/60" id="footerDesc"></p>
+      <p class="text-xs text-white/40 mt-4" id="footerYear"></p>
+    </div>
+    <div>
+      <h4 class="font-display font-bold mb-3 sm:mb-4">Layanan</h4>
+      <ul class="space-y-2 text-sm text-white/60">
+        <li><a href="#kolaborasi" class="hover:text-[#d4a437] transition">Kolaborasi</a></li>
+        <li><a href="#fasilitas" class="hover:text-[#d4a437] transition">Fasilitas</a></li>
+        <li><a href="#blog" class="hover:text-[#d4a437] transition">Wawasan Parfum</a></li>
+        <li><a href="#katalog" class="hover:text-[#d4a437] transition">Katalog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display font-bold mb-3 sm:mb-4">Kontak</h4>
+      <ul class="space-y-2 text-sm text-white/60 break-words">
+        <li><i class="fab fa-whatsapp mr-2 text-[#25D366]"></i> <span id="footerWa">-</span></li>
+        <li><i class="fas fa-envelope mr-2" style="color:var(--gold-soft)"></i> <span id="footerEmail" class="break-all">-</span></li>
+        <li><i class="fas fa-map-marker-alt mr-2" style="color:var(--primary-soft)"></i> <span id="footerAddress">-</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display font-bold mb-3 sm:mb-4">Jam Operasional</h4>
+      <p class="text-sm text-white/60" id="footerHours">-</p>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto container-x mt-10 sm:mt-12 pt-6 border-t border-white/10 text-center text-xs text-white/40">
+    <span id="footerCopyright">© 2025 Scentia Ultimacos</span>
+    <span class="block mt-2 text-white/20 text-[10px]">Klik logo 5x untuk admin panel</span>
+  </div>
+</footer>
+
+<button class="fab-wa" id="fabWa" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <div class="quick-menu" id="quickMenu">
+    <a href="#" data-wa="bonus">🎁 Klaim Bonus</a>
+    <a href="#" data-wa="moq">❓ Tanya MOQ</a>
+    <a href="#" data-wa="design">🎨 Konsultasi Design</a>
+    <a href="#" data-wa="booking">📅 Booking Kunjungan</a>
+    <a href="#" data-wa="legalitas">📜 Tanya Legalitas</a>
+  </div>
+</button>
+<button class="back-top" id="backTop"><i class="fas fa-arrow-up"></i></button>
+
+<nav class="quick-nav">
+  <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+  <a href="#fasilitas"><i class="fas fa-flask"></i> Fasilitas</a>
+  <a href="#blog"><i class="fas fa-book-open"></i> Wawasan</a>
+  <a href="#bonus"><i class="fas fa-gift"></i> Bonus</a>
+  <a href="#kontak"><i class="fas fa-phone"></i> Kontak</a>
+</nav>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+  <img src="" alt="Preview" id="lightboxImg">
+</div>
+
+<div class="sticky-cta" id="stickyCta">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 sm:gap-3">
+    <div class="flex items-center gap-3 w-full sm:w-auto">
+      <div class="hidden sm:block">
+        <div class="text-xs text-white/60">Bonus Total</div>
+        <div class="font-bold shimmer-text text-sm">Rp 2.750.000</div>
+      </div>
+      <div class="flex-1 min-w-[100px]">
+        <div class="flex justify-between text-xs mb-1"><span>Slot Bonus</span><span class="font-bold" style="color:var(--gold-soft)" id="stickySlot"></span></div>
+        <div class="slot-progress"><div class="slot-progress-bar" id="stickySlotBar"></div></div>
+      </div>
+      <div class="text-center hidden md:block">
+        <div class="text-xs text-white/60">Berakhir</div>
+        <div class="font-bold text-sm" id="countdown" style="color:var(--gold-soft)">23:59:59</div>
+      </div>
+    </div>
+    <div class="flex gap-2 w-full sm:w-auto">
+      <a href="#lead-magnet" class="btn-gold text-xs sm:text-sm flex-1 sm:flex-none justify-center" style="padding:.5rem .8rem"><i class="fas fa-gift"></i> Klaim Bonus</a>
+      <a href="#" id="stickyWaLink" class="btn-outline text-xs sm:text-sm flex-1 sm:flex-none justify-center" style="padding:.5rem .8rem"><i class="fas fa-comments"></i> Konsultasi</a>
+    </div>
+  </div>
+</div>
+
+<div class="social-proof" id="socialProof">
+  <div class="flex items-center gap-2">
+    <span class="text-lg">🔥</span>
+    <div>
+      <span id="proofText">TWIST baru saja order 5.000 pcs</span>
+      <div class="text-[10px] text-gray-400 mt-1">Baru saja</div>
+    </div>
+  </div>
+</div>
+
+<div class="exit-modal" id="exitModal">
+  <div class="exit-content">
+    <button class="absolute top-3 right-3 text-gray-400 text-xl w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100" id="closeExit"><i class="fas fa-times"></i></button>
+    <div class="text-4xl mb-3 floaty">🎁</div>
+    <h3 class="font-display text-xl sm:text-2xl font-bold mb-2" style="color:var(--dark)">Tunggu Dulu!</h3>
+    <p class="text-gray-500 mb-5 text-sm sm:text-base">Dapatkan <strong style="color:var(--primary)">Konsultasi GRATIS 30 menit</strong> dengan tim ahli kami.</p>
+    <a href="#" id="exitWaLink" class="btn-primary w-full justify-center"><i class="fab fa-whatsapp"></i> Klaim Konsultasi Gratis</a>
+    <button class="text-xs text-gray-400 mt-4 underline" id="closeExit2">Tidak, terima kasih</button>
+  </div>
+</div>
+
+<section id="kontak" class="section-py section-pale">
+  <div class="max-w-4xl mx-auto container-x">
+    <div id="lead-magnet" class="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-12 reveal" style="border:1px solid var(--line)">
+      <div class="text-center mb-6 sm:mb-8">
+        <span class="font-semibold text-xs sm:text-sm tracking-[.25em] uppercase" style="color:var(--primary)">Lead Magnet</span>
+        <h2 class="font-display text-xl sm:text-2xl md:text-4xl font-bold mt-2" style="color:var(--dark)">GRATIS 3 Sampel Aroma + E-book 7 Rahasia Brand Parfum Laris</h2>
+      </div>
+      <form id="leadForm" class="space-y-3 sm:space-y-4">
+        <div class="grid md:grid-cols-2 gap-3 sm:gap-4">
+          <input type="text" placeholder="Nama Lengkap" class="w-full px-4 py-3 rounded-xl outline-none text-sm sm:text-base" style="border:1.5px solid var(--line);min-height:48px" required>
+          <input type="tel" placeholder="Nomor WhatsApp" class="w-full px-4 py-3 rounded-xl outline-none text-sm sm:text-base" style="border:1.5px solid var(--line);min-height:48px" required>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3 sm:gap-4">
+          <input type="text" placeholder="Nama Brand" class="w-full px-4 py-3 rounded-xl outline-none text-sm sm:text-base" style="border:1.5px solid var(--line);min-height:48px" required>
+          <select class="w-full px-4 py-3 rounded-xl outline-none text-gray-600 text-sm sm:text-base" style="border:1.5px solid var(--line);min-height:48px" required>
+            <option value="">Pilih Kategori</option>
+            <option>EDP / Extrait</option>
+            <option>Non-Alkohol</option>
+            <option>Deospray</option>
+            <option>Multi Produk</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary w-full justify-center text-sm sm:text-lg"><i class="fas fa-paper-plane"></i> Kirim Sampel Gratis Sekarang</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="py-8 sm:py-10 text-white" style="background:var(--dark)">
+  <div class="max-w-6xl mx-auto container-x grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center">
+    <a href="#" id="multiWa" class="p-3 sm:p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
+      <i class="fab fa-whatsapp text-xl sm:text-2xl text-[#25D366] mb-1 sm:mb-2"></i>
+      <div class="text-xs sm:text-sm font-semibold">WhatsApp</div>
+      <div class="text-[10px] sm:text-xs text-white/50 break-all" id="multiWaNum">-</div>
+    </a>
+    <a href="#" id="multiTel" class="p-3 sm:p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
+      <i class="fas fa-phone text-xl sm:text-2xl mb-1 sm:mb-2" style="color:var(--gold-soft)"></i>
+      <div class="text-xs sm:text-sm font-semibold">Telepon</div>
+      <div class="text-[10px] sm:text-xs text-white/50 break-all" id="multiTelNum">-</div>
+    </a>
+    <a href="#" id="multiEmail" class="p-3 sm:p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
+      <i class="fas fa-envelope text-xl sm:text-2xl mb-1 sm:mb-2" style="color:var(--light)"></i>
+      <div class="text-xs sm:text-sm font-semibold">Email</div>
+      <div class="text-[10px] sm:text-xs text-white/50 break-all" id="multiEmailAdd">-</div>
+    </a>
+    <a href="#" class="p-3 sm:p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
+      <i class="fas fa-video text-xl sm:text-2xl mb-1 sm:mb-2" style="color:var(--emerald)"></i>
+      <div class="text-xs sm:text-sm font-semibold">Zoom Call</div>
+      <div class="text-[10px] sm:text-xs text-white/50">By appointment</div>
+    </a>
+  </div>
+</section>
+
+<section class="section-py bg-white">
+  <div class="max-w-6xl mx-auto container-x space-y-16 sm:space-y-20">
+    <div class="reveal">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10" style="color:var(--dark)"><span class="split-title" data-split="Scentia vs Maklon Biasa"></span></h2>
+      <div class="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+        <table class="comparison-table w-full text-sm min-w-[500px]">
+          <thead><tr><th>Aspek</th><th>Scentia Ultimacos</th><th>Maklon Biasa</th></tr></thead>
+          <tbody>
+            <tr><td>Sertifikasi CPKB</td><td style="background:rgba(142,28,60,.04)"><i class="fas fa-check-circle mr-1" style="color:var(--emerald)"></i> Ya</td><td>Tidak</td></tr>
+            <tr><td>Lab Fragrance Mandiri</td><td style="background:rgba(142,28,60,.04)"><i class="fas fa-check-circle mr-1" style="color:var(--emerald)"></i> Ya</td><td>Tidak</td></tr>
+            <tr><td>Smelling Room</td><td style="background:rgba(142,28,60,.04)"><i class="fas fa-check-circle mr-1" style="color:var(--emerald)"></i> Ya</td><td>Tidak</td></tr>
+            <tr><td>FREE Design Kemasan</td><td style="background:rgba(142,28,60,.04)"><i class="fas fa-check-circle mr-1" style="color:var(--emerald)"></i> Ya</td><td>Tidak</td></tr>
+            <tr><td>Bonus Total</td><td style="background:rgba(142,28,60,.04)" id="compBonus"></td><td>-</td></tr>
+            <tr><td>Pendampingan Legalitas</td><td style="background:rgba(142,28,60,.04)"><i class="fas fa-check-circle mr-1" style="color:var(--emerald)"></i> Ya</td><td>Tidak</td></tr>
+            <tr><td>Kapasitas Produksi</td><td style="background:rgba(142,28,60,.04)">20.000+ pcs/batch</td><td>Terbatas</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="reveal">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10" style="color:var(--dark)"><span class="split-title" data-split="Paket Maklon"></span></h2>
+      <div class="grid md:grid-cols-3 gap-5 sm:gap-6" id="paketGrid"></div>
+    </div>
+    <div class="reveal">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10" style="color:var(--dark)"><span class="split-title" data-split="Kredibilitas Kami"></span></h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        <div class="trust-badge"><i class="fas fa-certificate floaty" style="color:var(--primary)"></i><span>CPKB Certified</span></div>
+        <div class="trust-badge"><i class="fas fa-flask floaty" style="color:var(--primary);animation-delay:.2s"></i><span>Lab Mandiri</span></div>
+        <div class="trust-badge"><i class="fas fa-wind floaty" style="color:var(--primary);animation-delay:.4s"></i><span>Smelling Room</span></div>
+        <div class="trust-badge"><i class="fas fa-paint-brush floaty" style="color:var(--primary);animation-delay:.6s"></i><span>FREE Design</span></div>
+        <div class="trust-badge"><i class="fas fa-shield-alt floaty" style="color:var(--primary);animation-delay:.8s"></i><span>QC Berlapis</span></div>
+        <div class="trust-badge"><i class="fas fa-industry floaty" style="color:var(--primary);animation-delay:1s"></i><span>Kapasitas Besar</span></div>
+        <div class="trust-badge"><i class="fas fa-star floaty" style="color:var(--gold);animation-delay:1.2s"></i><span>Rating 4.9/5</span></div>
+        <div class="trust-badge"><i class="fas fa-users floaty" style="color:var(--primary);animation-delay:1.4s"></i><span>500+ Review</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10" style="color:var(--dark)"><span class="split-title" data-split="Pilih Karakter Aroma"></span></h2>
+      <div class="max-w-xl mx-auto rounded-2xl p-4 sm:p-6" style="background:var(--pale);border:1px solid var(--line)">
+        <div id="quizContainer">
+          <div class="quiz-step" data-step="1">
+            <p class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">1. Aroma seperti apa yang Anda sukai?</p>
+            <div class="quiz-option" data-value="floral"><i class="fas fa-leaf" style="color:var(--primary)"></i> Bunga & Floral</div>
+            <div class="quiz-option" data-value="fresh"><i class="fas fa-water" style="color:var(--primary)"></i> Fresh & Aquatic</div>
+            <div class="quiz-option" data-value="woody"><i class="fas fa-tree" style="color:var(--primary)"></i> Woody & Oriental</div>
+            <div class="quiz-option" data-value="sweet"><i class="fas fa-candy-cane" style="color:var(--primary)"></i> Sweet & Gourmand</div>
+          </div>
+          <div class="quiz-step hidden" data-step="2">
+            <p class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">2. Target pasar Anda?</p>
+            <div class="quiz-option" data-value="pria"><i class="fas fa-mars" style="color:var(--primary)"></i> Pria</div>
+            <div class="quiz-option" data-value="wanita"><i class="fas fa-venus" style="color:var(--primary)"></i> Wanita</div>
+            <div class="quiz-option" data-value="unisex"><i class="fas fa-genderless" style="color:var(--primary)"></i> Unisex</div>
+          </div>
+          <div class="quiz-step hidden" data-step="3">
+            <p class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">3. Karakter brand Anda?</p>
+            <div class="quiz-option" data-value="elegan"><i class="fas fa-gem" style="color:var(--primary)"></i> Elegan & Mewah</div>
+            <div class="quiz-option" data-value="casual"><i class="fas fa-smile" style="color:var(--primary)"></i> Casual & Fun</div>
+            <div class="quiz-option" data-value="profesional"><i class="fas fa-briefcase" style="color:var(--primary)"></i> Profesional</div>
+          </div>
+          <div class="quiz-step hidden" data-step="4">
+            <p class="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">4. Budget produksi?</p>
+            <div class="quiz-option" data-value="hemat"><i class="fas fa-coins" style="color:var(--primary)"></i> Hemat</div>
+            <div class="quiz-option" data-value="menengah"><i class="fas fa-wallet" style="color:var(--primary)"></i> Menengah</div>
+            <div class="quiz-option" data-value="premium"><i class="fas fa-crown" style="color:var(--primary)"></i> Premium</div>
+          </div>
+        </div>
+        <div id="quizResult" class="hidden text-center">
+          <div class="text-4xl mb-3 floaty">🎉</div>
+          <h3 class="font-display font-bold text-lg sm:text-xl" style="color:var(--dark)">Rekomendasi Aroma Anda</h3>
+          <p class="text-gray-600 mt-2 text-sm sm:text-base" id="quizResultText"></p>
+          <a href="#" id="quizWaLink" class="btn-primary mt-4 justify-center text-sm"><i class="fab fa-whatsapp"></i> Konsultasi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="admin-overlay" id="postModal" style="background:rgba(20,15,18,.9)">
+  <div class="post-modal-panel">
+    <div class="admin-header" style="padding:.75rem 1rem">
+      <button class="admin-btn admin-btn-ghost" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)" id="postBack"><i class="fas fa-arrow-left"></i> Kembali</button>
+      <button class="admin-btn admin-btn-ghost" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)" id="postClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="post-modal-content" id="postContent"></div>
+  </div>
+</div>
+
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-login" id="adminLogin">
+    <div class="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl" style="background:linear-gradient(135deg,var(--primary),var(--gold))"><i class="fas fa-lock"></i></div>
+    <h3 class="font-display text-2xl font-bold mb-2" style="color:var(--dark)">Admin Panel</h3>
+    <p class="text-sm text-gray-500 mb-6">Login dengan akun admin Supabase Anda.</p>
+    <input type="email" id="adminEmail" class="admin-input mb-3" placeholder="Email admin" autocomplete="username">
+    <input type="password" id="adminPass" class="admin-input mb-3" placeholder="Password" autocomplete="current-password">
+    <button class="btn-primary w-full justify-center" id="adminLoginBtn"><i class="fas fa-sign-in-alt"></i> Masuk</button>
+    <button class="text-xs text-gray-400 mt-4 underline" id="adminCloseLogin">Tutup</button>
+  </div>
+
+  <div class="admin-panel" id="adminPanel" style="display:none">
+    <div class="admin-header">
+      <div class="flex items-center gap-3 min-w-0">
+        <i class="fas fa-sliders-h"></i>
+        <div class="min-w-0">
+          <div class="font-display font-bold text-base sm:text-lg">Admin Panel</div>
+          <div class="text-xs opacity-70 truncate" id="adminUser">Scentia Ultimacos</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 flex-wrap">
+        <button class="admin-btn admin-btn-ghost" id="adminExportBtn" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)"><i class="fas fa-download"></i> <span class="hidden sm:inline">Export</span></button>
+        <button class="admin-btn admin-btn-ghost" id="adminImportBtn" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)"><i class="fas fa-upload"></i> <span class="hidden sm:inline">Import</span></button>
+        <button class="admin-btn admin-btn-ghost" id="adminCloseBtn" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="admin-body">
+      <div class="admin-tabs" id="adminTabs"></div>
+      <div class="admin-content" id="adminContent"></div>
+    </div>
+    <div class="admin-footer">
+      <div class="flex gap-2 flex-wrap">
+        <button class="admin-btn admin-btn-ghost" id="adminUndoBtn" title="Undo (Ctrl+Z)"><i class="fas fa-undo"></i> <span class="hidden sm:inline">Undo</span></button>
+        <button class="admin-btn admin-btn-ghost" id="adminRedoBtn" title="Redo (Ctrl+Y)"><i class="fas fa-redo"></i> <span class="hidden sm:inline">Redo</span></button>
+        <button class="admin-btn admin-btn-danger" id="adminResetAllBtn" title="Reset ALL data ke default"><i class="fas fa-trash-restore"></i> <span class="hidden sm:inline">Reset All</span></button>
+        <button class="admin-btn admin-btn-danger" id="adminLogoutBtn"><i class="fas fa-sign-out-alt"></i> <span class="hidden sm:inline">Logout</span></button>
+      </div>
+      <div class="flex gap-2">
+        <button class="admin-btn admin-btn-primary" id="adminSaveBtn"><i class="fas fa-save"></i> Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="adminFileInput" accept=".json" style="display:none">
+<div class="admin-toast" id="adminToast"></div>
+
+<script>
+const SUPABASE_URL = 'https://tjoyzlgdkhkhiggmealh.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_e8f0DIkmJBiGfMHVOINMEA_c_m6V_nn';
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+const THEMES = [
+  { id:'burgundy', name:'Burgundy Classic', colors: { primary:'#8e1c3c', primarySoft:'#a83254', dark:'#5c0f28', light:'#e8c9d3', pale:'#f7eef1', gold:'#b8860b', goldSoft:'#d4a437', goldPale:'#f5ecd4', emerald:'#2f6b4f', charcoal:'#2a2a2e', ivory:'#faf7f2', line:'#e8e3dc' } },
+  { id:'midnight', name:'Midnight Blue', colors: { primary:'#1e3a8a', primarySoft:'#3b5bdb', dark:'#0f1e4a', light:'#c7d2fe', pale:'#eef2ff', gold:'#b45309', goldSoft:'#d97706', goldPale:'#fef3c7', emerald:'#047857', charcoal:'#1e293b', ivory:'#f8fafc', line:'#e2e8f0' } },
+  { id:'emerald', name:'Emerald Luxe', colors: { primary:'#065f46', primarySoft:'#059669', dark:'#022c22', light:'#a7f3d0', pale:'#ecfdf5', gold:'#b45309', goldSoft:'#d97706', goldPale:'#fef3c7', emerald:'#065f46', charcoal:'#1f2937', ivory:'#f9fafb', line:'#e5e7eb' } },
+  { id:'royal', name:'Royal Purple', colors: { primary:'#6d28d9', primarySoft:'#7c3aed', dark:'#3b0764', light:'#ddd6fe', pale:'#f5f3ff', gold:'#b45309', goldSoft:'#d97706', goldPale:'#fef3c7', emerald:'#047857', charcoal:'#1e1b4b', ivory:'#faf5ff', line:'#ede9fe' } },
+  { id:'noir', name:'Noir Gold', colors: { primary:'#0f0f0f', primarySoft:'#333333', dark:'#000000', light:'#d4d4d4', pale:'#f5f5f5', gold:'#c9a227', goldSoft:'#d4af37', goldPale:'#f5f0d8', emerald:'#166534', charcoal:'#171717', ivory:'#fafafa', line:'#e5e5e5' } },
+  { id:'ocean', name:'Ocean Breeze', colors: { primary:'#0e7490', primarySoft:'#0891b2', dark:'#083344', light:'#a5f3fc', pale:'#ecfeff', gold:'#b45309', goldSoft:'#d97706', goldPale:'#fef3c7', emerald:'#047857', charcoal:'#164e63', ivory:'#f0fdfa', line:'#cffafe' } },
+  { id:'sunset', name:'Sunset Terra', colors: { primary:'#9a3412', primarySoft:'#c2410c', dark:'#7c2d12', light:'#fed7aa', pale:'#fff7ed', gold:'#a16207', goldSoft:'#ca8a04', goldPale:'#fef9c3', emerald:'#166534', charcoal:'#431407', ivory:'#fffbeb', line:'#fed7aa' } },
+  { id:'sakura', name:'Sakura Rose', colors: { primary:'#be185d', primarySoft:'#db2777', dark:'#831843', light:'#fbcfe8', pale:'#fdf2f8', gold:'#b45309', goldSoft:'#d97706', goldPale:'#fef3c7', emerald:'#047857', charcoal:'#500724', ivory:'#fef2f8', line:'#fce7f3' } }
+];
+
+function applyTheme(themeId) {
+  const theme = THEMES.find(t => t.id === themeId) || THEMES[0];
+  const c = theme.colors;
+  const root = document.documentElement;
+  root.setAttribute('data-theme', themeId);
+  root.style.setProperty('--primary', c.primary);
+  root.style.setProperty('--primary-soft', c.primarySoft);
+  root.style.setProperty('--dark', c.dark);
+  root.style.setProperty('--light', c.light);
+  root.style.setProperty('--pale', c.pale);
+  root.style.setProperty('--gold', c.gold);
+  root.style.setProperty('--gold-soft', c.goldSoft);
+  root.style.setProperty('--gold-pale', c.goldPale);
+  root.style.setProperty('--emerald', c.emerald);
+  root.style.setProperty('--charcoal', c.charcoal);
+  root.style.setProperty('--ivory', c.ivory);
+  root.style.setProperty('--line', c.line);
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', c.primary);
+}
+
+const DEFAULT_DATA = {
+  identity: {
+    brandName: "Scentia", brandSub: "ULTIMACOS", tagline: "By King Parfum",
+    factoryName: "King Parfum Indonesia", marketingName: "CV Scentia Ultimacos",
+    location: "Grand Harvest, Soho HO No.23, Kebraon, Karangpilang, Surabaya 60222",
+    email: "info@scentiaultimacos.com", whatsapp: "6287855876021",
+    whatsappDisplay: "0878-5587-6021", hours: "Senin - Sabtu · 09:00 - 17:00 WIB",
+    foundedYear: "2023",
+    copyright: "© 2025 Scentia Ultimacos by King Parfum Indonesia. All rights reserved."
+  },
+  logo: { url: "", showText: true, size: 48, roundBg: false },
+  theme: "burgundy",
+  heroStyle: { overlayOpacity: 25, brightness: 100, blur: 0, textShadow: true },
+  hero: {
+    badge: "CPKB Certified — BPOM",
+    line1: "Bukan Sekadar Pabrik —",
+    line2: "Partner Pertumbuhan",
+    line3: "Brand Anda",
+    typing: "Scentia Ultimacos by King Parfum — Satu Pintu: Konsultasi, Produksi, Legalitas.",
+    bonusText: "Rp 2.750.000",
+    heroImage: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1600&q=80"
+  },
+  stats: [
+    { value: 100, suffix: "K+", label: "Total Produksi pcs" },
+    { value: 3, suffix: " Thn", label: "Pengalaman" },
+    { value: 4.9, suffix: "", decimal: 1, label: "Rating /5" },
+    { value: 500, suffix: "+", label: "Review Pelanggan" }
+  ],
+  collaboration: {
+    factoryDesc: "Pabrik maklon parfum bersertifikat CPKB dengan lab fragrance mandiri, smelling room eksklusif, dan kapasitas produksi 20.000+ pcs per batch.",
+    marketingDesc: "Marketing dan partner pertumbuhan brand Anda. Membantu dari konsultasi ide, desain kemasan, hingga produk siap jual."
+  },
+  facilities: [
+    { icon: "fas fa-flask", title: "Lab Fragrance Mandiri", desc: "Riset dan pengembangan aroma secara mandiri." },
+    { icon: "fas fa-certificate", title: "CPKB Certified", desc: "Standar Cara Pembuatan Kosmetik yang Baik — BPOM." },
+    { icon: "fas fa-wind", title: "Smelling Room", desc: "Ruang eksklusif untuk mencoba berbagai varian aroma." },
+    { icon: "fas fa-paint-brush", title: "FREE Design Kemasan", desc: "Desain kemasan profesional tanpa biaya tambahan." },
+    { icon: "fas fa-shield-alt", title: "Quality Control Berlapis", desc: "Setiap batch melewati kontrol kualitas ketat." },
+    { icon: "fas fa-industry", title: "Kapasitas Produksi Besar", desc: "Mampu memproduksi 20.000+ pcs per batch." }
+  ],
+  processes: [
+    { title: "Konsultasi Ide", desc: "Diskusikan konsep brand dan aroma impian Anda." },
+    { title: "Sampel Aroma", desc: "Dapatkan 3 sampel aroma untuk dicoba." },
+    { title: "Produksi & Legalitas", desc: "Produksi massal dan pengurusan izin BPOM/HKI." },
+    { title: "Produk Siap Jual", desc: "Terima produk siap dipasarkan ke konsumen." }
+  ],
+  catalog: [
+    { badge: "POPULER", badgeColor: "gold", title: "Botol Kaca Mewah", desc: "Botol kaca premium dengan berbagai ukuran.", icon: "fas fa-spray-can", img: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&q=80" },
+    { badge: "FREE", badgeColor: "emerald", title: "Sticker & Label", desc: "Desain sticker dan label profesional gratis.", icon: "fas fa-tag", img: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80" },
+    { badge: "FREE", badgeColor: "emerald", title: "Kotak Kemasan", desc: "Kotak eksklusif untuk meningkatkan nilai produk.", icon: "fas fa-box-open", img: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&q=80" }
+  ],
+  bonuses: [
+    { icon: "fas fa-paint-brush", title: "Custom Design Kemasan", desc: "Desain profesional sesuai identitas brand.", price: "Rp 1.500.000" },
+    { icon: "fas fa-vial", title: "Sampel Aroma 3 Varian", desc: "Coba 3 varian aroma sebelum produksi.", price: "Rp 500.000" },
+    { icon: "fas fa-user-tie", title: "Konsultasi Perfumer 1-on-1", desc: "Sesi eksklusif dengan perfumer berpengalaman.", price: "Rp 750.000" }
+  ],
+  bonusTotal: "Rp 2.750.000",
+  slots: { taken: 8, total: 20 },
+  testimonials: [
+    { initial: "T", brand: "TWIST", role: "Brand Owner", text: "Pelayanan profesional, hasil parfum berkualitas tinggi. Sangat direkomendasikan!" },
+    { initial: "H", brand: "HIRE SCENT", role: "Founder", text: "Dari konsultasi sampai legalitas semua dibantu. Partner yang tepat!" },
+    { initial: "A", brand: "ACIL PARFUM", role: "Owner", text: "Kapasitas produksi besar dan kualitas terjaga. Luar biasa." },
+    { initial: "G", brand: "GHAZAL", role: "Brand Owner", text: "Aroma non-alkohol yang dihasilkan sangat memuaskan pasar." },
+    { initial: "S", brand: "SUPERJOSS", role: "Founder", text: "Bonus dan pelayanan after-sales sangat membantu pertumbuhan brand." },
+    { initial: "H", brand: "HYERIM", role: "Owner", text: "Deospray produksi Scentia laris di pasaran. Terima kasih!" }
+  ],
+  faqs: [
+    { q: "Hubungi King Parfum atau Scentia?", a: "King Parfum adalah pabrik, sedangkan Scentia Ultimacos adalah marketing/partner Anda. Hubungi Scentia untuk konsultasi awal, nanti akan diarahkan ke pabrik." },
+    { q: "Berapa minimum order?", a: "MOQ fleksibel mulai dari 100 pcs untuk paket Starter. Fokus kami adalah kualitas dan pertumbuhan brand Anda." },
+    { q: "Benar ada FREE Design?", a: "Ya, FREE design kemasan untuk paket Growth dan Enterprise. Tim desainer kami siap membantu." },
+    { q: "Biaya BPOM & HKI?", a: "Izin BPOM Rp 1.500.000 dan Pendaftaran Merek HKI Rp 4.000.000. Kami bantu prosesnya hingga tuntas." },
+    { q: "Apa itu CPKB?", a: "CPKB (Cara Pembuatan Kosmetik yang Baik) adalah standar sertifikasi dari BPOM yang menjamin kualitas dan keamanan produksi." },
+    { q: "Sistem pembayaran?", a: "DP 50% di awal, pelunasan 50% setelah produksi selesai." },
+    { q: "Berapa lama proses produksi?", a: "Rata-rata 2-4 minggu tergantung jumlah dan kompleksitas pesanan." },
+    { q: "Apakah bisa custom aroma?", a: "Tentu! Lab fragrance mandiri kami siap meracik aroma sesuai keinginan Anda." }
+  ],
+  paket: [
+    { name: "Starter", pcs: "100", unit: "pcs", price: "Mulai Rp 18rb/pcs", features: ["Sampel aroma", "Botol kaca mewah", "Sticker & label"], popular: false, wa: "Starter" },
+    { name: "Growth", pcs: "500", unit: "pcs", price: "Rp 15rb/pcs", features: ["FREE Design Kemasan", "3 sampel aroma", "Konsultasi perfumer"], popular: true, wa: "Growth" },
+    { name: "Enterprise", pcs: "1.000", unit: "pcs", price: "Custom / Full Service", features: ["Full service legalitas", "Prioritas produksi", "Dedicated account manager"], popular: false, wa: "Enterprise" }
+  ],
+  marquee: [
+    "CPKB Certified — BPOM", "Lab Fragrance Mandiri", "Smelling Room Eksklusif",
+    "FREE Design Kemasan", "Bonus Total Rp 2.750.000",
+    "Dipercaya Brand Lokal & Nasional", "Satu Pintu: Konsultasi, Produksi, Legalitas"
+  ]
+};
+
+const DEFAULT_BRANDS = [
+  { name: "TWIST", pcs: "5.000 pcs", type: "EDP/EXT", sort_order: 1 },
+  { name: "L SCARF", pcs: "2.000 pcs", type: "EDP/EXT", sort_order: 2 },
+  { name: "HIRE SCENT", pcs: "10.000 pcs", type: "EDP", sort_order: 3 },
+  { name: "ACIL PARFUM", pcs: "20.000 pcs", type: "EDP", sort_order: 4 },
+  { name: "GHAZAL", pcs: "5.000 pcs", type: "NON-ALKOHOL", sort_order: 5 },
+  { name: "HYERIM", pcs: "10.000 pcs", type: "DEOSPRAY", sort_order: 6 },
+  { name: "PERFECTMENS", pcs: "10.000 pcs", type: "MULTI", sort_order: 7 },
+  { name: "SUPERJOSS", pcs: "10.000 pcs", type: "EDP", sort_order: 8 }
+];
+
+let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
+let BRANDS = [];
+let POSTS = [];
+let allPosts = [];
+let postsShown = 0;
+const POSTS_PER_PAGE = 3;
+let session = null;
+let typingTimeout = null;
+
+const HISTORY_LIMIT = 30;
+let historyStack = [];
+let historyIndex = -1;
+let isRestoring = false;
+let historyDebounceTimer = null;
+
+const el = id => document.getElementById(id);
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const waLink = text => `https://wa.me/${DATA.identity.whatsapp || ''}?text=${encodeURIComponent(text)}`;
+function toast(msg){
+  const t = el('adminToast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._tm);
+  t._tm = setTimeout(()=>t.classList.remove('show'), 2600);
+}
+function slugify(str){
+  return String(str).toLowerCase().trim().replace(/[^\w\s-]/g,'').replace(/[\s_-]+/g,'-').replace(/^-+|-+$/g,'');
+}
+
+// Animasi per-kata (lebih cepat & profesional)
+function renderLettersFor(elm, text, delay=0){
+  if (!elm) return;
+  const words = String(text).split(' ');
+  let html = '';
+  words.forEach((word, i) => {
+    const d = (delay + i * 120) / 1000;
+    html += `<span style="animation-delay:${d}s">${esc(word)}</span>`;
+    if (i < words.length - 1) html += ' ';
+  });
+  elm.innerHTML = html;
+}
+
+function setupTyping(text){
+  const elm = el('heroTyping');
+  if (!elm) return;
+  if (typingTimeout) clearTimeout(typingTimeout);
+
+  elm.classList.remove('done');
+  elm.textContent = '';
+  elm.style.animation = 'none';
+  elm.style.width = '0';
+  elm.style.borderRight = '2px solid var(--gold-soft)';
+  void elm.offsetWidth;
+
+  const totalChars = [...String(text)].length || 1;
+  const duration = totalChars * 38;
+  const startDelay = 400;
+
+  elm.textContent = text;
+  elm.style.animation = `typing ${duration}ms steps(${totalChars}, end) ${startDelay}ms forwards, caretBlink 800ms step-end infinite`;
+
+  typingTimeout = setTimeout(() => {
+    elm.classList.add('done');
+    elm.style.width = 'auto';
+    elm.style.borderRight = 'none';
+  }, startDelay + duration + 50);
+}
+
+function renderSplitTitles(){
+  document.querySelectorAll('[data-split]').forEach(elm=>{
+    const words=(elm.dataset.split||'').split(' ');
+    let html='';
+    words.forEach((w,i)=>{html+=`<span class="word" style="transition-delay:${i*0.08}s">${esc(w)}</span> `;});
+    elm.innerHTML=html;
+  });
+}
+function formatBytes(bytes) {
+  if (!bytes || bytes < 0) return '0 B';
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / 1024 / 1024).toFixed(2) + ' MB';
+}
+
+/* HISTORY (UNDO / REDO) */
+function deepClone(obj) { return JSON.parse(JSON.stringify(obj)); }
+function snapshotState() { return { DATA: deepClone(DATA), BRANDS: deepClone(BRANDS), timestamp: Date.now() }; }
+
+function pushHistory() {
+  if (isRestoring) return;
+  clearTimeout(historyDebounceTimer);
+  historyDebounceTimer = setTimeout(() => {
+    const snapshot = snapshotState();
+    historyStack = historyStack.slice(0, historyIndex + 1);
+    historyStack.push(snapshot);
+    if (historyStack.length > HISTORY_LIMIT) {
+      historyStack.shift();
+    } else {
+      historyIndex++;
+    }
+    updateUndoRedoButtons();
+  }, 500);
+}
+
+function updateUndoRedoButtons() {
+  const undoBtn = el('adminUndoBtn');
+  const redoBtn = el('adminRedoBtn');
+  if (undoBtn) {
+    undoBtn.disabled = historyIndex <= 0;
+    undoBtn.style.opacity = historyIndex <= 0 ? '0.4' : '1';
+    undoBtn.style.cursor = historyIndex <= 0 ? 'not-allowed' : 'pointer';
+  }
+  if (redoBtn) {
+    redoBtn.disabled = historyIndex >= historyStack.length - 1;
+    redoBtn.style.opacity = historyIndex >= historyStack.length - 1 ? '0.4' : '1';
+    redoBtn.style.cursor = historyIndex >= historyStack.length - 1 ? 'not-allowed' : 'pointer';
+  }
+}
+
+async function undo() {
+  if (historyIndex <= 0) return toast('Tidak ada yang bisa di-undo');
+  historyIndex--;
+  await restoreFromHistory();
+  toast('Undo ✓');
+}
+async function redo() {
+  if (historyIndex >= historyStack.length - 1) return toast('Tidak ada yang bisa di-redo');
+  historyIndex++;
+  await restoreFromHistory();
+  toast('Redo ✓');
+}
+async function restoreFromHistory() {
+  if (historyIndex < 0 || historyIndex >= historyStack.length) return;
+  isRestoring = true;
+  const snapshot = historyStack[historyIndex];
+  DATA = deepClone(snapshot.DATA);
+  BRANDS = deepClone(snapshot.BRANDS);
+  if (DATA.theme) applyTheme(DATA.theme);
+  applyLogo();
+  applyHeroStyle();
+  renderAll();
+  renderSplitTitles();
+  if (session) renderAdmin();
+  updateUndoRedoButtons();
+  isRestoring = false;
+}
+
+/* RESET ALL */
+async function resetAll() {
+  if (!session) return toast('Harus login dulu');
+  const konfirmasi = prompt('⚠️ RESET ALL akan MENGHAPUS SEMUA DATA di database dan menggantinya dengan data default.\n\nKetik "RESET" (huruf besar) untuk konfirmasi:');
+  if (konfirmasi !== 'RESET') return toast('Dibatalkan');
+  toast('Menghapus data lama...');
+  try {
+    await supabaseClient.from('brands').delete().neq('id', 0);
+    await supabaseClient.from('site_config').delete().neq('key', '');
+    for (const b of DEFAULT_BRANDS) {
+      await supabaseClient.from('brands').insert(b);
+    }
+    const keys = ['identity','hero','stats','facilities','processes','catalog','bonuses','bonusTotal','slots','testimonials','faqs','paket','marquee','collaboration','theme','logo','heroStyle'];
+    for (const k of keys) {
+      if (DEFAULT_DATA[k] === undefined) continue;
+      await supabaseClient.from('site_config').insert({
+        key: k,
+        value: DEFAULT_DATA[k],
+        updated_at: new Date().toISOString()
+      });
+    }
+    historyStack = [];
+    historyIndex = -1;
+    await Promise.all([loadConfig(), loadBrands()]);
+    renderAll();
+    renderSplitTitles();
+    renderAdmin();
+    historyStack.push(snapshotState());
+    historyIndex = 0;
+    updateUndoRedoButtons();
+    toast('Reset All berhasil ✓ Memuat ulang...');
+    setTimeout(() => location.reload(), 1500);
+  } catch (err) {
+    toast('Gagal reset: ' + err.message);
+  }
+}
+
+/* LOAD DATA */
+async function loadConfig(){
+  const { data, error } = await supabaseClient.from('site_config').select('*');
+  if (error) { console.error('Load config error:', error); return; }
+  data.forEach(row => { DATA[row.key] = row.value; });
+  if (DATA.theme && typeof DATA.theme === 'string') applyTheme(DATA.theme);
+  applyLogo();
+  applyHeroStyle();
+}
+async function loadBrands(){
+  const { data, error } = await supabaseClient.from('brands').select('*').order('sort_order',{ascending:true});
+  if (error) { console.error('Load brands error:', error); return; }
+  BRANDS = data || [];
+}
+async function loadPosts(){
+  const { data, error } = await supabaseClient.from('posts').select('*').order('published_at',{ascending:false, nullsFirst:false});
+  if (error) { console.error('Load posts error:', error); return; }
+  allPosts = data || [];
+  POSTS = allPosts.filter(p => p.published);
+}
+
+/* LOGO & HERO STYLE */
+function applyLogo(){
+  const L = DATA.logo || {};
+  const logoHTML = L.url
+    ? `<img src="${esc(L.url)}" alt="Logo" style="width:100%;height:100%;object-fit:contain">`
+    : `<span class="logo-fallback">S</span>`;
+  const navWrap = el('logoImgWrap');
+  const footWrap = el('logoImgWrapFooter');
+  if (navWrap) navWrap.innerHTML = logoHTML;
+  if (footWrap) footWrap.innerHTML = logoHTML;
+  const textWrap = el('logoTextWrap');
+  if (textWrap) textWrap.style.display = (L.showText !== false) ? 'block' : 'none';
+  const size = L.size || 48;
+  [navWrap, footWrap].forEach(w => {
+    if (w) { w.style.width = size + 'px'; w.style.height = size + 'px'; }
+  });
+  const fav = el('favicon');
+  if (fav && L.url) fav.href = L.url;
+}
+async function uploadLogo(file){
+  const result = await uploadImageWithInfo(file, 'logo');
+  if (result) {
+    DATA.logo = DATA.logo || {};
+    DATA.logo.url = result.url;
+    applyLogo();
+    const info = el('logoInfo');
+    if (info) {
+      info.style.display = 'flex';
+      info.innerHTML = `<span>${formatBytes(result.originalSize)} → <strong>${formatBytes(result.newSize)}</strong></span><span class="compress-badge">Hemat ${result.savedPercent}%</span>`;
+    }
+    toast('Logo terupload ✓ Klik Simpan untuk menerapkan');
+    pushHistory();
+  }
+}
+function applyHeroStyle(){
+  const S = DATA.heroStyle || {overlayOpacity:25,brightness:100,blur:0,textShadow:true};
+  const H = DATA.hero || {};
+  const layer = el('heroImageLayer');
+  if (layer && H.heroImage) {
+    layer.style.backgroundImage = `url('${H.heroImage}')`;
+    layer.style.opacity = '1';
+    layer.style.filter = `brightness(${S.brightness || 100}%) blur(${S.blur || 0}px)`;
+  } else if (layer) {
+    layer.style.backgroundImage = '';
+    layer.style.opacity = '0';
+  }
+  const overlay = el('heroOverlay');
+  if (overlay) {
+    const op = (S.overlayOpacity || 0) / 100;
+    overlay.style.setProperty('--hero-overlay-top', (op * 0.5).toFixed(2));
+    overlay.style.setProperty('--hero-overlay-mid', (op * 0.85).toFixed(2));
+    overlay.style.setProperty('--hero-overlay-bot', (op * 1.4).toFixed(2));
+  }
+  const textWrap = el('heroTextWrap');
+  if (textWrap) {
+    textWrap.classList.toggle('hero-text-shadow', S.textShadow !== false);
+    textWrap.classList.toggle('hero-no-shadow', S.textShadow === false);
+  }
+}
+
+/* RENDER ALL */
+function renderAll(){
+  const I = DATA.identity || {};
+  el('brandNameNav').textContent = I.brandName || 'Scentia';
+  el('brandSubNav').textContent = I.brandSub || 'ULTIMACOS';
+  el('footerBrand').textContent = I.brandName || 'Scentia';
+  el('footerSub').textContent = I.brandSub || 'ULTIMACOS';
+  el('footerDesc').textContent = `By King Parfum. ${(I.location||'').split(',').slice(-2).join(',').trim()}`;
+  el('footerYear').textContent = `Berdiri sejak ${I.foundedYear || ''}`;
+  el('footerWa').textContent = I.whatsappDisplay || '';
+  el('footerEmail').textContent = I.email || '';
+  el('footerAddress').textContent = I.location || '';
+  el('footerHours').innerHTML = (I.hours||'').replace(' · ','<br>');
+  el('footerCopyright').textContent = I.copyright || '';
+  applyLogo();
+  applyHeroStyle();
+
+  const H = DATA.hero || {};
+  el('heroBadge').textContent = H.badge || '';
+  el('heroBonus').textContent = H.bonusText || '';
+  renderLettersFor(el('heroLine1'), H.line1 || '', 0);
+  renderLettersFor(el('heroLine2'), H.line2 || '', 300);
+  renderLettersFor(el('heroLine3'), H.line3 || '', 600);
+  setupTyping(H.typing || 'Scentia Ultimacos by King Parfum');
+
+  const marqueeArr = DATA.marquee || [];
+  const mHTML = marqueeArr.map(m=>`<span>◆ ${esc(m)}</span>`).join('');
+  el('marqueeTrack').innerHTML = `<div class="flex gap-8 sm:gap-12 pr-8 sm:pr-12">${mHTML}</div><div class="flex gap-8 sm:gap-12 pr-8 sm:pr-12" aria-hidden="true">${mHTML}</div>`;
+
+  el('statsGrid').innerHTML = (DATA.stats||[]).map((s,i)=>`
+    <div class="reveal delay-${i}">
+      <div class="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold counter" data-target="${s.value}" ${s.decimal?'data-decimal="1"':''} ${s.suffix?`data-suffix="${esc(s.suffix)}"`:''} style="color:var(--primary)">0</div>
+      <div class="text-xs sm:text-sm text-gray-500 mt-1">${esc(s.label)}</div>
+    </div>
+  `).join('');
+
+  el('factoryName').textContent = I.factoryName || '';
+  el('factoryDesc').textContent = (DATA.collaboration && DATA.collaboration.factoryDesc) || '';
+  el('marketingName').textContent = I.marketingName || '';
+  el('marketingDesc').textContent = (DATA.collaboration && DATA.collaboration.marketingDesc) || '';
+
+  el('brandGrid').innerHTML = BRANDS.map((b,i)=>`
+    <div class="reveal ${i>0?'delay-'+(i%4):''} rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center hover:shadow-lg transition-all" style="background:var(--pale);border:1px solid var(--line)">
+      <div class="font-display font-bold text-sm sm:text-lg" style="color:var(--dark)">${esc(b.name)}</div>
+      <div class="text-[10px] sm:text-xs text-gray-500 mt-1">${esc(b.pcs)}</div>
+      <div class="text-[9px] sm:text-[10px] font-semibold mt-1 tracking-wider" style="color:var(--primary)">${esc(b.type)}</div>
+    </div>
+  `).join('');
+
+  el('facilityGrid').innerHTML = (DATA.facilities||[]).map((f,i)=>`
+    <div class="reveal ${i>0?'delay-'+(i%3):''} p-4 sm:p-6 rounded-2xl hover:shadow-lg transition-all" style="background:#fff;border:1px solid var(--line)">
+      <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4 floaty" style="background:var(--pale);color:var(--primary)"><i class="${esc(f.icon)}"></i></div>
+      <h3 class="font-display font-bold text-base sm:text-lg" style="color:var(--dark)">${esc(f.title)}</h3>
+      <p class="text-xs sm:text-sm text-gray-600 mt-2">${esc(f.desc)}</p>
+    </div>
+  `).join('');
+
+  el('processGrid').innerHTML = (DATA.processes||[]).map((p,i)=>`
+    <div class="reveal ${i>0?'delay-'+i:''} text-center">
+      <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full text-white flex items-center justify-center text-lg sm:text-2xl font-bold mx-auto mb-3 sm:mb-4 shadow-lg floaty" style="background:linear-gradient(135deg,var(--primary),var(--dark))">${i+1}</div>
+      <h3 class="font-display font-bold text-sm sm:text-lg" style="color:var(--dark)">${esc(p.title)}</h3>
+      <p class="text-xs sm:text-sm text-gray-500 mt-1 sm:mt-2">${esc(p.desc)}</p>
+    </div>
+  `).join('');
+
+  el('catalogGrid').innerHTML = (DATA.catalog||[]).map((c,i)=>{
+    const badgeBg = c.badgeColor === 'gold' ? 'var(--gold-pale)' : 'rgba(47,107,79,.12)';
+    const badgeColor = c.badgeColor === 'gold' ? 'var(--gold)' : 'var(--emerald)';
+    return `
+      <div class="reveal ${i>0?'delay-'+i:''} bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer lightbox-trigger" style="border:1px solid var(--line)" data-img="${esc(c.img)}">
+        <div class="h-44 sm:h-56 flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,var(--light),var(--pale))">
+          ${c.img ? `<img src="${esc(c.img)}" alt="${esc(c.title)}" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">` : `<i class="${esc(c.icon)} text-5xl sm:text-6xl floaty" style="color:var(--primary);opacity:.35"></i>`}
+        </div>
+        <div class="p-4 sm:p-6">
+          <span class="text-[10px] font-bold px-2 py-1 rounded-full" style="background:${badgeBg};color:${badgeColor}">${esc(c.badge)}</span>
+          <h3 class="font-display font-bold text-lg sm:text-xl mt-3" style="color:var(--dark)">${esc(c.title)}</h3>
+          <p class="text-xs sm:text-sm text-gray-500 mt-2">${esc(c.desc)}</p>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  el('bonusTitle').dataset.split = `Total Bonus ${DATA.bonusTotal || ''}`;
+  el('bonusGrid').innerHTML = (DATA.bonuses||[]).map((b,i)=>`
+    <div class="reveal ${i>0?'delay-'+i:''} rounded-2xl p-4 sm:p-6 hover:bg-white/15 transition" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(8px)">
+      <i class="${esc(b.icon)} text-2xl sm:text-3xl mb-3 sm:mb-4 floaty" style="color:var(--gold-soft)"></i>
+      <h3 class="font-display font-bold text-base sm:text-xl">${esc(b.title)}</h3>
+      <p class="text-white/60 text-xs sm:text-sm mt-2">${esc(b.desc)}</p>
+      <div class="font-bold text-base sm:text-lg mt-3 sm:mt-4 shimmer-text">${esc(b.price)}</div>
+    </div>
+  `).join('');
+  el('bonusTotal').textContent = `Total Bonus: ${DATA.bonusTotal || ''}`;
+  el('compBonus').textContent = DATA.bonusTotal || '';
+
+  const slotPct = DATA.slots.total > 0 ? (DATA.slots.taken / DATA.slots.total) * 100 : 0;
+  el('slotText').textContent = `${DATA.slots.taken} / ${DATA.slots.total}`;
+  el('slotBar').style.width = slotPct + '%';
+  el('stickySlot').textContent = `${DATA.slots.taken}/${DATA.slots.total}`;
+  el('stickySlotBar').style.width = slotPct + '%';
+
+  const tHTML = (DATA.testimonials||[]).map(t=>`
+    <div class="min-w-[260px] sm:min-w-[280px] rounded-2xl p-4 sm:p-6" style="background:var(--pale);border:1px solid var(--line)">
+      <div class="flex items-center gap-3 mb-3 sm:mb-4">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full text-white flex items-center justify-center font-bold text-sm sm:text-base" style="background:var(--primary)">${esc(t.initial)}</div>
+        <div><div class="font-bold text-sm sm:text-base" style="color:var(--dark)">${esc(t.brand)}</div><div class="text-[10px] sm:text-xs text-gray-500">${esc(t.role)}</div></div>
+      </div>
+      <p class="text-xs sm:text-sm text-gray-600">"${esc(t.text)}"</p>
+      <div class="mt-2 sm:mt-3" style="color:var(--gold)">★★★★★</div>
+    </div>
+  `).join('');
+  el('testimoniTrack').innerHTML = `<div class="flex gap-4 sm:gap-6 pr-4 sm:pr-6">${tHTML}</div><div class="flex gap-4 sm:gap-6 pr-4 sm:pr-6" aria-hidden="true">${tHTML}</div>`;
+
+  el('faqList').innerHTML = (DATA.faqs||[]).map((f,i)=>`
+    <div class="faq-item bg-white rounded-xl px-4 sm:px-5">
+      <button class="faq-question">${i+1}. ${esc(f.q)} <i class="fas fa-chevron-down"></i></button>
+      <div class="faq-answer">${esc(f.a)}</div>
+    </div>
+  `).join('');
+
+  el('paketGrid').innerHTML = (DATA.paket||[]).map((p,i)=>`
+    <div class="paket-card ${p.popular?'popular':''}">
+      ${p.popular?`<span class="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold px-3 py-1 rounded-full floaty text-white" style="background:var(--primary)">POPULER</span>`:''}
+      <h3 class="font-display font-bold text-lg sm:text-xl" style="color:var(--dark)">${esc(p.name)}</h3>
+      <div class="text-2xl sm:text-3xl font-extrabold mt-2" style="color:var(--primary)">${esc(p.pcs)} <span class="text-sm font-normal text-gray-400">${esc(p.unit)}</span></div>
+      <div class="text-gray-500 text-xs sm:text-sm mt-1">${esc(p.price)}</div>
+      <ul class="mt-4 space-y-2 text-xs sm:text-sm text-gray-600">
+        ${(p.features||[]).map(f=>`<li><i class="fas fa-check mr-2" style="color:var(--emerald)"></i> ${esc(f)}</li>`).join('')}
+      </ul>
+      <a href="${waLink('Halo, saya tertarik paket ' + p.wa)}" target="_blank" class="btn-primary w-full mt-5 sm:mt-6 justify-center text-xs sm:text-sm">Pilih ${esc(p.name)}</a>
+    </div>
+  `).join('');
+
+  const waGeneral = `https://wa.me/${I.whatsapp || ''}`;
+  el('ctaWaLink').href = waGeneral;
+  el('stickyWaLink').href = waGeneral;
+  el('multiWa').href = waGeneral;
+  el('multiWaNum').textContent = I.whatsappDisplay || '';
+  el('multiTel').href = 'tel:' + (I.whatsapp || '');
+  el('multiTelNum').textContent = I.whatsappDisplay || '';
+  el('multiEmail').href = 'mailto:' + (I.email || '');
+  el('multiEmailAdd').textContent = I.email || '';
+  el('exitWaLink').href = waLink('Halo, saya ingin konsultasi gratis 30 menit');
+  el('quizWaLink').href = waLink('Halo, saya ingin konsultasi aroma rekomendasi');
+
+  const qmMap = { bonus:'Halo, saya ingin klaim bonus', moq:'Halo, saya ingin tanya MOQ', design:'Halo, saya ingin konsultasi design', booking:'Halo, saya ingin booking kunjungan', legalitas:'Halo, saya ingin tanya legalitas' };
+  document.querySelectorAll('#quickMenu a[data-wa]').forEach(a=>{
+    a.href = waLink(qmMap[a.dataset.wa] || 'Halo Scentia');
+  });
+
+  renderSplitTitles();
+  reinitAnimations();
+}
+
+function renderBlog(){
+  const grid = el('blogGrid');
+  if (!POSTS || POSTS.length === 0) {
+    grid.innerHTML = `<div class="col-span-full text-center py-12 sm:py-16"><i class="fas fa-book-open text-4xl sm:text-5xl text-gray-300 mb-4"></i><p class="text-gray-500 text-sm sm:text-base">Belum ada artikel.</p></div>`;
+    el('loadMoreBtn').style.display = 'none';
+    return;
+  }
+  const shown = POSTS.slice(0, postsShown);
+  grid.innerHTML = shown.map(p => `
+    <div class="post-card reveal" onclick="openPost(${p.id})">
+      ${p.cover_image ? `<img src="${esc(p.cover_image)}" alt="${esc(p.title)}" loading="lazy" onerror="this.style.display='none'">` : `<div style="height:180px;background:linear-gradient(135deg,var(--light),var(--pale));display:flex;align-items:center;justify-content:center"><i class="fas fa-book-open text-4xl sm:text-5xl" style="color:var(--primary);opacity:.3"></i></div>`}
+      <div class="p-4 sm:p-5">
+        <div class="flex items-center gap-2 text-[10px] sm:text-xs text-gray-500 mb-2">
+          <i class="far fa-calendar"></i> ${p.published_at ? new Date(p.published_at).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}) : ''}
+          <span>•</span>
+          <i class="far fa-user"></i> ${esc(p.author || 'Scentia Team')}
+        </div>
+        <h3 class="font-display font-bold text-base sm:text-lg mb-2 line-clamp-2" style="color:var(--dark)">${esc(p.title)}</h3>
+        <p class="text-xs sm:text-sm text-gray-600 line-clamp-3">${esc(p.excerpt || (p.content||'').substring(0,120))}</p>
+        <div class="mt-3 sm:mt-4 text-xs sm:text-sm font-semibold flex items-center gap-1" style="color:var(--primary)">Baca <i class="fas fa-arrow-right text-xs"></i></div>
+      </div>
+    </div>
+  `).join('');
+  el('loadMoreBtn').style.display = (postsShown < POSTS.length) ? 'inline-flex' : 'none';
+  reinitAnimations();
+}
+function loadMorePosts(){
+  postsShown = Math.min(postsShown + POSTS_PER_PAGE, POSTS.length);
+  renderBlog();
+}
+function openPost(id){
+  const p = POSTS.find(x => x.id === id);
+  if (!p) return;
+  el('postContent').innerHTML = `
+    ${p.cover_image ? `<img src="${esc(p.cover_image)}" alt="${esc(p.title)}" style="width:100%;max-height:400px;object-fit:cover;border-radius:16px;margin-bottom:1.5rem">` : ''}
+    <div class="text-xs text-gray-500 mb-3 flex items-center gap-3 flex-wrap">
+      <span><i class="far fa-calendar"></i> ${p.published_at ? new Date(p.published_at).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'}) : ''}</span>
+      <span><i class="far fa-user"></i> ${esc(p.author || 'Scentia Team')}</span>
+    </div>
+    <h1 class="font-display text-xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6" style="color:var(--dark)">${esc(p.title)}</h1>
+    <div class="post-content">${p.content || ''}</div>
+    <div class="mt-8 sm:mt-10 pt-6" style="border-top:1px solid var(--line)">
+      <a href="${waLink('Halo, saya baca artikel ' + p.title + ' dan ingin konsultasi')}" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Konsultasi</a>
+    </div>
+  `;
+  el('postModal').classList.add('open');
+  el('postContent').scrollTop = 0;
+}
+
+async function compressImage(file, options = {}) {
+  const { maxWidth = 1920, maxHeight = 1920, quality = 0.85, outputFormat = 'image/webp' } = options;
+  return new Promise((resolve, reject) => {
+    if (!file.type.startsWith('image/')) { reject(new Error('File bukan gambar')); return; }
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const img = new Image();
+      img.onload = () => {
+        let { width, height } = img;
+        let newW = width, newH = height;
+        if (width > maxWidth || height > maxHeight) {
+          const ratio = Math.min(maxWidth / width, maxHeight / height);
+          newW = Math.round(width * ratio);
+          newH = Math.round(height * ratio);
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = newW;
+        canvas.height = newH;
+        const ctx = canvas.getContext('2d');
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(img, 0, 0, newW, newH);
+        canvas.toBlob((blob) => {
+          if (!blob) { reject(new Error('Gagal compress')); return; }
+          const origSize = file.size;
+          if (blob.type !== 'image/webp' && outputFormat === 'image/webp') {
+            canvas.toBlob(
+              (jpgBlob) => resolve({ blob: jpgBlob, ext: 'jpg', originalSize: origSize, newSize: jpgBlob.size, savedPercent: ((1 - jpgBlob.size / origSize) * 100).toFixed(0) }),
+              'image/jpeg', quality
+            );
+          } else {
+            resolve({ blob, ext: 'webp', originalSize: origSize, newSize: blob.size, savedPercent: ((1 - blob.size / origSize) * 100).toFixed(0) });
+          }
+        }, outputFormat, quality);
+      };
+      img.onerror = () => reject(new Error('Gagal load gambar'));
+      img.src = ev.target.result;
+    };
+    reader.onerror = () => reject(new Error('Gagal baca file'));
+    reader.readAsDataURL(file);
+  });
+}
+async function uploadImageWithInfo(file, type = 'general') {
+  if (file.size > 15 * 1024 * 1024) { toast('Gambar max 15MB'); return null; }
+  const config = {
+    hero:    { maxWidth: 1920, maxHeight: 1080, quality: 0.9 },
+    cover:   { maxWidth: 1200, maxHeight: 800,  quality: 0.85 },
+    catalog: { maxWidth: 900,  maxHeight: 900,  quality: 0.85 },
+    logo:    { maxWidth: 400,  maxHeight: 400,  quality: 0.95 },
+    general: { maxWidth: 1200, maxHeight: 1200, quality: 0.85 }
+  }[type] || { maxWidth: 1200, maxHeight: 1200, quality: 0.85 };
+  let compressed;
+  try { compressed = await compressImage(file, config); }
+  catch (err) { toast('Gagal compress: ' + err.message); return null; }
+  const filename = `${type}/${Date.now()}-${Math.random().toString(36).substring(7)}.${compressed.ext}`;
+  const { data, error } = await supabaseClient.storage
+    .from('scentia-media')
+    .upload(filename, compressed.blob, { contentType: compressed.blob.type, cacheControl: '31536000' });
+  if (error) { toast('Upload gagal: ' + error.message); return null; }
+  const { data: urlData } = supabaseClient.storage.from('scentia-media').getPublicUrl(data.path);
+  return {
+    url: urlData.publicUrl,
+    originalSize: compressed.originalSize,
+    newSize: compressed.newSize,
+    saved: compressed.originalSize - compressed.newSize,
+    savedPercent: compressed.savedPercent
+  };
+}
+async function listMediaFiles() {
+  const { data, error } = await supabaseClient.storage.from('scentia-media').list('', { limit: 200, sortBy: { column: 'name', order: 'desc' } });
+  if (error) { toast('Gagal load media: ' + error.message); return []; }
+  const allFiles = [];
+  for (const item of (data || [])) {
+    if (item.id === null) {
+      const { data: sub } = await supabaseClient.storage.from('scentia-media').list(item.name, { limit: 200, sortBy: { column: 'name', order: 'desc' } });
+      (sub || []).forEach(f => allFiles.push({ ...f, path: `${item.name}/${f.name}` }));
+    } else {
+      allFiles.push({ ...item, path: item.name });
+    }
+  }
+  return allFiles;
+}
+async function renderMediaManager() {
+  const container = el('mediaManagerGrid');
+  if (!container) return;
+  container.innerHTML = '<p class="text-center text-gray-400 py-8 col-span-full text-sm">Memuat media...</p>';
+  const files = await listMediaFiles();
+  if (files.length === 0) {
+    container.innerHTML = '<p class="text-center text-gray-400 py-8 col-span-full text-sm">Belum ada gambar.</p>';
+    return;
+  }
+  const baseUrl = `${SUPABASE_URL}/storage/v1/object/public/scentia-media/`;
+  container.innerHTML = files.map(f => {
+    const url = baseUrl + f.path;
+    const sizeKB = f.metadata?.size ? formatBytes(f.metadata.size) : '—';
+    return `
+      <div class="media-item">
+        <img src="${esc(url)}" alt="${esc(f.name)}" loading="lazy" onerror="this.style.opacity=.3">
+        <div class="media-actions">
+          <button class="media-btn" onclick="copyMediaUrl('${esc(url)}')"><i class="fas fa-link"></i></button>
+          <button class="media-btn danger" onclick="deleteMedia('${esc(f.path)}')"><i class="fas fa-trash"></i></button>
+        </div>
+        <div class="media-label">${esc(f.name)}<br>${sizeKB}</div>
+      </div>
+    `;
+  }).join('');
+}
+function copyMediaUrl(url) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => toast('URL dicopy ✓')).catch(() => prompt('Copy URL:', url));
+  } else prompt('Copy URL:', url);
+}
+async function deleteMedia(path) {
+  if (!confirm(`Hapus file "${path}"?`)) return;
+  const { error } = await supabaseClient.storage.from('scentia-media').remove([path]);
+  if (error) return toast('Gagal hapus: ' + error.message);
+  toast('File dihapus ✓');
+  renderMediaManager();
+}
+
+let observers = [];
+function reinitAnimations(){
+  observers.forEach(o => o.disconnect());
+  observers = [];
+  const counters = document.querySelectorAll('.counter');
+  const co = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if (!e.isIntersecting) return;
+      const target = parseFloat(e.target.dataset.target);
+      const isDec = e.target.dataset.decimal === '1';
+      const suffix = e.target.dataset.suffix || '';
+      const start = performance.now();
+      const dur = 1800;
+      const ease = t => 1 - Math.pow(1-t, 3);
+      const tick = now => {
+        const t = Math.min((now-start)/dur, 1);
+        const v = target * ease(t);
+        e.target.textContent = (isDec ? v.toFixed(1) : Math.floor(v)) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+        else e.target.textContent = (isDec ? target.toFixed(1) : target) + suffix;
+      };
+      requestAnimationFrame(tick);
+      co.unobserve(e.target);
+    });
+  }, {threshold:0.5});
+  counters.forEach(c=>co.observe(c));
+  observers.push(co);
+  const ro = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.split-title').forEach(s=>s.classList.add('visible'));
+      ro.unobserve(e.target);
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(elm=>ro.observe(elm));
+  observers.push(ro);
+  const so = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      so.unobserve(e.target);
+    });
+  }, {threshold:0.3});
+  document.querySelectorAll('.split-title').forEach(elm=>so.observe(elm));
+  observers.push(so);
+  document.querySelectorAll('.faq-question').forEach(b=>{
+    b.onclick = () => {
+      const item = b.parentElement;
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    };
+  });
+  document.querySelectorAll('.lightbox-trigger').forEach(elm=>{
+    elm.onclick = () => {
+      const img = elm.dataset.img;
+      if (!img) return;
+      el('lightboxImg').src = img;
+      el('lightbox').classList.add('open');
+    };
+  });
+}
+
+async function checkSession(){
+  const { data } = await supabaseClient.auth.getSession();
+  session = data.session;
+}
+async function adminLoginSubmit(){
+  const email = el('adminEmail').value.trim();
+  const pass = el('adminPass').value;
+  if (!email || !pass) return toast('Isi email & password');
+  const { data, error } = await supabaseClient.auth.signInWithPassword({email, password: pass});
+  if (error) return toast('Login gagal: ' + error.message);
+  session = data.session;
+  el('adminUser').textContent = session.user.email;
+  el('adminLogin').style.display = 'none';
+  el('adminPanel').style.display = 'flex';
+  renderAdmin();
+  toast('Login berhasil ✨');
+}
+async function adminLogout(){
+  await supabaseClient.auth.signOut();
+  session = null;
+  el('adminOverlay').classList.remove('open');
+  toast('Logout');
+}
+
+const TABS = [
+  { id:'theme', icon:'fas fa-palette', label:'Tema' },
+  { id:'hero', icon:'fas fa-star', label:'Hero & Foto' },
+  { id:'logo', icon:'fas fa-image', label:'Logo' },
+  { id:'identity', icon:'fas fa-building', label:'Identitas' },
+  { id:'stats', icon:'fas fa-chart-line', label:'Statistik' },
+  { id:'brands', icon:'fas fa-tags', label:'Brand' },
+  { id:'facilities', icon:'fas fa-flask', label:'Fasilitas' },
+  { id:'processes', icon:'fas fa-list-ol', label:'Proses' },
+  { id:'catalog', icon:'fas fa-images', label:'Katalog' },
+  { id:'blog', icon:'fas fa-book-open', label:'Blog' },
+  { id:'media', icon:'fas fa-photo-video', label:'Media' },
+  { id:'bonuses', icon:'fas fa-gift', label:'Bonus' },
+  { id:'testimonials', icon:'fas fa-comments', label:'Testimoni' },
+  { id:'faqs', icon:'fas fa-question-circle', label:'FAQ' },
+  { id:'paket', icon:'fas fa-box', label:'Paket' },
+  { id:'marquee', icon:'fas fa-scroll', label:'Marquee' },
+  { id:'backup', icon:'fas fa-database', label:'Backup' }
+];
+let activeTab = 'theme';
+
+function openAdmin(){
+  el('adminOverlay').classList.add('open');
+  if (session) {
+    el('adminLogin').style.display = 'none';
+    el('adminPanel').style.display = 'flex';
+    el('adminUser').textContent = session.user.email;
+    renderAdmin();
+  } else {
+    el('adminLogin').style.display = 'block';
+    el('adminPanel').style.display = 'none';
+    setTimeout(()=>el('adminEmail').focus(), 100);
+  }
+}
+function closeAdmin(){ el('adminOverlay').classList.remove('open'); }
+
+function renderAdmin(){
+  el('adminTabs').innerHTML = TABS.map(t=>`
+    <div class="admin-tab ${t.id===activeTab?'active':''}" data-tab="${t.id}">
+      <i class="${t.icon}"></i> <span>${t.label}</span>
+    </div>
+  `).join('');
+  el('adminTabs').querySelectorAll('.admin-tab').forEach(t=>{
+    t.onclick = () => { activeTab = t.dataset.tab; renderAdmin(); };
+  });
+  el('adminContent').innerHTML = renderTabContent(activeTab);
+  renderDynamicLists();
+  if (activeTab === 'media') renderMediaManager();
+  if (activeTab === 'theme') bindThemePicker();
+  if (activeTab === 'hero') bindHeroStyleControls();
+  bindAllUploadHandlers();
+  updateUndoRedoButtons();
+}
+
+function renderTabContent(tab){
+  const D = DATA;
+  const I = D.identity || {};
+  const H = D.hero || {};
+  const L = D.logo || {};
+  const HS = D.heroStyle || {overlayOpacity:25,brightness:100,blur:0,textShadow:true};
+  switch(tab){
+    case 'theme': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Tema Warna</h3>
+      <p class="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-5">Pilih skema warna. Berlaku di seluruh halaman.</p>
+      <div class="theme-grid" id="themePicker">
+        ${THEMES.map(t => {
+          const c = t.colors;
+          return `
+            <div class="theme-card ${D.theme === t.id ? 'active' : ''}" data-theme-id="${t.id}">
+              <div class="theme-swatches">
+                <div class="theme-swatch" style="background:${c.primary}"></div>
+                <div class="theme-swatch" style="background:${c.gold}"></div>
+                <div class="theme-swatch" style="background:${c.dark}"></div>
+              </div>
+              <div class="theme-name">${t.name}</div>
+              ${D.theme === t.id ? '<div class="text-[10px] font-bold mt-1" style="color:var(--primary)">✓ AKTIF</div>' : ''}
+            </div>
+          `;
+        }).join('')}
+      </div>
+      <div class="admin-card" style="background:#fff;border:2px solid var(--primary);margin-top:1rem">
+        <p class="text-xs sm:text-sm text-gray-600">Klik tema untuk apply live. Klik <strong>Simpan</strong> untuk simpan ke database.</p>
+      </div>
+    `;
+    case 'hero': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Hero & Foto</h3>
+      <p class="text-xs sm:text-sm text-gray-500 mb-4">Foto hero transparan — teks tetap terbaca di atas foto.</p>
+      <div class="admin-field">
+        <label class="admin-label">Foto Hero (Background)</label>
+        <div class="img-upload" id="heroImgUpload">
+          ${H.heroImage ? `<img src="${esc(H.heroImage)}" class="img-upload-preview" id="heroImgPreview">` : `<div class="img-upload-preview" id="heroImgPreview" style="display:flex;align-items:center;justify-content:center;color:#999;height:150px"><i class="fas fa-image text-4xl"></i></div>`}
+          <input type="file" accept="image/*" id="heroImgFile">
+          <div class="text-xs sm:text-sm text-gray-600"><i class="fas fa-cloud-upload-alt"></i> <strong>Klik</strong> atau drag & drop</div>
+          <div class="text-[10px] sm:text-xs text-gray-400 mt-1">Auto compress WebP · 1920×1080 · hemat 60-85%</div>
+          <div class="img-upload-actions">
+            <button type="button" class="admin-btn admin-btn-primary" onclick="document.getElementById('heroImgFile').click()"><i class="fas fa-upload"></i> Upload</button>
+            <button type="button" class="admin-btn admin-btn-ghost" onclick="openHeroMediaPicker()"><i class="fas fa-photo-video"></i> Pilih dari Media</button>
+            ${H.heroImage ? `<button type="button" class="admin-btn admin-btn-danger" onclick="removeHeroImage()"><i class="fas fa-trash"></i> Hapus</button>` : ''}
+          </div>
+        </div>
+        <div class="img-info" id="heroImgInfo" style="display:none"></div>
+      </div>
+      <div class="admin-card" style="background:#fff;border:2px solid var(--gold)">
+        <div class="admin-card-head"><span class="admin-card-title">🎨 Pengaturan Foto Hero</span></div>
+        <div class="admin-field">
+          <label class="admin-label">Overlay Kegelapan: <span id="heroOpacityVal">${HS.overlayOpacity || 25}</span>%</label>
+          <input type="range" min="0" max="90" value="${HS.overlayOpacity || 25}" id="heroOpacity" class="w-full">
+          <div class="text-[10px] sm:text-xs text-gray-500 mt-1">0% = foto paling jelas · 90% = teks paling jelas</div>
+        </div>
+        <div class="admin-field">
+          <label class="admin-label">Kecerahan Foto: <span id="heroBrightVal">${HS.brightness || 100}</span>%</label>
+          <input type="range" min="40" max="150" value="${HS.brightness || 100}" id="heroBright" class="w-full">
+        </div>
+        <div class="admin-field">
+          <label class="admin-label">Blur Background: <span id="heroBlurVal">${HS.blur || 0}</span>px</label>
+          <input type="range" min="0" max="15" value="${HS.blur || 0}" id="heroBlur" class="w-full">
+        </div>
+        <div class="admin-field">
+          <label class="admin-label">Text Shadow</label>
+          <select class="admin-input" id="heroTextShadow">
+            <option value="1" ${HS.textShadow !== false ? 'selected' : ''}>Ya — teks dengan bayangan</option>
+            <option value="0" ${HS.textShadow === false ? 'selected' : ''}>Tidak — teks polos</option>
+          </select>
+        </div>
+      </div>
+      <div class="admin-card" style="background:#fff">
+        <div class="admin-card-head"><span class="admin-card-title">Teks Hero</span></div>
+        <div class="admin-field"><label class="admin-label">Badge</label><input class="admin-input" data-path="hero.badge" value="${esc(H.badge)}"></div>
+        <div class="admin-field"><label class="admin-label">Headline 1</label><input class="admin-input" data-path="hero.line1" value="${esc(H.line1)}"></div>
+        <div class="admin-field"><label class="admin-label">Headline 2 (emas)</label><input class="admin-input" data-path="hero.line2" value="${esc(H.line2)}"></div>
+        <div class="admin-field"><label class="admin-label">Headline 3</label><input class="admin-input" data-path="hero.line3" value="${esc(H.line3)}"></div>
+        <div class="admin-field"><label class="admin-label">Teks Typing</label><textarea class="admin-input" rows="2" data-path="hero.typing">${esc(H.typing)}</textarea></div>
+        <div class="admin-field"><label class="admin-label">Teks Bonus Tombol</label><input class="admin-input" data-path="hero.bonusText" value="${esc(H.bonusText)}"></div>
+      </div>
+    `;
+    case 'logo': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Logo Brand</h3>
+      <p class="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-5">Upload logo transparan (PNG/SVG). Tidak ada background bundaran.</p>
+      <div class="admin-field">
+        <label class="admin-label">Logo Saat Ini</label>
+        <div class="img-upload" id="logoUpload">
+          <div style="display:flex;justify-content:center;margin-bottom:.75rem">
+            ${L.url ? `<img src="${esc(L.url)}" style="width:100px;height:100px;object-fit:contain">` : `<div style="width:100px;height:100px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2.5rem;font-weight:700">S</div>`}
+          </div>
+          <input type="file" accept="image/*" id="logoFile">
+          <div class="text-xs sm:text-sm text-gray-500"><i class="fas fa-cloud-upload-alt"></i> Klik atau drag & drop</div>
+          <div class="text-[10px] sm:text-xs text-gray-400 mt-1">PNG/SVG transparan disarankan · max 400×400</div>
+          <div class="img-upload-actions">
+            <button type="button" class="admin-btn admin-btn-primary" onclick="document.getElementById('logoFile').click()"><i class="fas fa-upload"></i> Upload</button>
+            ${L.url ? `<button type="button" class="admin-btn admin-btn-danger" onclick="removeLogo()"><i class="fas fa-trash"></i> Hapus</button>` : ''}
+          </div>
+        </div>
+        <div class="img-info" id="logoInfo" style="display:none"></div>
+      </div>
+      <div class="admin-card" style="background:#fff">
+        <div class="admin-card-head"><span class="admin-card-title">Pengaturan Logo</span></div>
+        <div class="admin-field">
+          <label class="admin-label">Tampilkan Teks Brand</label>
+          <select class="admin-input" id="logoShowText">
+            <option value="1" ${L.showText !== false ? 'selected' : ''}>Ya — Tampilkan nama brand</option>
+            <option value="0" ${L.showText === false ? 'selected' : ''}>Tidak — Hanya logo</option>
+          </select>
+        </div>
+        <div class="admin-field">
+          <label class="admin-label">Ukuran Logo (px)</label>
+          <input type="number" class="admin-input" id="logoSize" value="${L.size || 48}" min="24" max="96">
+        </div>
+        <button type="button" class="admin-btn admin-btn-primary" onclick="applyLogoFromInputs()"><i class="fas fa-check"></i> Terapkan</button>
+      </div>
+    `;
+    case 'identity': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Identitas Bisnis</h3>
+      <div class="admin-grid-2">
+        <div class="admin-field"><label class="admin-label">Nama Brand</label><input class="admin-input" data-path="identity.brandName" value="${esc(I.brandName)}"></div>
+        <div class="admin-field"><label class="admin-label">Sub Brand</label><input class="admin-input" data-path="identity.brandSub" value="${esc(I.brandSub)}"></div>
+        <div class="admin-field"><label class="admin-label">Tagline</label><input class="admin-input" data-path="identity.tagline" value="${esc(I.tagline)}"></div>
+        <div class="admin-field"><label class="admin-label">Nama Pabrik</label><input class="admin-input" data-path="identity.factoryName" value="${esc(I.factoryName)}"></div>
+        <div class="admin-field"><label class="admin-label">Nama Marketing</label><input class="admin-input" data-path="identity.marketingName" value="${esc(I.marketingName)}"></div>
+        <div class="admin-field"><label class="admin-label">Tahun Berdiri</label><input class="admin-input" data-path="identity.foundedYear" value="${esc(I.foundedYear)}"></div>
+        <div class="admin-field"><label class="admin-label">Email</label><input class="admin-input" data-path="identity.email" value="${esc(I.email)}"></div>
+        <div class="admin-field"><label class="admin-label">WhatsApp (62...)</label><input class="admin-input" data-path="identity.whatsapp" value="${esc(I.whatsapp)}"></div>
+        <div class="admin-field"><label class="admin-label">WhatsApp Tampil</label><input class="admin-input" data-path="identity.whatsappDisplay" value="${esc(I.whatsappDisplay)}"></div>
+        <div class="admin-field"><label class="admin-label">Jam Operasional</label><input class="admin-input" data-path="identity.hours" value="${esc(I.hours)}"></div>
+      </div>
+      <div class="admin-field"><label class="admin-label">Alamat</label><textarea class="admin-input" rows="2" data-path="identity.location">${esc(I.location)}</textarea></div>
+      <div class="admin-field"><label class="admin-label">Copyright</label><input class="admin-input" data-path="identity.copyright" value="${esc(I.copyright)}"></div>
+    `;
+    case 'stats': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Statistik</h3>
+      <div>${(D.stats||[]).map((s,i)=>`
+        <div class="admin-card">
+          <div class="admin-card-head"><span class="admin-card-title">Stat ${i+1}</span><button class="admin-remove" onclick="removeStat(${i})"><i class="fas fa-times"></i></button></div>
+          <div class="admin-grid-3">
+            <div><label class="admin-label">Nilai</label><input class="admin-input" type="number" step="0.1" data-path="stats.${i}.value" value="${s.value}"></div>
+            <div><label class="admin-label">Suffix</label><input class="admin-input" data-path="stats.${i}.suffix" value="${esc(s.suffix)}"></div>
+            <div><label class="admin-label">Desimal?</label><select class="admin-input" data-path="stats.${i}.decimal"><option value="">Tidak</option><option value="1" ${s.decimal?'selected':''}>Ya</option></select></div>
+          </div>
+          <div><label class="admin-label">Label</label><input class="admin-input" data-path="stats.${i}.label" value="${esc(s.label)}"></div>
+        </div>
+      `).join('')}</div>
+      <button class="admin-btn-add" onclick="addStat()"><i class="fas fa-plus"></i> Tambah Statistik</button>
+    `;
+    case 'brands': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Brand Partner</h3>
+      <div id="brandsList"></div>
+      <button class="admin-btn-add" onclick="addBrand()"><i class="fas fa-plus"></i> Tambah Brand</button>
+    `;
+    case 'facilities': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Fasilitas</h3>
+      <div id="facilitiesList"></div>
+      <button class="admin-btn-add" onclick="addFacility()"><i class="fas fa-plus"></i> Tambah Fasilitas</button>
+    `;
+    case 'processes': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Alur Kerja</h3>
+      <div id="processesList"></div>
+      <button class="admin-btn-add" onclick="addProcess()"><i class="fas fa-plus"></i> Tambah Langkah</button>
+    `;
+    case 'catalog': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Katalog</h3>
+      <div id="catalogList"></div>
+      <button class="admin-btn-add" onclick="addCatalog()"><i class="fas fa-plus"></i> Tambah Item</button>
+    `;
+    case 'blog': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Blog / Wawasan</h3>
+      <div id="postsList"></div>
+      <button class="admin-btn-add" onclick="editPost(null)"><i class="fas fa-plus"></i> Tulis Artikel Baru</button>
+      <div id="postEditorWrap" style="display:none;margin-top:1.25rem">
+        <div class="admin-card" style="background:#fff;border:2px solid var(--primary)">
+          <div class="admin-card-head"><span class="admin-card-title" id="postEditorTitle">Artikel Baru</span></div>
+          <div class="admin-field"><label class="admin-label">Judul</label><input class="admin-input" id="postTitle"></div>
+          <div class="admin-field"><label class="admin-label">Slug</label><input class="admin-input" id="postSlug"></div>
+          <div class="admin-field"><label class="admin-label">Ringkasan</label><textarea class="admin-input" id="postExcerpt" rows="2"></textarea></div>
+          <div class="admin-field"><label class="admin-label">Konten (HTML)</label><textarea class="admin-input" id="postContentEditor" rows="10"></textarea></div>
+          <div class="admin-grid-2">
+            <div class="admin-field"><label class="admin-label">Penulis</label><input class="admin-input" id="postAuthor" value="Scentia Team"></div>
+            <div class="admin-field"><label class="admin-label">Status</label><select class="admin-input" id="postPublished"><option value="">Draft</option><option value="1">Published</option></select></div>
+          </div>
+          <div class="admin-field">
+            <label class="admin-label">Cover</label>
+            <div class="img-upload" id="postImgUpload">
+              <img src="" class="img-upload-preview" id="postImgPreview" style="display:none">
+              <input type="file" accept="image/*" id="postImgFile">
+              <div class="text-xs sm:text-sm text-gray-500"><i class="fas fa-cloud-upload-alt"></i> Upload cover</div>
+            </div>
+            <div class="img-info" id="postImgInfo" style="display:none"></div>
+          </div>
+          <input type="hidden" id="postEditingId">
+          <input type="hidden" id="postCoverUrl">
+          <div class="flex gap-2 mt-3 flex-wrap">
+            <button class="admin-btn admin-btn-primary" onclick="savePost()"><i class="fas fa-save"></i> Simpan</button>
+            <button class="admin-btn admin-btn-ghost" onclick="cancelPostEdit()">Batal</button>
+          </div>
+        </div>
+      </div>
+    `;
+    case 'media': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Media Manager</h3>
+      <p class="text-xs sm:text-sm text-gray-500 mb-4">Semua gambar. <span class="compress-badge">AUTO COMPRESS</span></p>
+      <div class="admin-card" style="background:#fff;border:2px solid var(--primary)">
+        <div class="admin-card-head"><span class="admin-card-title">Upload Baru</span></div>
+        <div class="img-upload" id="mediaUpload">
+          <input type="file" accept="image/*" id="mediaFileInput" multiple>
+          <div class="text-xs sm:text-sm text-gray-500">
+            <i class="fas fa-cloud-upload-alt text-2xl mb-2 block" style="color:var(--primary)"></i>
+            <strong>Klik</strong> atau drag & drop (bisa multiple)
+          </div>
+          <div class="text-[10px] sm:text-xs text-gray-400 mt-2">Auto compress WebP</div>
+        </div>
+        <div class="img-info" id="mediaUploadInfo" style="display:none"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1rem;flex-wrap:wrap;gap:.5rem">
+        <span class="admin-card-title">Semua Gambar</span>
+        <button class="admin-btn admin-btn-ghost" onclick="renderMediaManager()"><i class="fas fa-sync"></i> Refresh</button>
+      </div>
+      <div class="media-grid" id="mediaManagerGrid"></div>
+    `;
+    case 'bonuses': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Bonus</h3>
+      <div class="admin-grid-3">
+        <div class="admin-field"><label class="admin-label">Total Bonus</label><input class="admin-input" data-path="bonusTotal" value="${esc(D.bonusTotal)}"></div>
+        <div class="admin-field"><label class="admin-label">Slot Terisi</label><input class="admin-input" type="number" data-path="slots.taken" value="${D.slots.taken}"></div>
+        <div class="admin-field"><label class="admin-label">Slot Total</label><input class="admin-input" type="number" data-path="slots.total" value="${D.slots.total}"></div>
+      </div>
+      <div id="bonusesList"></div>
+      <button class="admin-btn-add" onclick="addBonus()"><i class="fas fa-plus"></i> Tambah Bonus</button>
+    `;
+    case 'testimonials': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Testimoni</h3>
+      <div id="testimonialsList"></div>
+      <button class="admin-btn-add" onclick="addTestimonial()"><i class="fas fa-plus"></i> Tambah Testimoni</button>
+    `;
+    case 'faqs': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">FAQ</h3>
+      <div id="faqsList"></div>
+      <button class="admin-btn-add" onclick="addFaq()"><i class="fas fa-plus"></i> Tambah FAQ</button>
+    `;
+    case 'paket': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Paket Maklon</h3>
+      <div id="paketList"></div>
+      <button class="admin-btn-add" onclick="addPaket()"><i class="fas fa-plus"></i> Tambah Paket</button>
+    `;
+    case 'marquee': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Marquee</h3>
+      <div class="admin-field"><label class="admin-label">Teks (satu per baris)</label><textarea class="admin-input" rows="10" data-path="marquee" data-type="array-lines">${(D.marquee||[]).join('\n')}</textarea></div>
+    `;
+    case 'backup': return `
+      <h3 class="font-display font-bold text-lg sm:text-xl mb-1" style="color:var(--dark)">Backup / Reset</h3>
+      <div class="admin-card">
+        <div class="admin-card-head"><span class="admin-card-title">Export Data</span></div>
+        <button class="admin-btn admin-btn-primary" onclick="exportData()"><i class="fas fa-download"></i> Export JSON</button>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-head"><span class="admin-card-title">Import Data</span></div>
+        <button class="admin-btn admin-btn-gold" onclick="document.getElementById('adminFileInput').click()"><i class="fas fa-upload"></i> Pilih File JSON</button>
+      </div>
+      <div class="admin-card" style="border:2px solid #fdd;background:#fff">
+        <div class="admin-card-head"><span class="admin-card-title" style="color:#c00">⚠️ Reset All (Hapus Database)</span></div>
+        <p class="text-xs sm:text-sm text-gray-600 mb-3">Menghapus SEMUA data di database dan mengganti dengan data default. Tidak bisa di-undo!</p>
+        <button class="admin-btn admin-btn-danger" onclick="resetAll()"><i class="fas fa-trash-restore"></i> Reset All Sekarang</button>
+      </div>
+    `;
+  }
+  return '';
+}
+
+function bindThemePicker(){
+  document.querySelectorAll('#themePicker .theme-card').forEach(card => {
+    card.onclick = () => {
+      const id = card.dataset.themeId;
+      DATA.theme = id;
+      applyTheme(id);
+      toast(`Tema "${THEMES.find(t=>t.id===id).name}" diterapkan`);
+      renderAdmin();
+      pushHistory();
+    };
+  });
+}
+function bindHeroStyleControls(){
+  const opacity = el('heroOpacity');
+  const bright = el('heroBright');
+  const blur = el('heroBlur');
+  const shadow = el('heroTextShadow');
+  if (!opacity) return;
+  DATA.heroStyle = DATA.heroStyle || {overlayOpacity:25,brightness:100,blur:0,textShadow:true};
+  const update = () => {
+    DATA.heroStyle.overlayOpacity = parseInt(opacity.value) || 0;
+    DATA.heroStyle.brightness = parseInt(bright.value) || 100;
+    DATA.heroStyle.blur = parseInt(blur.value) || 0;
+    DATA.heroStyle.textShadow = shadow.value === '1';
+    el('heroOpacityVal').textContent = opacity.value;
+    el('heroBrightVal').textContent = bright.value;
+    el('heroBlurVal').textContent = blur.value;
+    applyHeroStyle();
+    pushHistory();
+  };
+  opacity.oninput = update;
+  bright.oninput = update;
+  blur.oninput = update;
+  shadow.onchange = update;
+}
+function applyLogoFromInputs(){
+  DATA.logo = DATA.logo || {};
+  DATA.logo.showText = el('logoShowText').value === '1';
+  DATA.logo.size = parseInt(el('logoSize').value) || 48;
+  applyLogo();
+  toast('Pengaturan logo diterapkan ✓ Klik Simpan');
+  pushHistory();
+}
+function removeLogo(){
+  if (!confirm('Hapus logo?')) return;
+  DATA.logo.url = '';
+  applyLogo();
+  renderAdmin();
+  toast('Logo dihapus (klik Simpan)');
+  pushHistory();
+}
+
+function bindFields(){
+  document.querySelectorAll('#adminContent [data-path]').forEach(inp=>{
+    inp.oninput = () => {
+      const path = inp.dataset.path;
+      const type = inp.dataset.type;
+      let val = inp.value;
+      if (inp.type === 'number') val = parseFloat(val) || 0;
+      if (type === 'array-lines') val = val.split('\n').filter(x=>x.trim() !== '');
+      if (inp.tagName === 'SELECT' && (path.endsWith('.popular') || path.endsWith('.decimal'))) {
+        val = inp.value === '1';
+      }
+      setPath(DATA, path, val);
+      pushHistory();
+    };
+  });
+  document.querySelectorAll('#adminContent [data-brand-id]').forEach(inp=>{
+    inp.oninput = () => {
+      const id = inp.dataset.brandId;
+      const field = inp.dataset.brandField;
+      const b = BRANDS.find(x=>x.id == id);
+      if (b) b[field] = inp.value;
+      pushHistory();
+    };
+  });
+}
+
+function renderDynamicLists(){
+  const bl = el('brandsList');
+  if (bl) bl.innerHTML = BRANDS.map((b,i)=>`
+    <div class="admin-card">
+      <div class="admin-card-head"><span class="admin-card-title">Brand ${i+1}</span><button class="admin-remove" onclick="removeBrand(${b.id})"><i class="fas fa-times"></i></button></div>
+      <div class="admin-grid-3">
+        <div><label class="admin-label">Nama</label><input class="admin-input" data-brand-id="${b.id}" data-brand-field="name" value="${esc(b.name)}"></div>
+        <div><label class="admin-label">Jumlah</label><input class="admin-input" data-brand-id="${b.id}" data-brand-field="pcs" value="${esc(b.pcs)}"></div>
+        <div><label class="admin-label">Tipe</label><input class="admin-input" data-brand-id="${b.id}" data-brand-field="type" value="${esc(b.type)}"></div>
+      </div>
+    </div>
+  `).join('');
+  const fl = el('facilitiesList');
+  if (fl) fl.innerHTML = (DATA.facilities||[]).map((f,i)=>`
+    <div class="admin-card">
+      <div class="admin-card-head"><span class="admin-card-title">Fasilitas ${i+1}</span><button class="admin-remove" onclick="removeFacility(${i})"><i class="fas fa-times"></i></button></div>
+      <div class="admin-grid-2">
+        <div><label class="admin-label">Icon</label><input class="admin-input" data-path="facilities.${i}.icon" value="${esc(f.icon)}"></div>
+        <div><label class="admin-label">Judul</label><input class="admin-input" data-path="facilities.${i}.title" value="${esc(f.title)}"></div>
+      </div>
+      <div><label class="admin-label">Deskripsi</label><textarea class="admin-input" rows="2" data-path="facilities.${i}.desc">${esc(f.desc)}</textarea></div>
+    </div>
+  `).join('');
+  const pl = el('processesList');
+  if (pl) pl.innerHTML = (DATA.processes||[]).map((p,i)=>`
+    <div class="admin-card">
+      <div class="admin-card-head"><span class="admin-card-title">Langkah ${i+1}</span><button class="admin-remove" onclick="removeProcess(${i})"><i class="fas fa-times"></i></button></div>
+      <div><label class="admin-label">Judul</label><input class="admin-input" data-path="processes.${i}.title" value="${esc(p.title)}"></div>
+      <div><label class="admin-label">Deskripsi</label><textarea class="admin-input" rows="2" data-path="processes.${i}.desc">${esc(p.desc)}</textarea></div>
+    </div>
+  `).join('');
+  const cl = el('catalogList');
+  if (cl) cl.innerHTML = (DATA.catalog||[]).map((c,i)=>`
+    <div class="admin-card">
+      <div class="admin-card-head"><span class="admin-card-title">Item ${i+1}</span><button class="admin-remove" onclick="removeCatalog(${i})"><i class="fas fa-times"></i></button></div>
+      <div class="admin-field">
+        <label class="admin-label">Gambar</label>
+        <div class="img-upload" data-catalog-upload="${i}" style="padding:.5rem">
+          ${c.img ? `<img src="${esc(c.img)}" class="img-upload-preview" style="max-height:120px" id="catImgPreview${i}">` : `<div class="img-upload-preview" style="display:flex;align-items:center;justify-content:center;color:#999;height:120px" id="catImgPreview${i}"><i class="fas fa-image text-3xl"></i></div>`}
+          <input type="file" accept="image/*" data-catalog-file="${i}">
+          <div class="text-xs text-gray-500 mt-1">Klik untuk upload</div>
+        </div>
+        <input class="admin-input mt-2" data-path="catalog.${i}.img" value="${esc(c.img)}" placeholder="atau paste URL">
+      </div>
+      <div class="admin-grid-3">
+        <div><label class="admin-label">Badge</label><input class="admin-input" data-path="catalog.${i}.badge" value="${esc(c.badge)}"></div>
+        <div><label class="admin-label">Warna</label><select class="admin-input" data-path="catalog.${i}.badgeColor"><option value="gold" ${c.badgeColor==='gold'?'selected':''}>Gold</option><option value="emerald" ${c.badgeColor==='emerald'?'selected':''}>Emerald</option></select></div>
+        <div><label class="admin-label">Icon</label><input class="admin-input" data-path="catalog.${i}.icon" value="${esc(c.icon)}"></div>
+      </div>
+      <div><label class="admin-label">Judul</label><input class="admin-input" data-path="catalog.${i}.title" value="${esc(c.title)}"></div>
+      <div><label class="admin-label">Deskripsi</label><textarea class="admin-input" rows="2" data-path="catalog.${i}.desc">${esc(c.desc)}</textarea></div>
+    </div>
+  `).join('');
+  const bol = el('bonusesList');
+  if (bol) bol.innerHTML = (DATA.bonuses||[]).map((b,i)=>`
+    <div class="admin-card">
+      <div class="admin-card-head"><span class="admin-card-title">Bonus ${i+1}</span><button class="admin-remove" onclick="removeBonus(${i})"><i class="fas fa-times"></i></button></div>
+      <div class="admin-grid-2">
+        <div><label class="admin-label">Icon</label><input class="admin-input" data-path="bonuses.${i}.icon" value="${esc(b.icon)}"></div>
+        <div><label class="admin-label">Harga</label><input class="admin-input" data-path="bonuses.${i}.price" value="${esc(b.price)}"></div>
+      </div>
+      <div><label class="admin-label">Judul</label><input class="admin-input" data-path="bonuses.${i}.title" value="${esc(b.title)}"></div>
+      <div><label class="admin-label">Deskripsi</label><textarea class="admin-input" rows="2" data-path="bonuses.${i}.desc">${esc(b.desc)}</textarea></div>
+    </div>
+  `).join('');
+  const tl = el('testimonialsList');
+  if (tl) tl.innerHTML = (DATA.testimonials||[]).map((t,i)=>`
+    <div class="admin-card">
+      <div class="admin-card-head"><span class="admin-card-title">Testimoni ${i+1}</span><button class="admin-remove" onclick="removeTestimonial(${i})"><i class="fas fa-times"></i></button></div>
+      <div class="admin-grid-3">
+        <div><label class="admin-label">Inisial</label><input class="admin-input" data-path="testimonials.${i}.initial" value="${esc(t.initial)}"></div>
+        <div><label class="admin-label">Brand</label><input class="admin-input" data-path="testimonials.${i}.brand" value="${esc(t.brand)}"></div>
+        <div><label class="admin-label">Peran</label><input class="admin-input" data-path="testimonials.${i}.role" value="${esc(t.role)}"></div>
+      </div>
+      <div><label class="admin-label">Teks</label><textarea class="admin-input" rows="2" data-path="testimonials.${i}.text">${esc(t.text)}</textarea></div>
+    </div>
+  `).join('');
+  const fq = el('faqsList');
+  if (fq) fq.innerHTML = (DATA.faqs||[]).map((f,i)=>`
+    <div class="admin-card">
+      <div class="admin-card-head"><span class="admin-card-title">FAQ ${i+1}</span><button class="admin-remove" onclick="removeFaq(${i})"><i class="fas fa-times"></i></button></div>
+      <div><label class="admin-label">Pertanyaan</label><input class="admin-input" data-path="faqs.${i}.q" value="${esc(f.q)}"></div>
+      <div><label class="admin-label">Jawaban</label><textarea class="admin-input" rows="3" data-path="faqs.${i}.a">${esc(f.a)}</textarea></div>
+    </div>
+  `).join('');
+  const pk = el('paketList');
+  if (pk) pk.innerHTML = (DATA.paket||[]).map((p,i)=>`
+    <div class="admin-card">
+      <div class="admin-card-head"><span class="admin-card-title">Paket ${i+1}</span><button class="admin-remove" onclick="removePaket(${i})"><i class="fas fa-times"></i></button></div>
+      <div class="admin-grid-3">
+        <div><label class="admin-label">Nama</label><input class="admin-input" data-path="paket.${i}.name" value="${esc(p.name)}"></div>
+        <div><label class="admin-label">Jumlah</label><input class="admin-input" data-path="paket.${i}.pcs" value="${esc(p.pcs)}"></div>
+        <div><label class="admin-label">Unit</label><input class="admin-input" data-path="paket.${i}.unit" value="${esc(p.unit)}"></div>
+      </div>
+      <div class="admin-grid-2">
+        <div><label class="admin-label">Harga</label><input class="admin-input" data-path="paket.${i}.price" value="${esc(p.price)}"></div>
+        <div><label class="admin-label">Populer?</label><select class="admin-input" data-path="paket.${i}.popular"><option value="">Tidak</option><option value="1" ${p.popular?'selected':''}>Ya</option></select></div>
+      </div>
+      <div><label class="admin-label">Fitur (satu per baris)</label><textarea class="admin-input" rows="4" data-path="paket.${i}.features" data-type="array-lines">${(p.features||[]).join('\n')}</textarea></div>
+    </div>
+  `).join('');
+  const postsList = el('postsList');
+  if (postsList) postsList.innerHTML = (allPosts||[]).length === 0 ? `<p class="text-center text-gray-400 py-6 text-sm">Belum ada artikel.</p>` : allPosts.map(p=>`
+    <div class="admin-card">
+      <div class="admin-card-head">
+        <span class="admin-card-title" style="text-transform:none;letter-spacing:0;font-size:.85rem">${esc(p.title)} ${p.published?'<span style="color:var(--emerald)">● Publish</span>':'<span style="color:#999">● Draft</span>'}</span>
+        <div class="flex gap-1">
+          <button class="admin-btn admin-btn-ghost" style="padding:.4rem .6rem" onclick="editPost(${p.id})"><i class="fas fa-edit"></i></button>
+          <button class="admin-remove" onclick="removePost(${p.id})"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="text-xs text-gray-500 line-clamp-2">${esc(p.excerpt||'')}</div>
+    </div>
+  `).join('');
+  bindFields();
+}
+
+function bindAllUploadHandlers(){
+  const logoUpload = el('logoUpload');
+  const logoFile = el('logoFile');
+  if (logoUpload && logoFile) {
+    logoUpload.onclick = (e) => { if (e.target.tagName !== 'BUTTON') logoFile.click(); };
+    logoFile.onchange = async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      await uploadLogo(file);
+      logoFile.value = '';
+    };
+    ['dragenter','dragover'].forEach(ev => logoUpload.addEventListener(ev, e => { e.preventDefault(); logoUpload.classList.add('dragover'); }));
+    ['dragleave','drop'].forEach(ev => logoUpload.addEventListener(ev, e => { e.preventDefault(); logoUpload.classList.remove('dragover'); }));
+    logoUpload.addEventListener('drop', async (e) => {
+      const file = e.dataTransfer.files[0];
+      if (!file || !file.type.startsWith('image/')) return;
+      await uploadLogo(file);
+    });
+  }
+  const heroUpload = el('heroImgUpload');
+  const heroFile = el('heroImgFile');
+  if (heroUpload && heroFile) {
+    heroUpload.onclick = (e) => { if (e.target.tagName !== 'BUTTON') heroFile.click(); };
+    heroFile.onchange = async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const result = await uploadImageWithInfo(file, 'hero');
+      if (result) {
+        DATA.hero.heroImage = result.url;
+        const prev = el('heroImgPreview');
+        if (prev) { prev.src = result.url; prev.style.display = 'block'; prev.classList.add('img-upload-preview'); }
+        const info = el('heroImgInfo');
+        if (info) { info.style.display = 'flex'; info.innerHTML = `<span>${formatBytes(result.originalSize)} → <strong>${formatBytes(result.newSize)}</strong></span><span class="compress-badge">Hemat ${result.savedPercent}%</span>`; }
+        applyHeroStyle();
+        toast('Hero terupload ✓ Klik Simpan');
+        pushHistory();
+      }
+      heroFile.value = '';
+    };
+    ['dragenter','dragover'].forEach(ev => heroUpload.addEventListener(ev, e => { e.preventDefault(); heroUpload.classList.add('dragover'); }));
+    ['dragleave','drop'].forEach(ev => heroUpload.addEventListener(ev, e => { e.preventDefault(); heroUpload.classList.remove('dragover'); }));
+    heroUpload.addEventListener('drop', async (e) => {
+      const file = e.dataTransfer.files[0];
+      if (!file || !file.type.startsWith('image/')) return;
+      const result = await uploadImageWithInfo(file, 'hero');
+      if (result) {
+        DATA.hero.heroImage = result.url;
+        const prev = el('heroImgPreview');
+        if (prev) { prev.src = result.url; prev.style.display = 'block'; }
+        applyHeroStyle();
+        toast('Hero terupload ✓');
+        pushHistory();
+      }
+    });
+  }
+  document.querySelectorAll('#adminContent [data-catalog-upload]').forEach(upload => {
+    const idx = upload.dataset.catalogUpload;
+    const input = document.querySelector(`#adminContent [data-catalog-file="${idx}"]`);
+    if (!input) return;
+    upload.onclick = () => input.click();
+    input.onchange = async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const result = await uploadImageWithInfo(file, 'catalog');
+      if (result) {
+        DATA.catalog[idx].img = result.url;
+        const preview = el('catImgPreview' + idx);
+        if (preview) { preview.src = result.url; preview.style.display = 'block'; preview.classList.add('img-upload-preview'); }
+        toast('Katalog terupload ✓');
+        const urlInp = document.querySelector(`#adminContent [data-path="catalog.${idx}.img"]`);
+        if (urlInp) urlInp.value = result.url;
+        pushHistory();
+      }
+      input.value = '';
+    };
+  });
+  const postUpload = el('postImgUpload');
+  const postFile = el('postImgFile');
+  if (postUpload && postFile) {
+    postUpload.onclick = () => postFile.click();
+    postFile.onchange = async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const result = await uploadImageWithInfo(file, 'cover');
+      if (result) {
+        el('postImgPreview').src = result.url;
+        el('postImgPreview').style.display = 'block';
+        el('postCoverUrl').value = result.url;
+        const info = el('postImgInfo');
+        if (info) { info.style.display = 'flex'; info.innerHTML = `<span>${formatBytes(result.originalSize)} → <strong>${formatBytes(result.newSize)}</strong></span><span class="compress-badge">Hemat ${result.savedPercent}%</span>`; }
+        toast('Cover terupload ✓');
+      }
+      postFile.value = '';
+    };
+  }
+  const mediaUpload = el('mediaUpload');
+  const mediaFile = el('mediaFileInput');
+  if (mediaUpload && mediaFile) {
+    mediaUpload.onclick = () => mediaFile.click();
+    mediaFile.onchange = async (e) => {
+      const files = Array.from(e.target.files);
+      if (files.length === 0) return;
+      const info = el('mediaUploadInfo');
+      info.style.display = 'flex';
+      info.innerHTML = `Memproses ${files.length} gambar...`;
+      let success = 0, totalSaved = 0, totalOriginal = 0;
+      for (const file of files) {
+        const result = await uploadImageWithInfo(file);
+        if (result) { success++; totalSaved += result.saved; totalOriginal += result.originalSize; }
+      }
+      info.innerHTML = `<span><strong>${success}/${files.length}</strong> berhasil</span><span>Hemat: <strong>${formatBytes(totalSaved)}</strong></span>`;
+      mediaFile.value = '';
+      renderMediaManager();
+    };
+    ['dragenter','dragover'].forEach(ev => mediaUpload.addEventListener(ev, e => { e.preventDefault(); mediaUpload.classList.add('dragover'); }));
+    ['dragleave','drop'].forEach(ev => mediaUpload.addEventListener(ev, e => { e.preventDefault(); mediaUpload.classList.remove('dragover'); }));
+    mediaUpload.addEventListener('drop', async (e) => {
+      const files = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/'));
+      if (files.length === 0) return;
+      const info = el('mediaUploadInfo');
+      info.style.display = 'flex';
+      info.innerHTML = `Memproses ${files.length} gambar...`;
+      let success = 0, totalSaved = 0, totalOriginal = 0;
+      for (const file of files) {
+        const result = await uploadImageWithInfo(file);
+        if (result) { success++; totalSaved += result.saved; totalOriginal += result.originalSize; }
+      }
+      info.innerHTML = `<span><strong>${success}/${files.length}</strong> berhasil</span><span>Hemat: <strong>${formatBytes(totalSaved)}</strong></span>`;
+      renderMediaManager();
+    });
+  }
+}
+
+function setPath(obj, path, val){
+  const parts = path.split('.');
+  let cur = obj;
+  for (let i=0;i<parts.length-1;i++){
+    const p = parts[i];
+    if (cur[p] === undefined) cur[p] = /^\d+$/.test(parts[i+1]) ? [] : {};
+    cur = cur[p];
+  }
+  cur[parts[parts.length-1]] = val;
+}
+function removeHeroImage(){
+  if (!confirm('Hapus gambar hero?')) return;
+  DATA.hero.heroImage = '';
+  applyHeroStyle();
+  renderAdmin();
+  toast('Hero dihapus (klik Simpan)');
+  pushHistory();
+}
+async function openHeroMediaPicker(){
+  const files = await listMediaFiles();
+  const baseUrl = `${SUPABASE_URL}/storage/v1/object/public/scentia-media/`;
+  const html = `
+    <div class="media-grid" style="max-height:400px;overflow-y:auto">
+      ${files.length === 0 ? '<p class="text-gray-400 text-center col-span-full py-6 text-sm">Belum ada gambar.</p>' : files.map(f => `
+        <div class="media-item" onclick="pickHeroImage('${baseUrl}${f.path}')">
+          <img src="${baseUrl}${f.path}" loading="lazy">
+          <div class="media-label">${esc(f.name)}</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  const picker = document.createElement('div');
+  picker.className = 'admin-overlay open';
+  picker.style.zIndex = '25000';
+  picker.id = 'heroPickerModal';
+  picker.innerHTML = `<div class="admin-panel" style="max-width:800px"><div class="admin-header"><span class="font-bold text-sm sm:text-base">Pilih Gambar Hero</span><button class="admin-btn admin-btn-ghost" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)" onclick="document.getElementById('heroPickerModal').remove()"><i class="fas fa-times"></i></button></div><div class="admin-content">${html}</div></div>`;
+  document.body.appendChild(picker);
+}
+function pickHeroImage(url){
+  DATA.hero.heroImage = url;
+  const preview = el('heroImgPreview');
+  if (preview) { preview.src = url; preview.style.display = 'block'; preview.classList.add('img-upload-preview'); }
+  const modal = el('heroPickerModal');
+  if (modal) modal.remove();
+  applyHeroStyle();
+  toast('Gambar hero dipilih ✓');
+  pushHistory();
+}
+
+function addStat(){ DATA.stats.push({value:0, suffix:'', label:'Stat Baru'}); renderAdmin(); pushHistory(); }
+function removeStat(i){ DATA.stats.splice(i,1); renderAdmin(); pushHistory(); }
+function addBrand(){ BRANDS.push({name:'BRAND BARU', pcs:'1.000 pcs', type:'EDP', sort_order:BRANDS.length+1, id:'new-'+Date.now()}); renderAdmin(); pushHistory(); }
+async function removeBrand(id){
+  if (!confirm('Hapus brand ini?')) return;
+  if (String(id).startsWith('new-')) {
+    BRANDS = BRANDS.filter(b=>b.id !== id);
+  } else {
+    const { error } = await supabaseClient.from('brands').delete().eq('id', id);
+    if (error) return toast('Gagal: ' + error.message);
+    BRANDS = BRANDS.filter(b=>b.id !== id);
+  }
+  renderAdmin();
+  pushHistory();
+}
+function addFacility(){ DATA.facilities.push({icon:'fas fa-star', title:'Fasilitas Baru', desc:'Deskripsi.'}); renderAdmin(); pushHistory(); }
+function removeFacility(i){ DATA.facilities.splice(i,1); renderAdmin(); pushHistory(); }
+function addProcess(){ DATA.processes.push({title:'Langkah Baru', desc:'Deskripsi.'}); renderAdmin(); pushHistory(); }
+function removeProcess(i){ DATA.processes.splice(i,1); renderAdmin(); pushHistory(); }
+function addCatalog(){ DATA.catalog.push({badge:'BARU', badgeColor:'gold', title:'Item Baru', desc:'Deskripsi.', icon:'fas fa-box', img:''}); renderAdmin(); pushHistory(); }
+function removeCatalog(i){ DATA.catalog.splice(i,1); renderAdmin(); pushHistory(); }
+function addBonus(){ DATA.bonuses.push({icon:'fas fa-gift', title:'Bonus Baru', desc:'Deskripsi.', price:'Rp 100.000'}); renderAdmin(); pushHistory(); }
+function removeBonus(i){ DATA.bonuses.splice(i,1); renderAdmin(); pushHistory(); }
+function addTestimonial(){ DATA.testimonials.push({initial:'X', brand:'BRAND BARU', role:'Owner', text:'Testimoni baru.'}); renderAdmin(); pushHistory(); }
+function removeTestimonial(i){ DATA.testimonials.splice(i,1); renderAdmin(); pushHistory(); }
+function addFaq(){ DATA.faqs.push({q:'Pertanyaan baru?', a:'Jawaban baru.'}); renderAdmin(); pushHistory(); }
+function removeFaq(i){ DATA.faqs.splice(i,1); renderAdmin(); pushHistory(); }
+function addPaket(){ DATA.paket.push({name:'Paket Baru', pcs:'100', unit:'pcs', price:'Rp 20rb/pcs', features:['Fitur 1','Fitur 2'], popular:false, wa:'Paket Baru'}); renderAdmin(); pushHistory(); }
+function removePaket(i){ DATA.paket.splice(i,1); renderAdmin(); pushHistory(); }
+
+function editPost(id){
+  const wrap = el('postEditorWrap');
+  wrap.style.display = 'block';
+  if (id === null) {
+    el('postEditorTitle').textContent = 'Artikel Baru';
+    el('postTitle').value = '';
+    el('postSlug').value = '';
+    el('postExcerpt').value = '';
+    el('postContentEditor').value = '';
+    el('postAuthor').value = 'Scentia Team';
+    el('postPublished').value = '';
+    el('postEditingId').value = '';
+    el('postCoverUrl').value = '';
+    el('postImgPreview').style.display = 'none';
+    el('postImgInfo').style.display = 'none';
+  } else {
+    const p = allPosts.find(x=>x.id === id);
+    if (!p) return;
+    el('postEditorTitle').textContent = 'Edit Artikel';
+    el('postTitle').value = p.title || '';
+    el('postSlug').value = p.slug || '';
+    el('postExcerpt').value = p.excerpt || '';
+    el('postContentEditor').value = p.content || '';
+    el('postAuthor').value = p.author || 'Scentia Team';
+    el('postPublished').value = p.published ? '1' : '';
+    el('postEditingId').value = p.id;
+    el('postCoverUrl').value = p.cover_image || '';
+    if (p.cover_image) {
+      el('postImgPreview').src = p.cover_image;
+      el('postImgPreview').style.display = 'block';
+    }
+  }
+  bindAllUploadHandlers();
+  wrap.scrollIntoView({behavior:'smooth', block:'start'});
+}
+function cancelPostEdit(){ el('postEditorWrap').style.display = 'none'; }
+async function savePost(){
+  const id = el('postEditingId').value;
+  const title = el('postTitle').value.trim();
+  if (!title) return toast('Judul wajib diisi');
+  let slug = el('postSlug').value.trim() || slugify(title);
+  const payload = {
+    title, slug,
+    excerpt: el('postExcerpt').value.trim(),
+    content: el('postContentEditor').value.trim(),
+    author: el('postAuthor').value.trim() || 'Scentia Team',
+    published: el('postPublished').value === '1',
+    cover_image: el('postCoverUrl').value || null
+  };
+  if (payload.published && !id) payload.published_at = new Date().toISOString();
+  let res;
+  if (id) res = await supabaseClient.from('posts').update(payload).eq('id', id);
+  else res = await supabaseClient.from('posts').insert(payload);
+  if (res.error) return toast('Gagal: ' + res.error.message);
+  toast('Artikel tersimpan ✓');
+  await loadPosts();
+  postsShown = Math.min(postsShown || POSTS_PER_PAGE, POSTS.length);
+  renderBlog();
+  renderAdmin();
+  el('postEditorWrap').style.display = 'none';
+}
+async function removePost(id){
+  if (!confirm('Hapus artikel ini?')) return;
+  const { error } = await supabaseClient.from('posts').delete().eq('id', id);
+  if (error) return toast('Gagal hapus: ' + error.message);
+  await loadPosts();
+  renderBlog();
+  renderAdmin();
+  toast('Artikel dihapus');
+}
+
+async function saveAll(){
+  const keys = ['identity','hero','stats','facilities','processes','catalog','bonuses','bonusTotal','slots','testimonials','faqs','paket','marquee','collaboration','theme','logo','heroStyle'];
+  for (const k of keys) {
+    if (DATA[k] === undefined) continue;
+    await supabaseClient.from('site_config').upsert({key: k, value: DATA[k], updated_at: new Date().toISOString()});
+  }
+  for (const b of BRANDS) {
+    const payload = { name: b.name, pcs: b.pcs, type: b.type, sort_order: b.sort_order || 0 };
+    if (String(b.id).startsWith('new-')) {
+      await supabaseClient.from('brands').insert(payload);
+    } else {
+      await supabaseClient.from('brands').update(payload).eq('id', b.id);
+    }
+  }
+  toast(`Tersimpan ✓`);
+  await loadBrands();
+  await loadConfig();
+  renderAll();
+  renderSplitTitles();
+  renderAdmin();
+  historyStack.push(snapshotState());
+  if (historyStack.length > HISTORY_LIMIT) historyStack.shift();
+  historyIndex = historyStack.length - 1;
+  updateUndoRedoButtons();
+}
+async function exportData(){
+  const exportObj = { ...DATA, brands: BRANDS, posts: allPosts };
+  const blob = new Blob([JSON.stringify(exportObj, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `scentia-backup-${new Date().toISOString().split('T')[0]}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('Data diexport');
+}
+
+el('adminLoginBtn').onclick = adminLoginSubmit;
+el('adminEmail').onkeydown = e => { if (e.key === 'Enter') el('adminPass').focus(); };
+el('adminPass').onkeydown = e => { if (e.key === 'Enter') adminLoginSubmit(); };
+el('adminCloseLogin').onclick = closeAdmin;
+el('adminCloseBtn').onclick = closeAdmin;
+el('adminLogoutBtn').onclick = adminLogout;
+el('adminSaveBtn').onclick = saveAll;
+el('adminExportBtn').onclick = exportData;
+el('adminImportBtn').onclick = () => el('adminFileInput').click();
+el('adminUndoBtn').onclick = undo;
+el('adminRedoBtn').onclick = redo;
+el('adminResetAllBtn').onclick = resetAll;
+
+el('adminFileInput').onchange = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = async (ev) => {
+    try {
+      const imported = JSON.parse(ev.target.result);
+      if (imported.brands) { BRANDS = imported.brands; delete imported.brands; }
+      if (imported.posts) delete imported.posts;
+      Object.assign(DATA, imported);
+      if (DATA.theme) applyTheme(DATA.theme);
+      applyLogo();
+      applyHeroStyle();
+      await saveAll();
+      toast('Import berhasil');
+    } catch(err) { toast('File tidak valid'); }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+};
+
+let logoClicks = 0, logoTimer = null;
+el('logoTrigger').addEventListener('click', (e) => {
+  e.preventDefault();
+  logoClicks++;
+  clearTimeout(logoTimer);
+  logoTimer = setTimeout(()=>logoClicks = 0, 1500);
+  if (logoClicks >= 5) { logoClicks = 0; openAdmin(); }
+});
+if (new URLSearchParams(location.search).get('admin') === '1') setTimeout(openAdmin, 500);
+
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a') { e.preventDefault(); openAdmin(); }
+  if (e.ctrlKey && !e.shiftKey && e.key.toLowerCase() === 'z') {
+    if (el('adminOverlay').classList.contains('open')) { e.preventDefault(); undo(); }
+  }
+  if ((e.ctrlKey && e.key.toLowerCase() === 'y') || (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'z')) {
+    if (el('adminOverlay').classList.contains('open')) { e.preventDefault(); redo(); }
+  }
+  if (e.key === 'Escape') {
+    if (el('adminOverlay').classList.contains('open')) closeAdmin();
+    if (el('postModal').classList.contains('open')) el('postModal').classList.remove('open');
+  }
+});
+
+el('postBack').onclick = () => el('postModal').classList.remove('open');
+el('postClose').onclick = () => el('postModal').classList.remove('open');
+el('postModal').onclick = e => { if (e.target === el('postModal')) el('postModal').classList.remove('open'); };
+
+el('menu-toggle').onclick = () => { el('mobileDrawer').classList.add('open'); el('overlay').classList.add('active'); };
+el('closeDrawer').onclick = () => { el('mobileDrawer').classList.remove('open'); el('overlay').classList.remove('active'); };
+el('overlay').onclick = () => { el('mobileDrawer').classList.remove('open'); el('overlay').classList.remove('active'); };
+document.querySelectorAll('.mobile-link').forEach(l=>l.onclick = () => { el('mobileDrawer').classList.remove('open'); el('overlay').classList.remove('active'); });
+
+el('fabWa').addEventListener('click', e => {
+  if (e.target.closest('.quick-menu')) return;
+  el('quickMenu').classList.toggle('show');
+  e.stopPropagation();
+});
+document.addEventListener('click', e => { if (!el('fabWa').contains(e.target)) el('quickMenu').classList.remove('show'); });
+
+el('backTop').onclick = () => window.scrollTo({top:0, behavior:'smooth'});
+el('lightboxClose').onclick = () => el('lightbox').classList.remove('open');
+el('lightbox').onclick = e => { if (e.target === el('lightbox')) el('lightbox').classList.remove('open'); };
+
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      const p = (st / dh) * 100;
+      el('scroll-progress').style.width = p + '%';
+      el('navbar').classList.toggle('scrolled', st > 50);
+      el('backTop').classList.toggle('show', st > 600);
+      el('stickyCta').classList.toggle('visible', p > 30);
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, {passive:true});
+
+let cdT = 24 * 60 * 60;
+setInterval(() => {
+  cdT--;
+  const h = Math.floor(cdT / 3600);
+  const m = Math.floor((cdT % 3600) / 60);
+  const s = cdT % 60;
+  el('countdown').textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}, 1000);
+
+const proofs = ["TWIST baru saja order 5.000 pcs","HIRE SCENT baru saja order 10.000 pcs","ACIL PARFUM baru saja order 20.000 pcs","GHAZAL baru saja order 5.000 pcs","SUPERJOSS baru saja order 10.000 pcs","HYERIM baru saja order 10.000 pcs"];
+let pi = 0;
+function showProof(){
+  el('proofText').textContent = proofs[pi];
+  el('socialProof').classList.add('show');
+  setTimeout(()=>el('socialProof').classList.remove('show'), 5000);
+  pi = (pi + 1) % proofs.length;
+}
+setInterval(showProof, 9000);
+setTimeout(showProof, 3000);
+
+const cal = el('calendar');
+const today = new Date();
+let selD = null, selT = null;
+for (let i = 0; i < 30; i++) {
+  const d = new Date(today);
+  d.setDate(today.getDate() + i);
+  const day = d.getDate();
+  const dn = ['Min','Sen','Sel','Rab','Kam','Jum','Sab'][d.getDay()];
+  const isSun = d.getDay() === 0;
+  const div = document.createElement('div');
+  div.className = 'calendar-day' + (isSun ? ' disabled' : '');
+  div.innerHTML = `${dn}<br><strong>${day}</strong>`;
+  div.dataset.date = d.toISOString().split('T')[0];
+  if (!isSun) div.addEventListener('click', () => {
+    document.querySelectorAll('.calendar-day').forEach(x=>x.classList.remove('selected'));
+    div.classList.add('selected');
+    selD = div.dataset.date;
+  });
+  cal.appendChild(div);
+}
+document.querySelectorAll('.time-slot').forEach(s=>{
+  s.addEventListener('click', () => {
+    document.querySelectorAll('.time-slot').forEach(x=>x.classList.remove('selected'));
+    s.classList.add('selected');
+    selT = s.dataset.time;
+  });
+});
+el('bookingBtn').onclick = () => {
+  if (!selD || !selT) return alert('Pilih tanggal dan waktu terlebih dahulu.');
+  const msg = `Halo, saya ingin booking kunjungan pada ${selD} pukul ${selT} WIB.`;
+  window.open(waLink(msg), '_blank');
+};
+
+let shown = false;
+setTimeout(() => { if (!shown) { el('exitModal').classList.add('open'); shown = true; } }, 15000);
+document.addEventListener('mouseleave', e => {
+  if (e.clientY < 0 && !shown) { el('exitModal').classList.add('open'); shown = true; }
+});
+el('closeExit').onclick = () => el('exitModal').classList.remove('open');
+el('closeExit2').onclick = () => el('exitModal').classList.remove('open');
+el('exitModal').onclick = e => { if (e.target === el('exitModal')) el('exitModal').classList.remove('open'); };
+
+el('leadForm').onsubmit = e => {
+  e.preventDefault();
+  const inp = e.target.querySelectorAll('input, select');
+  const msg = `Halo Scentia Ultimacos!%0A%0ASaya ingin klaim:%0A- 3 Sampel Aroma GRATIS%0A- E-book 7 Rahasia Brand Parfum Laris%0A%0AData:%0ANama: ${inp[0].value}%0AWhatsApp: ${inp[1].value}%0ANama Brand: ${inp[2].value}%0AKategori: ${inp[3].value}`;
+  window.open(waLink(msg), '_blank');
+};
+
+let qa = {};
+document.querySelectorAll('.quiz-option').forEach(opt=>{
+  opt.onclick = () => {
+    const step = opt.closest('.quiz-step');
+    qa[step.dataset.step] = opt.dataset.value;
+    step.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));
+    opt.classList.add('selected');
+    setTimeout(() => {
+      step.classList.add('hidden');
+      const next = document.querySelector(`.quiz-step[data-step="${parseInt(step.dataset.step)+1}"]`);
+      if (next) next.classList.remove('hidden');
+      else {
+        el('quizContainer').classList.add('hidden');
+        el('quizResult').classList.remove('hidden');
+        const rekom = { floral:'Aroma Floral yang elegan dan feminin', fresh:'Aroma Fresh & Aquatic yang menyegarkan', woody:'Aroma Woody & Oriental yang maskulin', sweet:'Aroma Sweet & Gourmand yang manis' };
+        el('quizResultText').textContent = `Berdasarkan jawaban Anda, kami merekomendasikan ${rekom[qa['1']] || 'aroma spesial'} dengan estimasi harga mulai Rp 15.000/pcs.`;
+      }
+    }, 260);
+  };
+});
+
+document.querySelectorAll('.quick-nav a').forEach(a=>{
+  a.onclick = function(){
+    document.querySelectorAll('.quick-nav a').forEach(x=>x.classList.remove('active'));
+    this.classList.add('active');
+  };
+});
+
+async function init(){
+  await checkSession();
+  await Promise.all([loadConfig(), loadBrands(), loadPosts()]);
+  postsShown = Math.min(POSTS_PER_PAGE, POSTS.length);
+  renderAll();
+  renderBlog();
+  renderSplitTitles();
+  reinitAnimations();
+  if (session) el('adminUser').textContent = session.user.email;
+  historyStack = [snapshotState()];
+  historyIndex = 0;
+  updateUndoRedoButtons();
+}
+init();
+</script>
+</body>
+</html>
