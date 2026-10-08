@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#8e1c3c">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin Panel — Scentia Ultimacos</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='72' font-size='80' font-weight='bold' fill='%238e1c3c' text-anchor='middle' font-family='sans-serif'>S</text></svg>">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root, [data-theme="burgundy"] { --primary:#8e1c3c; --primary-soft:#a83254; --dark:#5c0f28; --light:#e8c9d3; --pale:#f7eef1; --gold:#b8860b; --gold-soft:#d4a437; --gold-pale:#f5ecd4; --emerald:#2f6b4f; --charcoal:#2a2a2e; --ivory:#faf7f2; --line:#e8e3dc; }
+  [data-theme="midnight"] { --primary:#1e3a8a; --primary-soft:#3b5bdb; --dark:#0f1e4a; --light:#c7d2fe; --pale:#eef2ff; --gold:#b45309; --gold-soft:#d97706; --gold-pale:#fef3c7; --emerald:#047857; --charcoal:#1e293b; --ivory:#f8fafc; --line:#e2e8f0; }
+  [data-theme="emerald"] { --primary:#065f46; --primary-soft:#059669; --dark:#022c22; --light:#a7f3d0; --pale:#ecfdf5; --gold:#b45309; --gold-soft:#d97706; --gold-pale:#fef3c7; --emerald:#065f46; --charcoal:#1f2937; --ivory:#f9fafb; --line:#e5e7eb; }
+  [data-theme="royal"] { --primary:#6d28d9; --primary-soft:#7c3aed; --dark:#3b0764; --light:#ddd6fe; --pale:#f5f3ff; --gold:#b45309; --gold-soft:#d97706; --gold-pale:#fef3c7; --emerald:#047857; --charcoal:#1e1b4b; --ivory:#faf5ff; --line:#ede9fe; }
+  [data-theme="noir"] { --primary:#0f0f0f; --primary-soft:#333333; --dark:#000000; --light:#d4d4d4; --pale:#f5f5f5; --gold:#c9a227; --gold-soft:#d4af37; --gold-pale:#f5f0d8; --emerald:#166534; --charcoal:#171717; --ivory:#fafafa; --line:#e5e5e5; }
+  [data-theme="ocean"] { --primary:#0e7490; --primary-soft:#0891b2; --dark:#083344; --light:#a5f3fc; --pale:#ecfeff; --gold:#b45309; --gold-soft:#d97706; --gold-pale:#fef3c7; --emerald:#047857; --charcoal:#164e63; --ivory:#f0fdfa; --line:#cffafe; }
+  [data-theme="sunset"] { --primary:#9a3412; --primary-soft:#c2410c; --dark:#7c2d12; --light:#fed7aa; --pale:#fff7ed; --gold:#a16207; --gold-soft:#ca8a04; --gold-pale:#fef9c3; --emerald:#166534; --charcoal:#431407; --ivory:#fffbeb; --line:#fed7aa; }
+  [data-theme="sakura"] { --primary:#be185d; --primary-soft:#db2777; --dark:#831843; --light:#fbcfe8; --pale:#fdf2f8; --gold:#b45309; --gold-soft:#d97706; --gold-pale:#fef3c7; --emerald:#047857; --charcoal:#500724; --ivory:#fef2f8; --line:#fce7f3; }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:var(--pale);
+    color:var(--charcoal);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.6;
+    font-size:15px;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.font-display{font-family:'Inter',sans-serif;line-height:1.2;letter-spacing:-0.02em;font-weight:700}
+  img{max-width:100%;display:block;height:auto}
+  button,input,select,textarea{font-family:inherit;font-size:inherit}
+  button{touch-action:manipulation}
+
+  /* ADMIN OVERLAY */
+  .admin-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(20,15,18,.75);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    z-index:20000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:.5rem;
+  }
+  @media (min-width:640px){.admin-overlay{padding:1rem}}
+  .admin-overlay.open{display:flex}
+  .admin-panel{
+    background:#fff;
+    border-radius:16px;
+    width:100%;
+    max-width:1200px;
+    max-height:95vh;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.4);
+  }
+  @media (min-width:640px){.admin-panel{border-radius:20px;max-height:92vh}}
+  .admin-header{
+    padding:.75rem 1rem;
+    background:linear-gradient(135deg,var(--dark),var(--primary));
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-shrink:0;
+    gap:.5rem;
+    flex-wrap:wrap;
+  }
+  @media (min-width:640px){.admin-header{padding:1.25rem 1.5rem;gap:1rem}}
+  .admin-body{display:flex;flex:1;overflow:hidden;min-height:0;flex-direction:column}
+  @media (min-width:768px){.admin-body{flex-direction:row}}
+  .admin-tabs{
+    width:100%;
+    background:#faf7f2;
+    border-bottom:1px solid var(--line);
+    overflow-x:auto;
+    overflow-y:hidden;
+    flex-shrink:0;
+    padding:.4rem;
+    display:flex;
+    gap:.25rem;
+    -webkit-overflow-scrolling:touch;
+  }
+  @media (min-width:768px){
+    .admin-tabs{width:250px;border-right:1px solid var(--line);border-bottom:none;overflow-x:hidden;overflow-y:auto;flex-direction:column;padding:.5rem}
+  }
+  .admin-tab{
+    padding:.6rem .8rem;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:.8rem;
+    font-weight:500;
+    color:#555;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    transition:.2s;
+    flex-shrink:0;
+    white-space:nowrap;
+    min-height:42px;
+  }
+  @media (min-width:768px){.admin-tab{font-size:.85rem;padding:.7rem .9rem}}
+  .admin-tab:hover{background:#fff;color:var(--primary)}
+  .admin-tab.active{background:var(--primary);color:#fff}
+  .admin-content{
+    flex:1;
+    overflow-y:auto;
+    padding:1rem;
+    -webkit-overflow-scrolling:touch;
+    min-width:0;
+  }
+  @media (min-width:640px){.admin-content{padding:1.5rem}}
+  .admin-footer{
+    padding:.75rem 1rem;
+    background:#faf7f2;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    gap:.5rem;
+    flex-shrink:0;
+    flex-wrap:wrap;
+  }
+  @media (min-width:640px){.admin-footer{padding:1rem 1.5rem}}
+  .admin-input{
+    width:100%;
+    padding:.65rem .8rem;
+    border:1.5px solid var(--line);
+    border-radius:8px;
+    font-size:.9rem;
+    font-family:inherit;
+    transition:.2s;
+    outline:none;
+    background:#fff;
+    color:var(--charcoal);
+    -webkit-appearance:none;
+    min-height:44px;
+  }
+  .admin-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(142,28,60,.1)}
+  .admin-label{
+    display:block;
+    font-size:.72rem;
+    font-weight:600;
+    color:#666;
+    margin-bottom:.35rem;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+  }
+  .admin-field{margin-bottom:.85rem}
+  .admin-card{
+    background:#faf7f2;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:.85rem;
+    margin-bottom:.7rem;
+  }
+  @media (min-width:640px){.admin-card{padding:1rem}}
+  .admin-card-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:.5rem;
+    gap:.5rem;
+    flex-wrap:wrap;
+  }
+  .admin-card-title{
+    font-size:.75rem;
+    font-weight:700;
+    color:var(--dark);
+    letter-spacing:.05em;
+    text-transform:uppercase;
+  }
+  .admin-remove{
+    background:#fee;
+    color:#c00;
+    border:none;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:.75rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.2s;
+    flex-shrink:0;
+  }
+  .admin-remove:hover{background:#c00;color:#fff}
+  .admin-btn{
+    padding:.55rem .9rem;
+    border-radius:8px;
+    font-size:.8rem;
+    font-weight:600;
+    border:none;
+    cursor:pointer;
+    transition:.2s;
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    font-family:inherit;
+    min-height:38px;
+    white-space:nowrap;
+  }
+  @media (min-width:640px){.admin-btn{font-size:.85rem;padding:.55rem 1rem;min-height:40px}}
+  .admin-btn:disabled{opacity:.5;cursor:not-allowed}
+  .admin-btn-primary{background:var(--primary);color:#fff}
+  .admin-btn-primary:hover:not(:disabled){background:var(--dark)}
+  .admin-btn-gold{background:var(--gold);color:#fff}
+  .admin-btn-ghost{background:#fff;color:var(--charcoal);border:1.5px solid var(--line)}
+  .admin-btn-ghost:hover:not(:disabled){border-color:var(--primary);color:var(--primary)}
+  .admin-btn-danger{background:#fff;color:#c00;border:1.5px solid #fdd}
+  .admin-btn-danger:hover:not(:disabled){background:#c00;color:#fff;border-color:#c00}
+  .admin-btn-add{
+    background:transparent;
+    color:var(--primary);
+    border:1.5px dashed var(--primary);
+    width:100%;
+    padding:.6rem;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+    font-size:.85rem;
+  }
+  .admin-grid-2{display:grid;grid-template-columns:1fr;gap:.75rem}
+  @media (min-width:640px){.admin-grid-2{grid-template-columns:1fr 1fr}}
+  .admin-grid-3{display:grid;grid-template-columns:1fr;gap:.75rem}
+  @media (min-width:640px){.admin-grid-3{grid-template-columns:repeat(3,1fr)}}
+  .admin-login{
+    background:#fff;
+    border-radius:16px;
+    padding:1.5rem;
+    width:100%;
+    max-width:400px;
+    text-align:center;
+  }
+  @media (min-width:640px){.admin-login{padding:2.5rem;border-radius:20px}}
+  .admin-toast{
+    position:fixed;
+    bottom:1.5rem;
+    left:50%;
+    transform:translateX(-50%) translateY(120px);
+    background:var(--charcoal);
+    color:#fff;
+    padding:.7rem 1.25rem;
+    border-radius:99px;
+    font-size:.85rem;
+    z-index:30000;
+    transition:transform .3s;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    max-width:90vw;
+    text-align:center;
+  }
+  .admin-toast.show{transform:translateX(-50%) translateY(0)}
+
+  /* IMG UPLOAD */
+  .img-upload{
+    position:relative;
+    border:2px dashed var(--line);
+    border-radius:12px;
+    padding:1rem;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+    background:#fff;
+  }
+  .img-upload:hover,.img-upload.dragover{border-color:var(--primary);background:var(--pale)}
+  .img-upload input[type=file]{display:none}
+  .img-upload-preview{
+    width:100%;
+    height:auto;
+    max-height:220px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-bottom:.6rem;
+    background:#f5f5f5;
+  }
+  .img-upload-actions{display:flex;gap:.35rem;justify-content:center;margin-top:.6rem;flex-wrap:wrap}
+  .img-info{
+    font-size:.7rem;
+    color:#666;
+    margin-top:.4rem;
+    padding:.4rem .5rem;
+    background:var(--pale);
+    border-radius:6px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:.5rem;
+    flex-wrap:wrap;
+  }
+  .img-info strong{color:var(--emerald)}
+  .compress-badge{
+    display:inline-block;
+    background:var(--emerald);
+    color:#fff;
+    font-size:.6rem;
+    font-weight:700;
+    padding:.15rem .4rem;
+    border-radius:99px;
+    text-transform:uppercase;
+  }
+
+  /* MEDIA GRID */
+  .media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-top:.6rem}
+  @media (min-width:640px){.media-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}}
+  .media-item{
+    position:relative;
+    border-radius:8px;
+    overflow:hidden;
+    border:1.5px solid var(--line);
+    background:#faf7f2;
+    cursor:pointer;
+    aspect-ratio:1;
+    transition:.2s;
+  }
+  .media-item:hover{border-color:var(--primary)}
+  .media-item img{width:100%;height:100%;object-fit:cover;display:block}
+  .media-item .media-actions{
+    position:absolute;
+    top:.3rem;
+    right:.3rem;
+    display:flex;
+    gap:.25rem;
+  }
+  .media-item .media-btn{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,.95);
+    color:var(--charcoal);
+    cursor:pointer;
+    font-size:.7rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  .media-item .media-btn:hover{background:var(--primary);color:#fff}
+  .media-item .media-btn.danger:hover{background:#c00}
+  .media-item .media-label{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:linear-gradient(transparent,rgba(0,0,0,.75));
+    color:#fff;
+    padding:.4rem .35rem .3rem;
+    font-size:.55rem;
+    text-align:center;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+
+  /* THEME GRID */
+  .theme-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-top:.6rem}
+  @media (min-width:640px){.theme-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem}}
+  .theme-card{
+    border:2px solid var(--line);
+    border-radius:12px;
+    padding:.6rem;
+    cursor:pointer;
+    transition:.2s;
+    background:#fff;
+    text-align:center;
+    position:relative;
+  }
+  .theme-card:hover{border-color:var(--primary);transform:translateY(-2px)}
+  .theme-card.active{border-color:var(--primary);box-shadow:0 0 0 3px rgba(142,28,60,.2)}
+  .theme-swatches{display:flex;gap:.25rem;justify-content:center;margin-bottom:.4rem}
+  .theme-swatch{width:22px;height:22px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+  .theme-name{font-size:.75rem;font-weight:600;color:var(--charcoal)}
+  .theme-card.active .theme-name{color:var(--primary)}
+
+  input[type=range]{
+    -webkit-appearance:none;
+    width:100%;
+    height:6px;
+    border-radius:3px;
+    background:var(--line);
+    outline:none;
+    margin:.5rem 0;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    appearance:none;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--primary);
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--primary);
+    cursor:pointer;
+    border:none;
+  }
+
+  .line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+  /* HP */
+  @media (max-width:640px){
+    .admin-panel{border-radius:12px;max-height:98vh}
+    .admin-header{padding:.6rem .75rem}
+    .admin-content{padding:.85rem}
+    .admin-tabs{padding:.35rem}
+    .admin-tab{padding:.55rem .7rem;font-size:.75rem;min-height:38px}
+    .admin-btn{font-size:.75rem;padding:.5rem .75rem}
+    .admin-grid-3,.admin-grid-2{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ADMIN OVERLAY -->
+<div class="admin-overlay" id="adminOverlay">
+
+  <!-- LOGIN -->
+  <div class="admin-login" id="adminLogin">
+    <div style="width:56px;height:56px;border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;background:linear-gradient(135deg,var(--primary),var(--gold))">
+      <i class="fas fa-lock"></i>
+    </div>
+    <h3 class="font-display" style="font-size:1.5rem;font-weight:700;color:var(--dark);margin-bottom:.5rem">Admin Panel</h3>
+    <p style="font-size:.85rem;color:#666;margin-bottom:1.5rem">Login dengan akun admin Supabase Anda.</p>
+    <input type="email" id="adminEmail" class="admin-input" placeholder="Email admin" autocomplete="username" style="margin-bottom:.75rem">
+    <input type="password" id="adminPass" class="admin-input" placeholder="Password" autocomplete="current-password" style="margin-bottom:.75rem">
+    <button class="admin-btn admin-btn-primary" id="adminLoginBtn" style="width:100%;justify-content:center">
+      <i class="fas fa-sign-in-alt"></i> Masuk
+    </button>
+    <button id="adminCloseLogin" style="font-size:.75rem;color:#999;margin-top:1rem;background:none;border:none;cursor:pointer;text-decoration:underline">Tutup</button>
+  </div>
+
+  <!-- PANEL -->
+  <div class="admin-panel" id="adminPanel" style="display:none">
+    <div class="admin-header">
+      <div style="display:flex;align-items:center;gap:.75rem;min-width:0">
+        <i class="fas fa-sliders-h"></i>
+        <div style="min-width:0">
+          <div class="font-display" style="font-weight:700;font-size:1rem">Admin Panel</div>
+          <div style="font-size:.75rem;opacity:.7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="adminUser">Scentia Ultimacos</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap">
+        <button class="admin-btn admin-btn-ghost" id="adminExportBtn" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)">
+          <i class="fas fa-download"></i> <span class="hidden sm:inline">Export</span>
+        </button>
+        <button class="admin-btn admin-btn-ghost" id="adminImportBtn" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)">
+          <i class="fas fa-upload"></i> <span class="hidden sm:inline">Import</span>
+        </button>
+        <button class="admin-btn admin-btn-ghost" id="adminCloseBtn" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="admin-body">
+      <div class="admin-tabs" id="adminTabs"></div>
+      <div class="admin-content" id="adminContent"></div>
+    </div>
+
+    <div class="admin-footer">
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <button class="admin-btn admin-btn-ghost" id="adminUndoBtn" title="Undo (Ctrl+Z)">
+          <i class="fas fa-undo"></i> <span class="hidden sm:inline">Undo</span>
+        </button>
+        <button class="admin-btn admin-btn-ghost" id="adminRedoBtn" title="Redo (Ctrl+Y)">
+          <i class="fas fa-redo"></i> <span class="hidden sm:inline">Redo</span>
+        </button>
+        <button class="admin-btn admin-btn-danger" id="adminResetAllBtn" title="Reset ALL data ke default">
+          <i class="fas fa-trash-restore"></i> <span class="hidden sm:inline">Reset All</span>
+        </button>
+        <button class="admin-btn admin-btn-danger" id="adminLogoutBtn">
+          <i class="fas fa-sign-out-alt"></i> <span class="hidden sm:inline">Logout</span>
+        </button>
+      </div>
+      <div style="display:flex;gap:.5rem">
+        <button class="admin-btn admin-btn-primary" id="adminSaveBtn">
+          <i class="fas fa-save"></i> Simpan
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="adminFileInput" accept=".json" style="display:none">
+<div class="admin-toast" id="adminToast"></div>
+
+<script src="shared.js"></script>
+<script src="admin.js"></script>
+<script>
+  // Auto-open admin panel saat halaman dimuat
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      if (typeof openAdmin === 'function') openAdmin();
+    }, 100);
+  });
+</script>
+</body>
+</html>
