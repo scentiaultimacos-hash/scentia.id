@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin — Scentia Ultimacos by King Parfum Indonesia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDFCFA;--bg-alt:#F7F4EE;--bg-dark:#1C1A17;
+  --gold:#B08D4F;--gold-lt:#D4B875;--gold-dk:#8C6E3A;
+  --text:#1C1A17;--muted:#57524A;--muted-2:#8A8378;
+  --line:#E7E1D8;--line-2:#EFEAE1;--white:#fff;
+  --radius:14px;--shadow:0 4px 16px rgba(28,26,23,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.25}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.login-wrap{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(160deg,#F7F4EE,#EFEAE1)}
+.login-box{background:var(--white);border-radius:var(--radius);padding:40px 32px;max-width:400px;width:100%;box-shadow:0 20px 60px rgba(28,26,23,.12)}
+.login-box .brand{display:flex;align-items:center;gap:12px;margin-bottom:28px;justify-content:center}
+.login-box .brand-mark{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--gold-lt),var(--gold));display:grid;place-items:center;color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:1.3rem}
+.login-box h1{font-size:1.5rem;text-align:center;margin-bottom:6px}
+.login-box .sub{text-align:center;color:var(--muted);font-size:.86rem;margin-bottom:28px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:11px 14px;border-radius:9px;font-family:inherit;font-size:.92rem;color:var(--text);background:var(--bg);border:1px solid var(--line);outline:none;transition:.2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,141,79,.13);background:#fff}
+.field textarea{resize:vertical;min-height:70px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 22px;border-radius:9px;font-size:.86rem;font-weight:500;transition:.2s;cursor:pointer;border:none;white-space:nowrap}
+.btn-gold{background:linear-gradient(135deg,var(--gold-lt),var(--gold));color:#fff;box-shadow:0 4px 14px rgba(176,141,79,.28)}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(176,141,79,.4)}
+.btn-outline{background:transparent;border:1px solid var(--line);color:var(--text)}
+.btn-outline:hover{background:var(--bg-alt)}
+.btn-danger{background:#c75c5c;color:#fff}
+.btn-danger:hover{background:#a94a4a}
+.btn-sm{padding:6px 12px;font-size:.78rem}
+.btn-block{width:100%}
+.err{padding:10px 14px;background:#fdecec;color:#a94a4a;border-radius:8px;font-size:.82rem;margin-bottom:14px;display:none}
+.err.show{display:block}
+.app{display:none}
+.app.show{display:block}
+.topbar{background:var(--white);border-bottom:1px solid var(--line);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.topbar .brand{display:flex;align-items:center;gap:10px}
+.topbar .brand-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold-lt),var(--gold));display:grid;place-items:center;color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;overflow:hidden}
+.topbar strong{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600}
+.topbar .meta{display:flex;align-items:center;gap:12px;font-size:.82rem;color:var(--muted)}
+.topbar .meta a{color:var(--gold-dk);font-weight:500}
+.layout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 63px)}
+.sidebar{background:var(--white);border-right:1px solid var(--line);padding:16px 12px;position:sticky;top:63px;height:calc(100vh - 63px);overflow-y:auto}
+.sidebar button{width:100%;text-align:left;padding:10px 14px;border-radius:8px;font-size:.86rem;color:var(--muted);transition:.2s;display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.sidebar button:hover{background:var(--bg-alt);color:var(--text)}
+.sidebar button.active{background:var(--bg-dark);color:#fff;font-weight:500}
+.sidebar .section-label{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);padding:14px 14px 6px;font-weight:600}
+.main{padding:24px 28px;max-width:1100px}
+.panel{display:none}
+.panel.active{display:block}
+.panel h1{font-size:1.5rem;margin-bottom:6px}
+.panel .subtitle{color:var(--muted);font-size:.86rem;margin-bottom:22px}
+.card{background:var(--white);border-radius:var(--radius);border:1px solid var(--line-2);padding:22px;margin-bottom:16px;box-shadow:var(--shadow)}
+.card h3{font-size:1rem;margin-bottom:14px}
+.card .card-help{font-size:.78rem;color:var(--muted-2);margin:-8px 0 14px;line-height:1.6;padding:8px 12px;background:rgba(176,141,79,.05);border-radius:6px;border-left:3px solid var(--gold)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.list-item{display:flex;align-items:center;gap:14px;padding:14px;border:1px solid var(--line-2);border-radius:10px;margin-bottom:10px;background:var(--bg);cursor:grab;transition:.2s}
+.list-item:active{cursor:grabbing}
+.list-item.dragging{opacity:.4}
+.list-item.dragover{border-color:var(--gold);background:rgba(176,141,79,.06)}
+.list-item .drag-handle{color:var(--muted-2);font-size:1.1rem;user-select:none;padding:0 4px}
+.list-item .thumb{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--bg-alt),#EFEAE1);flex-shrink:0;overflow:hidden;display:grid;place-items:center;color:var(--muted-2);font-size:.7rem}
+.list-item .thumb img{width:100%;height:100%;object-fit:cover}
+.list-item .info{flex:1;min-width:0}
+.list-item .info strong{font-size:.9rem;display:block;margin-bottom:2px}
+.list-item .info small{font-size:.75rem;color:var(--muted-2);display:block;margin-top:2px}
+.list-item .actions{display:flex;gap:6px;flex-shrink:0}
+.upload-zone{border:2px dashed var(--line);border-radius:12px;padding:24px;text-align:center;transition:.2s;cursor:pointer;background:var(--bg);position:relative}
+.upload-zone:hover{border-color:var(--gold);background:rgba(176,141,79,.03)}
+.upload-zone.dragover{border-color:var(--gold);background:rgba(176,141,79,.08)}
+.upload-zone p{color:var(--muted);font-size:.86rem;margin-top:6px}
+.upload-zone strong{color:var(--gold-dk)}
+.upload-zone .upload-hint{font-size:.72rem;color:var(--muted-2);margin-top:8px;display:block;line-height:1.5}
+.preview{width:80px;height:80px;border-radius:10px;object-fit:contain;border:1px solid var(--line);margin-top:12px;background:var(--bg)}
+pre.sql{background:#1C1A17;color:#E7E1D8;padding:20px;border-radius:12px;font-size:.72rem;line-height:1.6;overflow-x:auto;max-height:400px;overflow-y:auto;font-family:ui-monospace,monospace}
+.copy-btn{position:relative;float:right;margin-top:-8px}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--bg-dark);color:#fff;padding:12px 20px;border-radius:10px;font-size:.86rem;box-shadow:var(--shadow);z-index:100;opacity:0;transform:translateY(10px);transition:.3s;pointer-events:none;max-width:340px}
+.toast.show{opacity:1;transform:none}
+.toast.err{background:#c75c5c}
+.badge{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.7rem;font-weight:600;letter-spacing:.04em}
+.badge-new{background:#fef3c7;color:#92400e}
+.badge-done{background:#d1fae5;color:#065f46}
+.badge-tipe{background:rgba(176,141,79,.15);color:var(--gold-dk);text-transform:capitalize;margin-left:6px}
+.help-box{padding:10px 14px;background:#f0f9ff;border-left:3px solid #0ea5e9;border-radius:6px;font-size:.78rem;color:#075985;margin-bottom:14px;line-height:1.6}
+.help-box.warn{background:#fffbeb;border-left-color:#f59e0b;color:#92400e}
+.help-box.danger{background:#fef2f2;border-left-color:#dc2626;color:#991b1b}
+.help-box.gold{background:rgba(176,141,79,.08);border-left-color:var(--gold);color:var(--gold-dk)}
+.tag-lokasi{display:inline-block;font-size:.68rem;padding:2px 8px;border-radius:4px;background:rgba(176,141,79,.12);color:var(--gold-dk);font-weight:600;letter-spacing:.02em;margin-left:6px}
+.filter-chips{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.filter-chips button{padding:8px 16px;border-radius:999px;font-size:.8rem;font-weight:500;border:1px solid var(--line);background:var(--white);color:var(--muted);transition:.2s}
+.filter-chips button:hover{border-color:var(--gold)}
+.filter-chips button.active{background:var(--bg-dark);color:#fff;border-color:var(--bg-dark)}
+.badge-industry{background:#e0e7ff;color:#3730a3;margin-left:6px}
+.badge-count{background:var(--gold);color:#fff;margin-left:6px;padding:2px 8px;font-size:.68rem}
+.gallery-modal{position:fixed;inset:0;z-index:200;background:rgba(28,26,23,.6);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;padding:30px 20px;overflow-y:auto}
+.gallery-modal.open{display:flex;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.gallery-modal-box{background:#fff;border-radius:16px;max-width:860px;width:100%;padding:0;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.2);overflow:hidden;margin:auto}
+.gm-header{padding:22px 24px;background:linear-gradient(135deg,var(--bg-alt),#EFEAE1);border-bottom:1px solid var(--line-2);display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:2}
+.gm-header h3{font-size:1.15rem;margin:0}
+.gm-header small{font-size:.72rem;color:var(--gold-dk);font-weight:600;letter-spacing:.1em;text-transform:uppercase;display:block;margin-top:2px}
+.gm-close{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;background:rgba(0,0,0,.05);color:var(--muted);font-size:1rem;transition:.2s}
+.gm-close:hover{background:rgba(0,0,0,.1);color:var(--text)}
+.gm-body{padding:24px}
+.gm-form{background:var(--bg-alt);border-radius:12px;padding:18px;margin-bottom:20px}
+.gm-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gm-form .field{margin-bottom:0}
+.gm-form .upload-zone{padding:16px}
+.gm-form .upload-zone p{font-size:.82rem}
+.gm-form-actions{display:flex;gap:8px;margin-top:14px;justify-content:flex-end}
+.gm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.gm-item{background:var(--bg-alt);border:1px solid var(--line-2);border-radius:10px;overflow:hidden;transition:.2s;position:relative}
+.gm-item:hover{border-color:var(--gold);box-shadow:var(--shadow)}
+.gm-item-img{aspect-ratio:1;background:linear-gradient(135deg,var(--bg-alt),#EFEAE1);overflow:hidden;display:grid;place-items:center;color:var(--muted-2);font-size:.7rem}
+.gm-item-img img{width:100%;height:100%;object-fit:cover}
+.gm-item-body{padding:10px 12px 12px}
+.gm-item-cat{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dk);font-weight:600;margin-bottom:3px}
+.gm-item-name{font-size:.85rem;font-weight:600;line-height:1.3;margin-bottom:4px;word-break:break-word}
+.gm-item-desc{font-size:.72rem;color:var(--muted-2);line-height:1.4;margin-bottom:8px}
+.gm-item-actions{display:flex;gap:4px}
+.gm-item-actions button{flex:1;padding:5px 8px;font-size:.7rem}
+.gm-empty{padding:40px 20px;text-align:center;color:var(--muted-2);font-size:.85rem;background:var(--bg-alt);border-radius:10px;border:1px dashed var(--line);grid-column:1/-1}
+@media(max-width:860px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static;height:auto;display:flex;overflow-x:auto;padding:10px;gap:4px;border-right:none;border-bottom:1px solid var(--line)}
+  .sidebar button{flex-shrink:0;margin-bottom:0;width:auto;padding:8px 14px}
+  .sidebar .section-label{display:none}
+  .main{padding:16px}
+  .row,.row-3{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .gm-form-grid{grid-template-columns:1fr}
+  .gm-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .gm-body{padding:16px}
+  .gallery-modal{padding:0;align-items:flex-end}
+  .gallery-modal-box{border-radius:20px 20px 0 0;max-height:92vh;overflow-y:auto}
+  .gm-header{padding:18px 20px;position:sticky;top:0}
+  .gm-close{width:40px;height:40px}
+}
+</style>
+</head>
+<body>
+
+<div class="login-wrap" id="loginWrap">
+  <div class="login-box">
+    <div class="brand">
+      <div class="brand-mark">S</div>
+      <div><strong style="font-family:'Playfair Display',serif;font-size:1rem">Scentia Ultimacos</strong><br><span style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600">Admin Panel</span></div>
+    </div>
+    <h1>Selamat Datang</h1>
+    <p class="sub">Masuk untuk mengelola konten website</p>
+    <div class="err" id="loginErr"></div>
+    <form id="loginForm">
+      <div class="field"><label>Email</label><input type="email" id="loginEmail" required autocomplete="username"></div>
+      <div class="field"><label>Password</label><input type="password" id="loginPass" required autocomplete="current-password"></div>
+      <button type="submit" class="btn btn-gold btn-block" style="margin-top:14px">Masuk</button>
+    </form>
+    <p style="text-align:center;margin-top:16px;font-size:.78rem;color:var(--muted)"><a href="index.html" style="color:var(--gold-dk)">← Kembali ke website</a></p>
+  </div>
+</div>
+
+<div class="app" id="app">
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark" id="topbarMark">S</div>
+      <strong id="topbarBrandName">Admin Panel</strong>
+    </div>
+    <div class="meta">
+      <a href="index.html" target="_blank">Lihat Website ↗</a>
+      <span id="userEmail" style="font-size:.78rem"></span>
+      <button class="btn btn-outline btn-sm" id="logoutBtn">Keluar</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="section-label">Konten</div>
+      <button data-panel="teks" class="active">📝 Teks Situs</button>
+      <button data-panel="katalog">📦 Katalog Produk</button>
+      <button data-panel="showcase">🏷️ Showcase</button>
+      <button data-panel="portofolio">🏆 Portofolio</button>
+      <button data-panel="lab">🔬 Lab & Foto</button>
+      <button data-panel="aroma">🌸 Aroma</button>
+      <button data-panel="faq">❓ FAQ</button>
+      <button data-panel="promo">🎁 Promo</button>
+      <button data-panel="html">🧩 HTML Kustom</button>
+      <div class="section-label">Data</div>
+      <button data-panel="inbox">📥 Inbox</button>
+      <button data-panel="settings">⚙️ Pengaturan & Branding</button>
+      <div class="section-label">Sistem</div>
+      <button data-panel="setup">🗄️ Setup Database</button>
+    </aside>
+
+    <main class="main">
+
+      <section class="panel active" id="panel-teks">
+        <h1>Teks Situs</h1>
+        <p class="subtitle">Edit konten teks dari section-section utama website.</p>
+        <div class="help-box">💡 <strong>Tips:</strong> Kosongkan field untuk pakai default. Perubahan langsung tampil setelah disimpan.</div>
+        <div id="teksContent"></div>
+      </section>
+
+      <section class="panel" id="panel-katalog">
+        <h1>Katalog Produk</h1>
+        <p class="subtitle">Tambah, edit, atau hapus produk.</p>
+        <div class="help-box">📍 <strong>Tampil di:</strong> menu <strong>Katalog</strong> (index.html).</div>
+        <button class="btn btn-gold" onclick="openProductForm()">+ Tambah Produk</button>
+        <div id="productFormWrap" style="display:none;margin-top:16px">
+          <div class="card">
+            <h3 id="pfTitle">Tambah Produk</h3>
+            <form id="productForm">
+              <input type="hidden" id="pfId">
+              <div class="row">
+                <div class="field"><label>Nama Produk</label><input type="text" id="pfName" required></div>
+                <div class="field"><label>Kategori</label>
+                  <select id="pfCategory">
+                    <option>EDP</option>
+                    <option>EDT</option>
+                    <option>Body Mist</option>
+                    <option>Parfum Non Alkohol</option>
+                    <option>Pomade</option>
+                    <option>Hair Tonic</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field"><label>Ukuran</label><input type="text" id="pfSize" placeholder="50 ml"></div>
+                <div class="field"><label>Keluarga Aroma</label><input type="text" id="pfFamily" placeholder="Woody"></div>
+              </div>
+              <div class="field"><label>Deskripsi</label><textarea id="pfDesc"></textarea></div>
+              <div class="field"><label>Foto Produk</label>
+                <div class="upload-zone" data-target="pfImage">
+                  <p><strong>Klik atau drag</strong> foto ke sini</p>
+                  <span class="upload-hint">Otomatis dikompres ke WebP · maks 10MB</span>
+                  <input type="file" accept="image/*" style="display:none">
+                </div>
+                <input type="hidden" id="pfImage">
+                <img class="preview" id="pfImagePreview" style="display:none">
+              </div>
+              <div class="row">
+                <div class="field"><label>Urutan</label><input type="number" id="pfOrder" value="0"></div>
+                <div class="field"><label>Status</label><select id="pfActive"><option value="true">Aktif</option><option value="false">Nonaktif</option></select></div>
+              </div>
+              <div style="display:flex;gap:8px;margin-top:8px">
+                <button type="submit" class="btn btn-gold">Simpan</button>
+                <button type="button" class="btn btn-outline" onclick="closeProductForm()">Batal</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="productList" style="margin-top:16px"></div>
+      </section>
+
+      <section class="panel" id="panel-showcase">
+        <h1>Showcase</h1>
+        <p class="subtitle">Item botol, kemasan, dan sticker untuk halaman showcase.html.</p>
+        <div class="help-box">📍 <strong>Tampil di:</strong> halaman <strong>showcase.html</strong> — section Botol / Kemasan / Sticker.<br>Filter di bawah untuk memfilter list; klik <em>Semua</em> untuk drag-reorder.</div>
+
+        <div class="filter-chips" id="showcaseFilterChips">
+          <button data-item-filter="all" class="active">Semua</button>
+          <button data-item-filter="botol">Botol</button>
+          <button data-item-filter="kemasan">Kemasan</button>
+          <button data-item-filter="sticker">Sticker</button>
+        </div>
+
+        <button class="btn btn-gold" onclick="openItemForm()">+ Tambah Item</button>
+        <div id="itemFormWrap" style="display:none;margin-top:16px">
+          <div class="card">
+            <h3 id="ifTitle">Tambah Item</h3>
+            <form id="itemForm">
+              <input type="hidden" id="ifId">
+              <div class="row">
+                <div class="field"><label>Jenis</label>
+                  <select id="ifType">
+                    <option value="botol">Botol</option>
+                    <option value="kemasan">Kemasan</option>
+                    <option value="sticker">Sticker</option>
+                  </select>
+                </div>
+                <div class="field"><label>Kategori</label><input type="text" id="ifCategory" placeholder="Glass Bottle, Kraft Box, Vinyl"></div>
+              </div>
+              <div class="field"><label>Nama Item</label><input type="text" id="ifName" required placeholder="Contoh: Flint Glass 50 ml"></div>
+              <div class="row">
+                <div class="field"><label>Ukuran</label><input type="text" id="ifSize" placeholder="50 ml / 10×5×5 cm"></div>
+                <div class="field"><label>Material</label><input type="text" id="ifMaterial" placeholder="Glass, Kraft, Vinyl"></div>
+              </div>
+              <div class="field"><label>Deskripsi</label><textarea id="ifDesc"></textarea></div>
+              <div class="field"><label>Foto</label>
+                <div class="upload-zone" data-target="ifImage">
+                  <p><strong>Klik atau drag</strong> foto ke sini</p>
+                  <span class="upload-hint">Otomatis dikompres WebP · maks 10MB</span>
+                  <input type="file" accept="image/*" style="display:none">
+                </div>
+                <input type="hidden" id="ifImage">
+                <img class="preview" id="ifImagePreview" style="display:none">
+              </div>
+              <div class="row">
+                <div class="field"><label>Urutan</label><input type="number" id="ifOrder" value="0"></div>
+                <div class="field"><label>Status</label><select id="ifActive"><option value="true">Aktif</option><option value="false">Nonaktif</option></select></div>
+              </div>
+              <div style="display:flex;gap:8px;margin-top:8px">
+                <button type="submit" class="btn btn-gold">Simpan</button>
+                <button type="button" class="btn btn-outline" onclick="closeItemForm()">Batal</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="itemList" style="margin-top:16px"></div>
+      </section>
+
+      <section class="panel" id="panel-portofolio">
+        <h1>Portofolio</h1>
+        <p class="subtitle">Logo brand klien yang tampil di marquee dan showcase.</p>
+        <div class="help-box">📍 <strong>Tampil di:</strong> bagian <strong>Portofolio</strong> di index.html + section <strong>Brand Partner</strong> di showcase.html.<br>✋ Drag item untuk atur urutan.</div>
+
+        <div class="card">
+          <h3>Upload Logo Klien</h3>
+          <div class="field"><label>Nama Brand</label><input type="text" id="logoName" placeholder="Contoh: AURÉLIA"></div>
+          <div class="row">
+            <div class="field"><label>Industri (opsional)</label><input type="text" id="logoIndustry" placeholder="Beauty, Fashion, Retail"></div>
+            <div class="field"><label>Website (opsional)</label><input type="text" id="logoWebsite" placeholder="https://..."></div>
+          </div>
+          <div class="field"><label>Deskripsi Singkat (opsional)</label><input type="text" id="logoDesc" placeholder="Brand parfum lokal Surabaya"></div>
+          <div class="field"><label>File Logo</label>
+            <div class="upload-zone" data-target="logoImage">
+              <p><strong>Klik atau drag</strong> logo ke sini</p>
+              <span class="upload-hint">Disarankan PNG transparan · otomatis dikompres WebP</span>
+              <input type="file" accept="image/*" style="display:none">
+            </div>
+            <input type="hidden" id="logoImage">
+            <img class="preview" id="logoImagePreview" style="display:none">
+          </div>
+          <button class="btn btn-gold" style="margin-top:12px" onclick="addLogo()">Tambah Logo</button>
+        </div>
+        <div id="logoList"></div>
+      </section>
+
+      <section class="panel" id="panel-lab">
+        <h1>Lab & Foto</h1>
+        <p class="subtitle">Foto yang tampil di section "Lab Fragrance King Parfum Indonesia".</p>
+        <div class="help-box">📍 <strong>Tampil di:</strong> section <strong>Lab & Proses</strong>. Foto pertama tampil besar (16:9), berikutnya kecil di samping.<br>✋ Drag item untuk atur urutan.</div>
+        <div class="card">
+          <h3>Upload Foto Lab</h3>
+          <div class="field"><label>Caption (opsional)</label><input type="text" id="labCaption" placeholder="Contoh: Ruang formulasi parfum"></div>
+          <div class="field"><label>File Foto</label>
+            <div class="upload-zone" data-target="labImage">
+              <p><strong>Klik atau drag</strong> foto ke sini</p>
+              <span class="upload-hint">Disarankan landscape · otomatis dikompres WebP</span>
+              <input type="file" accept="image/*" style="display:none">
+            </div>
+            <input type="hidden" id="labImage">
+            <img class="preview" id="labImagePreview" style="display:none">
+          </div>
+          <button class="btn btn-gold" style="margin-top:12px" onclick="addLabPhoto()">Tambah Foto</button>
+        </div>
+        <div id="labList"></div>
+      </section>
+
+      <section class="panel" id="panel-aroma">
+        <h1>Aroma</h1>
+        <p class="subtitle">Keluarga aroma + bahan + foto.</p>
+        <div class="help-box">📍 <strong>Tampil di:</strong> section <strong>Jelajahi Aroma</strong> (index.html) dan <strong>Aroma</strong> (showcase.html).</div>
+
+        <div class="card">
+          <h3 id="famFormTitle">Tambah Keluarga Aroma</h3>
+          <div class="row">
+            <div class="field"><label>Nama</label><input type="text" id="famName" placeholder="Floral"></div>
+            <div class="field"><label>Urutan</label><input type="number" id="famOrder" value="0"></div>
+          </div>
+          <div class="field"><label>Deskripsi</label><input type="text" id="famDesc" placeholder="Deskripsi singkat"></div>
+          <div class="field"><label>Foto (opsional)</label>
+            <div class="upload-zone" data-target="famImage">
+              <p><strong>Klik atau drag</strong> foto ke sini</p>
+              <span class="upload-hint">Otomatis dikompres WebP</span>
+              <input type="file" accept="image/*" style="display:none">
+            </div>
+            <input type="hidden" id="famImage">
+            <img class="preview" id="famImagePreview" style="display:none">
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="btn btn-gold" id="famSubmitBtn" onclick="submitFamily()">Tambah Keluarga</button>
+            <button class="btn btn-outline" id="famCancelBtn" onclick="cancelFamilyEdit()" style="display:none">Batal</button>
+          </div>
+        </div>
+        <div id="famList"></div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>Tambah Bahan Aroma</h3>
+          <div class="row">
+            <div class="field"><label>Keluarga</label><select id="ingFamily"></select></div>
+            <div class="field"><label>Nama Bahan</label><input type="text" id="ingName" placeholder="Rose"></div>
+          </div>
+          <div class="field"><label>Deskripsi</label><input type="text" id="ingDesc"></div>
+          <button class="btn btn-gold" onclick="addIngredient()">Tambah Bahan</button>
+        </div>
+        <div id="ingList"></div>
+      </section>
+
+      <section class="panel" id="panel-faq">
+        <h1>FAQ</h1>
+        <p class="subtitle">Pertanyaan yang tampil di section FAQ.</p>
+        <div class="help-box">📍 <strong>Tampil di:</strong> section <strong>FAQ</strong>. Otomatis masuk FAQ Schema untuk SEO.<br>✋ Drag item untuk atur urutan.</div>
+        <div class="card">
+          <h3>Tambah FAQ</h3>
+          <div class="field"><label>Pertanyaan</label><input type="text" id="faqQ"></div>
+          <div class="field"><label>Jawaban</label><textarea id="faqA"></textarea></div>
+          <div class="field"><label>Kategori (opsional)</label><input type="text" id="faqCat" placeholder="MOQ & Harga"></div>
+          <button class="btn btn-gold" onclick="addFaq()">Tambah FAQ</button>
+        </div>
+        <div id="faqList"></div>
+      </section>
+
+      <section class="panel" id="panel-promo">
+        <h1>Promo</h1>
+        <p class="subtitle">Teks promo yang tampil di announcement bar + banner katalog.</p>
+        <div class="help-box">📍 <strong>Tampil di:</strong> bar atas website + banner di atas katalog.</div>
+        <div class="card">
+          <h3>Promo Aktif</h3>
+          <form id="promoForm">
+            <div class="field"><label>Judul</label><input type="text" id="prTitle"></div>
+            <div class="field"><label>Deskripsi</label><textarea id="prDesc"></textarea></div>
+            <div class="row">
+              <div class="field"><label>Kuota</label><input type="number" id="prQuota" value="100"></div>
+              <div class="field"><label>Aktif</label><select id="prActive"><option value="true">Ya</option><option value="false">Tidak</option></select></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>Mulai</label><input type="date" id="prStart"></div>
+              <div class="field"><label>Berakhir</label><input type="date" id="prEnd"></div>
+            </div>
+            <button type="submit" class="btn btn-gold">Simpan Promo</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-html">
+        <h1>HTML Kustom</h1>
+        <p class="subtitle">Ganti konten default section dengan HTML buatan Anda sendiri.</p>
+        <div class="help-box warn">⚠️ Kosongkan untuk pakai default. Begitu diisi, HTML Anda <strong>menggantikan seluruh isi section</strong>.</div>
+
+        <div class="card">
+          <h3>Katalog <span class="tag-lokasi">Menu Katalog</span></h3>
+          <p class="card-help">Container: <code>#katalogContent</code></p>
+          <textarea id="htmlKatalog" style="width:100%;min-height:180px;font-family:ui-monospace,monospace;font-size:12px;padding:12px;border-radius:8px;border:1px solid var(--line);background:var(--bg)"></textarea>
+          <button class="btn btn-gold" style="margin-top:12px" onclick="saveHtml('katalog')">Simpan Katalog</button>
+        </div>
+        <div class="card">
+          <h3>Simulasi <span class="tag-lokasi">Menu Simulasi</span></h3>
+          <p class="card-help">Container: <code>#simulasiContent</code></p>
+          <textarea id="htmlSimulasi" style="width:100%;min-height:180px;font-family:ui-monospace,monospace;font-size:12px;padding:12px;border-radius:8px;border:1px solid var(--line);background:var(--bg)"></textarea>
+          <button class="btn btn-gold" style="margin-top:12px" onclick="saveHtml('simulasi')">Simpan Simulasi</button>
+        </div>
+        <div class="card">
+          <h3>Scent Quiz <span class="tag-lokasi">Menu Jelajahi Aroma</span></h3>
+          <p class="card-help">Container: <code>#aromaQuizContent</code></p>
+          <textarea id="htmlAromaQuiz" style="width:100%;min-height:180px;font-family:ui-monospace,monospace;font-size:12px;padding:12px;border-radius:8px;border:1px solid var(--line);background:var(--bg)"></textarea>
+          <button class="btn btn-gold" style="margin-top:12px" onclick="saveHtml('aroma_quiz')">Simpan Quiz</button>
+        </div>
+        <div class="card">
+          <h3>Explorer Bahan Aroma <span class="tag-lokasi">Menu Jelajahi Aroma</span></h3>
+          <p class="card-help">Container: <code>#aromaExplorerContent</code></p>
+          <textarea id="htmlAromaExplorer" style="width:100%;min-height:180px;font-family:ui-monospace,monospace;font-size:12px;padding:12px;border-radius:8px;border:1px solid var(--line);background:var(--bg)"></textarea>
+          <button class="btn btn-gold" style="margin-top:12px" onclick="saveHtml('aroma_explorer')">Simpan Explorer</button>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-inbox">
+        <h1>Inbox</h1>
+        <p class="subtitle">Permintaan sampel dan brief dari website.</p>
+        <div class="card">
+          <h3>Permintaan Sampel</h3>
+          <div id="sampleList"></div>
+        </div>
+        <div class="card">
+          <h3>Brief Masuk</h3>
+          <div id="briefList"></div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-settings">
+        <h1>Pengaturan & Branding</h1>
+        <p class="subtitle">Logo, nama brand, foto hero, info kontak, dan data pabrik.</p>
+
+        <div class="card">
+          <h3>Brand Layanan — Scentia Ultimacos</h3>
+          <div class="help-box gold">📍 <strong>Tampil di:</strong> navbar atas + footer semua halaman.</div>
+          <div class="field"><label>Nama Brand Layanan</label><input type="text" id="stBrandName" placeholder="Scentia Ultimacos"></div>
+          <div class="field"><label>Tagline (sub-teks kecil)</label><input type="text" id="stTagline" placeholder="by King Parfum Indonesia"></div>
+          <div class="field"><label>Logo Perusahaan</label>
+            <div class="upload-zone" data-target="companyLogo">
+              <p><strong>Klik atau drag</strong> logo perusahaan</p>
+              <span class="upload-hint">PNG transparan disarankan · rasio 1:1 · <strong>otomatis dikompres 256px</strong></span>
+              <input type="file" accept="image/*" style="display:none">
+            </div>
+            <input type="hidden" id="companyLogo">
+            <img class="preview" id="companyLogoPreview" style="display:none">
+            <button type="button" class="btn btn-outline btn-sm" onclick="clearCompanyLogo()" style="margin-top:10px;display:none" id="companyLogoClearBtn">Hapus Logo</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Foto Hero — Beranda</h3>
+          <div class="help-box gold">📍 <strong>Tampil di:</strong> section Hero di index.html — <strong>menggantikan ilustrasi botol default</strong>.</div>
+          <div class="field">
+            <label>Foto Hero</label>
+            <div class="upload-zone" data-target="heroImage">
+              <p><strong>Klik atau drag</strong> foto hero ke sini</p>
+              <span class="upload-hint">Otomatis dikompres WebP · maks 10MB</span>
+              <input type="file" accept="image/*" style="display:none">
+            </div>
+            <input type="hidden" id="heroImage">
+            <img class="preview" id="heroImagePreview" style="display:none;width:140px;height:140px;object-fit:cover">
+            <button type="button" class="btn btn-outline btn-sm" onclick="clearHeroImage()" style="margin-top:10px;display:none" id="heroImageClearBtn">Hapus Foto Hero</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Pabrik — King Parfum Indonesia</h3>
+          <div class="help-box gold">📍 <strong>Tampil di:</strong> section <strong>Pabrik</strong> + trust stats + schema SEO sebagai entitas utama.</div>
+          <div class="field"><label>Nama Pabrik</label><input type="text" id="stKpName" placeholder="King Parfum Indonesia"></div>
+          <div class="field"><label>Tagline Pabrik</label><input type="text" id="stKpTagline" placeholder="Pabrik Maklon Parfum"></div>
+          <div class="field"><label>Tentang Pabrik (1–2 kalimat)</label><textarea id="stKpAbout"></textarea></div>
+          <div class="row">
+            <div class="field"><label>Kapasitas Produksi</label><input type="text" id="stKpCapacity" placeholder="50.000+"></div>
+            <div class="field"><label>Satuan</label><input type="text" id="stKpCapacityUnit" placeholder="pcs/bulan"></div>
+          </div>
+          <div class="row">
+            <div class="field"><label>Tahun Berdiri</label><input type="text" id="stKpYear" placeholder="2015"></div>
+            <div class="field"><label>Jumlah Batch</label><input type="text" id="stKpBatches" placeholder="200+"></div>
+          </div>
+          <div class="field"><label>Sertifikasi (pisahkan dengan · )</label><input type="text" id="stKpCertifications" placeholder="BPOM · Halal MUI · CPKB"></div>
+          <div class="field"><label>Alamat Pabrik (opsional)</label><input type="text" id="stKpFactoryAddress" placeholder="Kawasan Industri Surabaya"></div>
+        </div>
+
+        <div class="card">
+          <h3>Informasi Kontak</h3>
+          <form id="settingsForm">
+            <div class="field"><label>Nomor WhatsApp</label><input type="text" id="stWa" placeholder="6285743243378"></div>
+            <div class="field"><label>Email</label><input type="email" id="stEmail"></div>
+            <div class="field"><label>Alamat Kantor</label><textarea id="stAddress"></textarea></div>
+            <div class="field"><label>Jam Operasional</label><input type="text" id="stHours"></div>
+            <button type="submit" class="btn btn-gold">Simpan Semua Pengaturan</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-setup">
+        <h1>Setup Database & Storage</h1>
+        <p class="subtitle">Cek status bucket dan setup awal.</p>
+        <div class="card">
+          <h3>Cek Status Bucket</h3>
+          <button class="btn btn-outline" onclick="checkBucketClick()">🔍 Cek Bucket Sekarang</button>
+          <div id="bucketStatus" style="margin-top:12px"></div>
+        </div>
+        <div class="card">
+          <h3>Buat Bucket Storage</h3>
+          <div class="help-box warn">
+            <strong>Kalau upload error "Bucket not found":</strong>
+            <ol style="margin:10px 0 0 20px;line-height:1.8">
+              <li>Supabase → Storage → <strong>New Bucket</strong> → nama <code>media</code> → centang <strong>Public</strong>.</li>
+              <li>Jalankan policy storage di SQL Editor.</li>
+              <li>Refresh admin, klik <strong>Cek Bucket</strong>.</li>
+            </ol>
+          </div>
+          <button class="btn btn-gold" onclick="tryCreateBucket()">🚀 Coba Buat Bucket Otomatis</button>
+        </div>
+        <div class="card">
+          <h3>Buat User Admin</h3>
+          <p style="font-size:.86rem;color:var(--muted);line-height:1.7">Supabase → Authentication → Users → Add User. Gunakan email & password itu untuk login di sini.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div class="gallery-modal" id="galleryModal">
+  <div class="gallery-modal-box">
+    <div class="gm-header">
+      <div>
+        <small>Kelola Foto Produk</small>
+        <h3 id="gmPartnerName">—</h3>
+      </div>
+      <button class="gm-close" onclick="closeGalleryModal()" aria-label="Tutup">✕</button>
+    </div>
+    <div class="gm-body">
+      <div class="gm-form">
+        <div class="field">
+          <label>Foto Produk</label>
+          <div class="upload-zone" data-target="gmImage">
+            <p><strong>Klik atau drag</strong> foto ke sini</p>
+            <span class="upload-hint">Otomatis dikompres WebP · maks 10MB</span>
+            <input type="file" accept="image/*" style="display:none">
+          </div>
+          <input type="hidden" id="gmImage">
+          <img class="preview" id="gmImagePreview" style="display:none;width:70px;height:70px">
+        </div>
+        <div class="gm-form-grid" style="margin-top:12px">
+          <div class="field"><label>Nama Produk (opsional)</label><input type="text" id="gmName" placeholder="Woody Amber Signature"></div>
+          <div class="field"><label>Kategori (opsional)</label><input type="text" id="gmCategory" placeholder="EDP 50 ml"></div>
+        </div>
+        <div class="field" style="margin-top:12px"><label>Deskripsi (opsional)</label><input type="text" id="gmDesc" placeholder="Aroma kayu hangat dengan amber"></div>
+        <div class="gm-form-actions">
+          <button type="button" class="btn btn-outline btn-sm" onclick="resetGalleryForm()">Reset</button>
+          <button type="button" class="btn btn-gold btn-sm" id="gmSubmitBtn" onclick="saveGalleryItem()">+ Tambah Foto</button>
+        </div>
+      </div>
+      <div class="gm-grid" id="gmGrid"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+const SUPABASE_URL = 'https://tjoyzlgdkhkhiggmealh.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqb3l6bGdka2hraGlnZ21lYWxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEyOTA2MTMsImV4cCI6MjEwNjg2NjYxM30.72127lDKmBDDB0vE-zgB2BLllCRZns1kb8x4zMkzMi0';
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
+
+function toast(msg, isErr) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.toggle('err', !!isErr); t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+function escapeHtml(s) { if (s == null) return ''; return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* AUTH */
+const loginWrap = document.getElementById('loginWrap');
+const app = document.getElementById('app');
+const loginErr = document.getElementById('loginErr');
+
+async function checkSession() {
+  const { data: { session } } = await sb.auth.getSession();
+  if (session) showApp(session);
+}
+function showApp(session) {
+  loginWrap.style.display = 'none';
+  app.classList.add('show');
+  document.getElementById('userEmail').textContent = session.user.email || '';
+  loadAll();
+}
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  loginErr.classList.remove('show');
+  const btn = e.target.querySelector('button');
+  btn.disabled = true; btn.textContent = 'Memuat...';
+  const { data, error } = await sb.auth.signInWithPassword({
+    email: document.getElementById('loginEmail').value,
+    password: document.getElementById('loginPass').value
+  });
+  btn.disabled = false; btn.textContent = 'Masuk';
+  if (error) { loginErr.textContent = error.message; loginErr.classList.add('show'); return; }
+  showApp(data.session);
+});
+document.getElementById('logoutBtn').addEventListener('click', async () => {
+  await sb.auth.signOut(); location.reload();
+});
+checkSession();
+
+document.querySelectorAll('.sidebar button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.sidebar button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.panel)?.classList.add('active');
+  });
+});
+
+/* BUCKET */
+async function checkBucket() {
+  try {
+    const { error } = await sb.storage.from('media').list('', { limit: 1 });
+    if (error) {
+      const msg = (error.message || '').toLowerCase();
+      if (msg.includes('not found') || msg.includes('bucket')) return { ok: false, message: 'Bucket "media" belum ada.' };
+      return { ok: false, message: error.message };
+    }
+    return { ok: true };
+  } catch (e) { return { ok: false, message: e.message }; }
+}
+window.checkBucketClick = async function () {
+  const el = document.getElementById('bucketStatus');
+  el.innerHTML = '<p style="color:var(--muted)">Memeriksa...</p>';
+  const r = await checkBucket();
+  if (r.ok) el.innerHTML = '<div class="help-box" style="background:#ecfdf5;border-left-color:#10b981;color:#065f46">✅ <strong>Bucket OK</strong></div>';
+  else el.innerHTML = `<div class="help-box danger">❌ <strong>Bermasalah:</strong> ${r.message}</div>`;
+};
+window.tryCreateBucket = async function () {
+  try {
+    const { error } = await sb.storage.createBucket('media', { public: true });
+    if (error) throw error;
+    toast('Bucket berhasil dibuat!');
+    window.checkBucketClick();
+  } catch (e) { toast('Gagal: ' + e.message, true); }
+};
+
+/* IMAGE UPLOAD — FIX: LOGO COMPRESS 256px */
+async function compressImage(file, maxWidth = 1400, quality = 0.82) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const reader = new FileReader();
+    reader.onload = (e) => { img.src = e.target.result; };
+    reader.onerror = reject;
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      let { width, height } = img;
+      if (width > maxWidth) { height = (maxWidth / width) * height; width = maxWidth; }
+      canvas.width = width; canvas.height = height;
+      canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+      canvas.toBlob(b => b ? resolve(b) : reject(new Error('compress failed')), 'image/webp', quality);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+async function uploadImage(file, targetId) {
+  if (!file) throw new Error('Tidak ada file.');
+  const check = await checkBucket();
+  if (!check.ok) throw new Error(check.message);
+  const isLogo = targetId && targetId.toLowerCase().includes('logo');
+  const blob = await compressImage(file, isLogo ? 256 : 1400, isLogo ? 0.85 : 0.82);
+  const filename = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.webp`;
+  const { error } = await sb.storage.from('media').upload(filename, blob, { contentType: 'image/webp', upsert: false, cacheControl: '31536000' });
+  if (error) throw error;
+  const { data: { publicUrl } } = sb.storage.from('media').getPublicUrl(filename);
+  return publicUrl;
+}
+
+document.querySelectorAll('.upload-zone').forEach(zone => {
+  const input = zone.querySelector('input[type=file]');
+  const targetId = zone.dataset.target;
+  const target = document.getElementById(targetId);
+  const preview = document.getElementById(targetId + 'Preview');
+  if (!input || !target) return;
+
+  const handle = async (file) => {
+    if (!file || !file.type.startsWith('image/')) return toast('File harus gambar', true);
+    if (file.size > 10 * 1024 * 1024) return toast('Maksimal 10MB', true);
+    const orig = zone.querySelector('p').innerHTML;
+    zone.querySelector('p').innerHTML = '⏳ Mengompres & upload...';
+    try {
+      const url = await uploadImage(file, targetId);
+      target.value = url;
+      if (preview) { preview.src = url; preview.style.display = 'block'; }
+      zone.querySelector('p').innerHTML = '✅ <strong>Terupload</strong>';
+      toast('Gambar diupload');
+      if (targetId === 'companyLogo') document.getElementById('companyLogoClearBtn').style.display = 'inline-flex';
+      if (targetId === 'heroImage') document.getElementById('heroImageClearBtn').style.display = 'inline-flex';
+    } catch (err) {
+      zone.querySelector('p').innerHTML = orig;
+      toast('Gagal: ' + err.message, true);
+    }
+  };
+
+  zone.addEventListener('click', () => input.click());
+  input.addEventListener('change', (e) => handle(e.target.files[0]));
+  zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('dragover'); });
+  zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+  zone.addEventListener('drop', (e) => { e.preventDefault(); zone.classList.remove('dragover'); if (e.dataTransfer.files[0]) handle(e.dataTransfer.files[0]); });
+});
+
+/* DRAG REORDER */
+function makeSortable(container, tableName, reloadFn) {
+  let draggedItem = null;
+  function getDragAfterElement(y) {
+    const els = [...container.querySelectorAll('[data-id]')].filter(el => el !== draggedItem);
+    return els.reduce((closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+      if (offset < 0 && offset > closest.offset) return { offset, element: child };
+      return closest;
+    }, { offset: Number.NEGATIVE_INFINITY, element: null }).element;
+  }
+  container.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    if (!draggedItem) return;
+    const after = getDragAfterElement(e.clientY);
+    if (after == null) container.appendChild(draggedItem); else container.insertBefore(draggedItem, after);
+  });
+  container.addEventListener('dragend', async () => {
+    if (!draggedItem) return;
+    draggedItem.classList.remove('dragging');
+    const items = [...container.querySelectorAll('[data-id]')];
+    for (let i = 0; i < items.length; i++) {
+      await sb.from(tableName).update({ sort_order: i }).eq('id', parseInt(items[i].dataset.id));
+    }
+    toast('Urutan disimpan');
+    draggedItem = null;
+    if (reloadFn) reloadFn();
+  });
+  container.addEventListener('dragstart', (e) => {
+    const item = e.target.closest('[data-id]');
+    if (!item) return;
+    draggedItem = item;
+    item.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+  });
+}
+
+/* KATALOG PRODUK */
+async function loadProducts() {
+  const { data, error } = await sb.from('catalog_products').select('*').order('sort_order');
+  const list = document.getElementById('productList');
+  if (error || !data || !data.length) { list.innerHTML = '<p style="color:var(--muted);padding:12px">Belum ada produk.</p>'; return; }
+  list.innerHTML = data.map(p => `
+    <div class="list-item" data-id="${p.id}">
+      <span class="drag-handle">⋮⋮</span>
+      <div class="thumb">${p.image_url ? `<img src="${p.image_url}">` : '—'}</div>
+      <div class="info">
+        <strong>${escapeHtml(p.name)}</strong>
+        <small>${escapeHtml(p.category)} · ${escapeHtml(p.size || '')} · ${escapeHtml(p.scent_family || '')} ${p.active === false ? '<span class="badge badge-done">nonaktif</span>' : ''}</small>
+      </div>
+      <div class="actions">
+        <button class="btn btn-outline btn-sm" onclick='editProduct(${JSON.stringify(p).replace(/'/g, "&#39;")})'>Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteProduct(${p.id})">Hapus</button>
+      </div>
+    </div>
+  `).join('');
+  makeSortable(list, 'catalog_products', loadProducts);
+}
+window.openProductForm = function(product) {
+  document.getElementById('productFormWrap').style.display = 'block';
+  document.getElementById('pfTitle').textContent = product ? 'Edit Produk' : 'Tambah Produk';
+  document.getElementById('pfId').value = product?.id || '';
+  document.getElementById('pfName').value = product?.name || '';
+  document.getElementById('pfCategory').value = product?.category || 'EDP';
+  document.getElementById('pfSize').value = product?.size || '';
+  document.getElementById('pfFamily').value = product?.scent_family || '';
+  document.getElementById('pfDesc').value = product?.description || '';
+  document.getElementById('pfImage').value = product?.image_url || '';
+  document.getElementById('pfOrder').value = product?.sort_order ?? 0;
+  document.getElementById('pfActive').value = product?.active === false ? 'false' : 'true';
+  const prev = document.getElementById('pfImagePreview');
+  if (product?.image_url) { prev.src = product.image_url; prev.style.display = 'block'; } else prev.style.display = 'none';
+};
+window.closeProductForm = function() {
+  document.getElementById('productFormWrap').style.display = 'none';
+  document.getElementById('productForm').reset();
+  document.getElementById('pfId').value = '';
+  document.getElementById('pfImagePreview').style.display = 'none';
+};
+window.editProduct = function(p) { openProductForm(p); };
+window.deleteProduct = async function(id) {
+  if (!confirm('Hapus produk ini?')) return;
+  const r = await sb.from('catalog_products').delete().eq('id', id);
+  if (r.error) return toast(r.error.message, true);
+  toast('Produk dihapus'); loadProducts();
+};
+document.getElementById('productForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const id = document.getElementById('pfId').value;
+  const payload = {
+    name: document.getElementById('pfName').value,
+    category: document.getElementById('pfCategory').value,
+    size: document.getElementById('pfSize').value,
+    scent_family: document.getElementById('pfFamily').value,
+    description: document.getElementById('pfDesc').value,
+    image_url: document.getElementById('pfImage').value || null,
+    sort_order: parseInt(document.getElementById('pfOrder').value) || 0,
+    active: document.getElementById('pfActive').value === 'true'
+  };
+  let res = id ? await sb.from('catalog_products').update(payload).eq('id', id) : await sb.from('catalog_products').insert([payload]);
+  if (res.error) return toast(res.error.message, true);
+  toast('Produk disimpan'); closeProductForm(); loadProducts();
+});
+
+/* SHOWCASE ITEMS */
+let showcaseItemsCache = [];
+let showcaseFilter = 'all';
+
+async function loadShowcaseItems() {
+  const { data, error } = await sb.from('catalog_items').select('*').order('sort_order');
+  if (error) { console.warn(error); showcaseItemsCache = []; }
+  else showcaseItemsCache = data || [];
+  renderShowcaseItems();
+}
+function renderShowcaseItems() {
+  const list = document.getElementById('itemList');
+  const filtered = showcaseFilter === 'all' ? showcaseItemsCache : showcaseItemsCache.filter(i => i.item_type === showcaseFilter);
+  if (!filtered.length) { list.innerHTML = '<p style="color:var(--muted);padding:12px">Belum ada item.</p>'; return; }
+  list.innerHTML = filtered.map(item => `
+    <div class="list-item" data-id="${item.id}">
+      <span class="drag-handle">⋮⋮</span>
+      <div class="thumb">${item.image_url ? `<img src="${item.image_url}">` : '—'}</div>
+      <div class="info">
+        <strong>${escapeHtml(item.name)} <span class="badge badge-tipe">${escapeHtml(item.item_type)}</span></strong>
+        <small>${escapeHtml(item.category || '')} · ${escapeHtml(item.size || '')} · ${escapeHtml(item.material || '')} ${item.active === false ? '<span class="badge badge-done">nonaktif</span>' : ''}</small>
+      </div>
+      <div class="actions">
+        <button class="btn btn-outline btn-sm" onclick='editShowcaseItem(${JSON.stringify(item).replace(/'/g, "&#39;")})'>Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="delShowcaseItem(${item.id})">Hapus</button>
+      </div>
+    </div>
+  `).join('');
+  if (showcaseFilter === 'all') makeSortable(list, 'catalog_items', loadShowcaseItems);
+}
+document.getElementById('showcaseFilterChips')?.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-item-filter]');
+  if (!btn) return;
+  document.querySelectorAll('[data-item-filter]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  showcaseFilter = btn.dataset.itemFilter;
+  renderShowcaseItems();
+});
+window.openItemForm = function(item) {
+  document.getElementById('itemFormWrap').style.display = 'block';
+  document.getElementById('ifTitle').textContent = item ? 'Edit Item' : 'Tambah Item';
+  document.getElementById('ifId').value = item?.id || '';
+  document.getElementById('ifType').value = item?.item_type || 'botol';
+  document.getElementById('ifCategory').value = item?.category || '';
+  document.getElementById('ifName').value = item?.name || '';
+  document.getElementById('ifSize').value = item?.size || '';
+  document.getElementById('ifMaterial').value = item?.material || '';
+  document.getElementById('ifDesc').value = item?.description || '';
+  document.getElementById('ifImage').value = item?.image_url || '';
+  document.getElementById('ifOrder').value = item?.sort_order ?? 0;
+  document.getElementById('ifActive').value = item?.active === false ? 'false' : 'true';
+  const prev = document.getElementById('ifImagePreview');
+  if (item?.image_url) { prev.src = item.image_url; prev.style.display = 'block'; } else prev.style.display = 'none';
+};
+window.closeItemForm = function() {
+  document.getElementById('itemFormWrap').style.display = 'none';
+  document.getElementById('itemForm').reset();
+  document.getElementById('ifId').value = '';
+  document.getElementById('ifImagePreview').style.display = 'none';
+};
+window.editShowcaseItem = function(item) { openItemForm(item); };
+window.delShowcaseItem = async function(id) {
+  if (!confirm('Hapus item ini?')) return;
+  const r = await sb.from('catalog_items').delete().eq('id', id);
+  if (r.error) return toast(r.error.message, true);
+  toast('Item dihapus'); loadShowcaseItems();
+};
+document.getElementById('itemForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const id = document.getElementById('ifId').value;
+  const payload = {
+    item_type: document.getElementById('ifType').value,
+    category: document.getElementById('ifCategory').value,
+    name: document.getElementById('ifName').value,
+    size: document.getElementById('ifSize').value,
+    material: document.getElementById('ifMaterial').value,
+    description: document.getElementById('ifDesc').value,
+    image_url: document.getElementById('ifImage').value || null,
+    sort_order: parseInt(document.getElementById('ifOrder').value) || 0,
+    active: document.getElementById('ifActive').value === 'true'
+  };
+  let res = id ? await sb.from('catalog_items').update(payload).eq('id', id) : await sb.from('catalog_items').insert([payload]);
+  if (res.error) return toast(res.error.message, true);
+  toast('Item disimpan'); closeItemForm(); loadShowcaseItems();
+});
+
+/* PORTOFOLIO */
+async function loadLogos() {
+  const { data } = await sb.from('portfolio_logos').select('*').order('sort_order');
+  const list = document.getElementById('logoList');
+  if (!data || !data.length) { list.innerHTML = '<p style="color:var(--muted);padding:12px">Belum ada logo.</p>'; return; }
+  list.innerHTML = data.map(l => `
+    <div class="list-item" data-id="${l.id}">
+      <span class="drag-handle">⋮⋮</span>
+      <div class="thumb">${l.image_url ? `<img src="${l.image_url}">` : '—'}</div>
+      <div class="info"><strong>${escapeHtml(l.name || '')}</strong><small>${escapeHtml(l.industry || '')} ${l.description ? '· ' + escapeHtml(l.description) : ''}</small></div>
+      <div class="actions"><button class="btn btn-danger btn-sm" onclick="delLogo(${l.id})">Hapus</button></div>
+    </div>
+  `).join('');
+  makeSortable(list, 'portfolio_logos', loadLogos);
+}
+window.addLogo = async function() {
+  const name = document.getElementById('logoName').value.trim();
+  const url = document.getElementById('logoImage').value;
+  if (!name) return toast('Nama brand wajib', true);
+  if (!url) return toast('Upload logo dulu', true);
+  const payload = {
+    name,
+    image_url: url,
+    industry: document.getElementById('logoIndustry').value || null,
+    website_url: document.getElementById('logoWebsite').value || null,
+    description: document.getElementById('logoDesc').value || null
+  };
+  const { error } = await sb.from('portfolio_logos').insert([payload]);
+  if (error) return toast(error.message, true);
+  toast('Logo ditambahkan');
+  ['logoName','logoIndustry','logoWebsite','logoDesc','logoImage'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('logoImagePreview').style.display = 'none';
+  document.querySelector('#panel-portofolio .upload-zone p').innerHTML = '<strong>Klik atau drag</strong> logo ke sini';
+  loadLogos();
+};
+window.delLogo = async (id) => {
+  if (!confirm('Hapus logo ini?')) return;
+  await sb.from('portfolio_logos').delete().eq('id', id);
+  toast('Dihapus'); loadLogos();
+};
+
+/* LAB */
+async function loadLabPhotos() {
+  const { data } = await sb.from('lab_photos').select('*').order('sort_order');
+  const list = document.getElementById('labList');
+  if (!data || !data.length) { list.innerHTML = '<p style="color:var(--muted);padding:12px">Belum ada foto lab.</p>'; return; }
+  list.innerHTML = data.map(l => `
+    <div class="list-item" data-id="${l.id}">
+      <span class="drag-handle">⋮⋮</span>
+      <div class="thumb">${l.image_url ? `<img src="${l.image_url}">` : '—'}</div>
+      <div class="info"><strong>${escapeHtml(l.caption || 'Tanpa caption')}</strong></div>
+      <div class="actions"><button class="btn btn-danger btn-sm" onclick="delLab(${l.id})">Hapus</button></div>
+    </div>
+  `).join('');
+  makeSortable(list, 'lab_photos', loadLabPhotos);
+}
+window.addLabPhoto = async function() {
+  const url = document.getElementById('labImage').value;
+  const caption = document.getElementById('labCaption').value;
+  if (!url) return toast('Upload foto dulu', true);
+  const { error } = await sb.from('lab_photos').insert([{ image_url: url, caption }]);
+  if (error) return toast(error.message, true);
+  toast('Foto ditambahkan');
+  document.getElementById('labCaption').value = '';
+  document.getElementById('labImage').value = '';
+  document.getElementById('labImagePreview').style.display = 'none';
+  document.querySelector('#panel-lab .upload-zone p').innerHTML = '<strong>Klik atau drag</strong> foto ke sini';
+  loadLabPhotos();
+};
+window.delLab = async (id) => {
+  if (!confirm('Hapus foto ini?')) return;
+  await sb.from('lab_photos').delete().eq('id', id);
+  toast('Dihapus'); loadLabPhotos();
+};
+
+/* AROMA */
+let familiesCache = [];
+let editingFamilyId = null;
+async function loadFamilies() {
+  const { data } = await sb.from('scent_families').select('*').order('sort_order');
+  familiesCache = data || [];
+  const list = document.getElementById('famList');
+  const sel = document.getElementById('ingFamily');
+  if (sel) sel.innerHTML = familiesCache.map(f => `<option value="${f.id}">${escapeHtml(f.name)}</option>`).join('');
+  if (!familiesCache.length) { list.innerHTML = '<p style="color:var(--muted);padding:12px">Belum ada keluarga aroma.</p>'; return; }
+  list.innerHTML = familiesCache.map(f => `
+    <div class="list-item" data-id="${f.id}">
+      <span class="drag-handle">⋮⋮</span>
+      <div class="thumb">${f.image_url ? `<img src="${f.image_url}">` : '—'}</div>
+      <div class="info"><strong>${escapeHtml(f.name)}</strong><small>${escapeHtml(f.description || '')}</small></div>
+      <div class="actions">
+        <button class="btn btn-outline btn-sm" onclick='editFamily(${JSON.stringify(f).replace(/'/g, "&#39;")})'>Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="delFamily(${f.id})">Hapus</button>
+      </div>
+    </div>
+  `).join('');
+  makeSortable(list, 'scent_families', loadFamilies);
+  loadIngredients();
+}
+window.submitFamily = async function() {
+  const name = document.getElementById('famName').value.trim();
+  const description = document.getElementById('famDesc').value;
+  const sort_order = parseInt(document.getElementById('famOrder').value) || 0;
+  const image_url = document.getElementById('famImage').value || null;
+  if (!name) return toast('Nama wajib', true);
+  const payload = { name, description, sort_order, image_url };
+  const res = editingFamilyId
+    ? await sb.from('scent_families').update(payload).eq('id', editingFamilyId)
+    : await sb.from('scent_families').insert([payload]);
+  if (res.error) return toast(res.error.message, true);
+  toast(editingFamilyId ? 'Keluarga diperbarui' : 'Keluarga ditambahkan');
+  cancelFamilyEdit(); loadFamilies();
+};
+window.editFamily = function(f) {
+  editingFamilyId = f.id;
+  document.getElementById('famFormTitle').textContent = 'Edit Keluarga Aroma';
+  document.getElementById('famName').value = f.name || '';
+  document.getElementById('famDesc').value = f.description || '';
+  document.getElementById('famOrder').value = f.sort_order ?? 0;
+  document.getElementById('famImage').value = f.image_url || '';
+  const prev = document.getElementById('famImagePreview');
+  if (f.image_url) { prev.src = f.image_url; prev.style.display = 'block'; } else prev.style.display = 'none';
+  document.getElementById('famSubmitBtn').textContent = 'Simpan Perubahan';
+  document.getElementById('famCancelBtn').style.display = 'inline-flex';
+};
+window.cancelFamilyEdit = function() {
+  editingFamilyId = null;
+  document.getElementById('famFormTitle').textContent = 'Tambah Keluarga Aroma';
+  document.getElementById('famName').value = '';
+  document.getElementById('famDesc').value = '';
+  document.getElementById('famOrder').value = 0;
+  document.getElementById('famImage').value = '';
+  document.getElementById('famImagePreview').style.display = 'none';
+  document.getElementById('famSubmitBtn').textContent = 'Tambah Keluarga';
+  document.getElementById('famCancelBtn').style.display = 'none';
+  document.querySelector('#panel-aroma .upload-zone p').innerHTML = '<strong>Klik atau drag</strong> foto ke sini';
+};
+window.delFamily = async (id) => {
+  if (!confirm('Hapus keluarga aroma ini?')) return;
+  await sb.from('scent_families').delete().eq('id', id);
+  toast('Dihapus'); loadFamilies();
+};
+async function loadIngredients() {
+  const { data } = await sb.from('ingredients').select('*');
+  const list = document.getElementById('ingList');
+  if (!data || !data.length) { list.innerHTML = '<p style="color:var(--muted);padding:12px">Belum ada bahan.</p>'; return; }
+  const byId = Object.fromEntries(familiesCache.map(f => [f.id, f.name]));
+  list.innerHTML = data.map(i => `
+    <div class="list-item" data-id="${i.id}">
+      <div class="info"><strong>${escapeHtml(i.name)}</strong><small>Keluarga: ${escapeHtml(byId[i.family_id] || '')} · ${escapeHtml(i.description || '')}</small></div>
+      <div class="actions"><button class="btn btn-danger btn-sm" onclick="delIng(${i.id})">Hapus</button></div>
+    </div>
+  `).join('');
+}
+window.addIngredient = async function() {
+  const family_id = parseInt(document.getElementById('ingFamily').value);
+  const name = document.getElementById('ingName').value.trim();
+  const description = document.getElementById('ingDesc').value;
+  if (!name || !family_id) return toast('Lengkapi data', true);
+  const { error } = await sb.from('ingredients').insert([{ family_id, name, description }]);
+  if (error) return toast(error.message, true);
+  toast('Bahan ditambahkan');
+  document.getElementById('ingName').value = '';
+  document.getElementById('ingDesc').value = '';
+  loadIngredients();
+};
+window.delIng = async (id) => {
+  if (!confirm('Hapus bahan ini?')) return;
+  await sb.from('ingredients').delete().eq('id', id);
+  toast('Dihapus'); loadIngredients();
+};
+
+/* FAQ */
+async function loadFaq() {
+  const { data } = await sb.from('faq').select('*').order('sort_order');
+  const list = document.getElementById('faqList');
+  if (!data || !data.length) { list.innerHTML = '<p style="color:var(--muted);padding:12px">Belum ada FAQ.</p>'; return; }
+  list.innerHTML = data.map(f => `
+    <div class="list-item" data-id="${f.id}">
+      <span class="drag-handle">⋮⋮</span>
+      <div class="info"><strong>${escapeHtml(f.question)}</strong><small>${escapeHtml(f.answer)}</small></div>
+      <div class="actions"><button class="btn btn-danger btn-sm" onclick="delFaq(${f.id})">Hapus</button></div>
+    </div>
+  `).join('');
+  makeSortable(list, 'faq', loadFaq);
+}
+window.addFaq = async function() {
+  const question = document.getElementById('faqQ').value.trim();
+  const answer = document.getElementById('faqA').value.trim();
+  const category = document.getElementById('faqCat').value;
+  if (!question || !answer) return toast('Lengkapi', true);
+  const { error } = await sb.from('faq').insert([{ question, answer, category }]);
+  if (error) return toast(error.message, true);
+  toast('FAQ ditambahkan');
+  document.getElementById('faqQ').value = '';
+  document.getElementById('faqA').value = '';
+  document.getElementById('faqCat').value = '';
+  loadFaq();
+};
+window.delFaq = async (id) => {
+  if (!confirm('Hapus FAQ ini?')) return;
+  await sb.from('faq').delete().eq('id', id);
+  toast('Dihapus'); loadFaq();
+};
+
+/* PROMO */
+async function loadPromo() {
+  const { data } = await sb.from('promo').select('*').limit(1);
+  if (data && data[0]) {
+    const p = data[0];
+    document.getElementById('prTitle').value = p.title || '';
+    document.getElementById('prDesc').value = p.description || '';
+    document.getElementById('prQuota').value = p.quota || 100;
+    document.getElementById('prActive').value = p.active ? 'true' : 'false';
+    document.getElementById('prStart').value = p.start_date || '';
+    document.getElementById('prEnd').value = p.end_date || '';
+  }
+}
+document.getElementById('promoForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const payload = {
+    title: document.getElementById('prTitle').value,
+    description: document.getElementById('prDesc').value,
+    quota: parseInt(document.getElementById('prQuota').value) || 100,
+    active: document.getElementById('prActive').value === 'true',
+    start_date: document.getElementById('prStart').value || null,
+    end_date: document.getElementById('prEnd').value || null
+  };
+  const { data } = await sb.from('promo').select('id').limit(1);
+  const res = data && data[0] ? await sb.from('promo').update(payload).eq('id', data[0].id) : await sb.from('promo').insert([payload]);
+  if (res.error) return toast(res.error.message, true);
+  toast('Promo disimpan');
+});
+
+/* HTML KUSTOM */
+const HTML_KEYS = ['katalog', 'simulasi', 'aroma_quiz', 'aroma_explorer'];
+const HTML_FIELDS = { katalog: 'htmlKatalog', simulasi: 'htmlSimulasi', aroma_quiz: 'htmlAromaQuiz', aroma_explorer: 'htmlAromaExplorer' };
+async function loadHtmlSections() {
+  try {
+    const { data, error } = await sb.from('custom_sections').select('*');
+    if (error) return;
+    const map = Object.fromEntries((data || []).map(d => [d.section_key, d.html_content || '']));
+    for (const key of HTML_KEYS) { const el = document.getElementById(HTML_FIELDS[key]); if (el) el.value = map[key] || ''; }
+  } catch (e) { console.warn(e); }
+}
+window.saveHtml = async function (key) {
+  const el = document.getElementById(HTML_FIELDS[key]);
+  if (!el) return;
+  const html = el.value.trim();
+  try {
+    const { error } = await sb.from('custom_sections').upsert({ section_key: key, html_content: html, updated_at: new Date().toISOString() }, { onConflict: 'section_key' });
+    if (error) throw error;
+    toast(html ? 'HTML disimpan' : 'Dikosongkan, kembali ke default');
+  } catch (e) { toast('Gagal: ' + e.message, true); }
+};
+
+/* INBOX */
+async function loadInbox() {
+  const { data: samples } = await sb.from('sample_requests').select('*').order('created_at', { ascending: false });
+  const sList = document.getElementById('sampleList');
+  if (!samples || !samples.length) sList.innerHTML = '<p style="color:var(--muted);padding:8px">Belum ada permintaan sampel.</p>';
+  else sList.innerHTML = samples.map(s => `
+    <div class="list-item">
+      <div class="info">
+        <strong>${escapeHtml(s.name)} <span class="badge badge-new">${escapeHtml(s.status || 'baru')}</span></strong>
+        <small>${escapeHtml(s.whatsapp)} · ${new Date(s.created_at).toLocaleDateString('id-ID')}</small>
+        <small>${escapeHtml(s.address)}</small>
+      </div>
+      <div class="actions">
+        <a href="https://wa.me/${(s.whatsapp || '').replace(/\D/g,'').replace(/^0/, '62')}" target="_blank" class="btn btn-outline btn-sm">WA</a>
+        <button class="btn btn-danger btn-sm" onclick="delSample(${s.id})">Hapus</button>
+      </div>
+    </div>
+  `).join('');
+
+  const { data: briefs } = await sb.from('briefs').select('*').order('created_at', { ascending: false });
+  const bList = document.getElementById('briefList');
+  if (!briefs || !briefs.length) bList.innerHTML = '<p style="color:var(--muted);padding:8px">Belum ada brief.</p>';
+  else bList.innerHTML = briefs.map(b => `
+    <div class="list-item">
+      <div class="info">
+        <strong>${escapeHtml(b.name)} ${b.brand_name ? '· ' + escapeHtml(b.brand_name) : ''}</strong>
+        <small>${escapeHtml(b.target_market || '')} · ${escapeHtml(b.scent_character || '')} · ${escapeHtml(b.tier || '')}</small>
+      </div>
+      <div class="actions"><button class="btn btn-danger btn-sm" onclick="delBrief(${b.id})">Hapus</button></div>
+    </div>
+  `).join('');
+}
+window.delSample = async (id) => { if (!confirm('Hapus?')) return; await sb.from('sample_requests').delete().eq('id', id); toast('Dihapus'); loadInbox(); };
+window.delBrief = async (id) => { if (!confirm('Hapus?')) return; await sb.from('briefs').delete().eq('id', id); toast('Dihapus'); loadInbox(); };
+
+/* SETTINGS */
+async function loadSettings() {
+  const { data } = await sb.from('settings').select('*');
+  if (!data) return;
+  const map = Object.fromEntries(data.map(s => [s.key, s.value]));
+  document.getElementById('stWa').value = map.whatsapp || '6285743243378';
+  document.getElementById('stEmail').value = map.email || 'scentia.ultimacos@gmail.com';
+  document.getElementById('stAddress').value = map.address || '';
+  document.getElementById('stHours').value = map.hours || 'Senin – Sabtu · 09.00 – 17.00 WIB';
+  document.getElementById('stBrandName').value = map.brand_name || 'Scentia Ultimacos';
+  document.getElementById('stTagline').value = map.brand_tagline || 'by King Parfum Indonesia';
+  document.getElementById('companyLogo').value = map.company_logo || '';
+  document.getElementById('heroImage').value = map.hero_image || '';
+  document.getElementById('stKpName').value = map.kingparfum_name || 'King Parfum Indonesia';
+  document.getElementById('stKpTagline').value = map.kingparfum_tagline || 'Pabrik Maklon Parfum';
+  document.getElementById('stKpAbout').value = map.kingparfum_about || '';
+  document.getElementById('stKpCapacity').value = map.kingparfum_capacity || '50.000+';
+  document.getElementById('stKpCapacityUnit').value = map.kingparfum_capacity_unit || 'pcs/bulan';
+  document.getElementById('stKpYear').value = map.kingparfum_year || '2015';
+  document.getElementById('stKpBatches').value = map.kingparfum_batches || '200+';
+  document.getElementById('stKpCertifications').value = map.kingparfum_certifications || 'BPOM · Halal MUI · CPKB';
+  document.getElementById('stKpFactoryAddress').value = map.kingparfum_factory_address || '';
+  if (map.company_logo) {
+    document.getElementById('companyLogoPreview').src = map.company_logo;
+    document.getElementById('companyLogoPreview').style.display = 'block';
+    document.getElementById('companyLogoClearBtn').style.display = 'inline-flex';
+    const mark = document.getElementById('topbarMark');
+    mark.innerHTML = `<img src="${map.company_logo}" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;padding:2px">`;
+    mark.style.background = 'transparent';
+  }
+  if (map.hero_image) {
+    document.getElementById('heroImagePreview').src = map.hero_image;
+    document.getElementById('heroImagePreview').style.display = 'block';
+    document.getElementById('heroImageClearBtn').style.display = 'inline-flex';
+  }
+  document.getElementById('topbarBrandName').textContent = map.brand_name || 'Admin Panel';
+}
+window.clearCompanyLogo = async function() {
+  if (!confirm('Hapus logo perusahaan?')) return;
+  await sb.from('settings').upsert({ key: 'company_logo', value: '' }, { onConflict: 'key' });
+  document.getElementById('companyLogo').value = '';
+  document.getElementById('companyLogoPreview').style.display = 'none';
+  document.getElementById('companyLogoClearBtn').style.display = 'none';
+  document.querySelector('[data-target="companyLogo"] p').innerHTML = '<strong>Klik atau drag</strong> logo perusahaan';
+  document.getElementById('topbarMark').innerHTML = 'S';
+  document.getElementById('topbarMark').style.background = '';
+  toast('Logo dihapus');
+};
+window.clearHeroImage = async function() {
+  if (!confirm('Hapus foto hero?')) return;
+  await sb.from('settings').upsert({ key: 'hero_image', value: '' }, { onConflict: 'key' });
+  document.getElementById('heroImage').value = '';
+  document.getElementById('heroImagePreview').style.display = 'none';
+  document.getElementById('heroImageClearBtn').style.display = 'none';
+  document.querySelector('[data-target="heroImage"] p').innerHTML = '<strong>Klik atau drag</strong> foto hero ke sini';
+  toast('Foto hero dihapus');
+};
+document.getElementById('settingsForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const entries = [
+    ['whatsapp', document.getElementById('stWa').value],
+    ['email', document.getElementById('stEmail').value],
+    ['address', document.getElementById('stAddress').value],
+    ['hours', document.getElementById('stHours').value],
+    ['brand_name', document.getElementById('stBrandName').value],
+    ['brand_tagline', document.getElementById('stTagline').value],
+    ['company_logo', document.getElementById('companyLogo').value],
+    ['hero_image', document.getElementById('heroImage').value],
+    ['kingparfum_name', document.getElementById('stKpName').value],
+    ['kingparfum_tagline', document.getElementById('stKpTagline').value],
+    ['kingparfum_about', document.getElementById('stKpAbout').value],
+    ['kingparfum_capacity', document.getElementById('stKpCapacity').value],
+    ['kingparfum_capacity_unit', document.getElementById('stKpCapacityUnit').value],
+    ['kingparfum_year', document.getElementById('stKpYear').value],
+    ['kingparfum_batches', document.getElementById('stKpBatches').value],
+    ['kingparfum_certifications', document.getElementById('stKpCertifications').value],
+    ['kingparfum_factory_address', document.getElementById('stKpFactoryAddress').value]
+  ];
+  for (const [key, value] of entries) {
+    await sb.from('settings').upsert({ key, value }, { onConflict: 'key' });
+  }
+  toast('Pengaturan disimpan'); loadSettings();
+});
+
+/* GALLERY MODAL — untuk partner */
+let galleryPartnerId = null;
+let galleryItems = [];
+window.openGalleryModal = async function(partnerId, partnerName) {
+  galleryPartnerId = partnerId;
+  document.getElementById('gmPartnerName').textContent = partnerName || '—';
+  document.getElementById('galleryModal').classList.add('open');
+  document.body.classList.add('modal-open');
+  await loadGalleryItems();
+};
+window.closeGalleryModal = function() {
+  document.getElementById('galleryModal').classList.remove('open');
+  document.body.classList.remove('modal-open');
+  galleryPartnerId = null;
+  resetGalleryForm();
+};
+window.resetGalleryForm = function() {
+  document.getElementById('gmImage').value = '';
+  document.getElementById('gmImagePreview').style.display = 'none';
+  document.getElementById('gmName').value = '';
+  document.getElementById('gmCategory').value = '';
+  document.getElementById('gmDesc').value = '';
+  document.getElementById('gmSubmitBtn').textContent = '+ Tambah Foto';
+  const zone = document.querySelector('[data-target="gmImage"]');
+  if (zone) zone.querySelector('p').innerHTML = '<strong>Klik atau drag</strong> foto ke sini';
+};
+async function loadGalleryItems() {
+  if (!galleryPartnerId) return;
+  const { data, error } = await sb.from('partner_products').select('*').eq('partner_id', galleryPartnerId).order('sort_order');
+  galleryItems = error ? [] : (data || []);
+  renderGalleryItems();
+}
+function renderGalleryItems() {
+  const grid = document.getElementById('gmGrid');
+  if (!galleryItems.length) {
+    grid.innerHTML = '<div class="gm-empty">Belum ada foto produk. Upload di atas untuk menambahkan.</div>';
+    return;
+  }
+  grid.innerHTML = galleryItems.map(item => `
+    <div class="gm-item">
+      <div class="gm-item-img">${item.image_url ? `<img src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.name || '')}">` : '—'}</div>
+      <div class="gm-item-body">
+        ${item.category ? `<div class="gm-item-cat">${escapeHtml(item.category)}</div>` : ''}
+        ${item.name ? `<div class="gm-item-name">${escapeHtml(item.name)}</div>` : ''}
+        ${item.description ? `<div class="gm-item-desc">${escapeHtml(item.description)}</div>` : ''}
+        <div class="gm-item-actions">
+          <button class="btn btn-danger btn-sm" onclick="delGalleryItem(${item.id})">Hapus</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+window.saveGalleryItem = async function() {
+  if (!galleryPartnerId) return toast('Partner tidak valid', true);
+  const imageUrl = document.getElementById('gmImage').value;
+  if (!imageUrl) return toast('Upload foto dulu', true);
+  const payload = {
+    partner_id: galleryPartnerId,
+    image_url: imageUrl,
+    name: document.getElementById('gmName').value || null,
+    category: document.getElementById('gmCategory').value || null,
+    description: document.getElementById('gmDesc').value || null,
+    sort_order: galleryItems.length,
+    active: true
+  };
+  const { error } = await sb.from('partner_products').insert([payload]);
+  if (error) {
+    if ((error.message || '').toLowerCase().includes('does not exist'))
+      return toast('❌ Tabel partner_products belum ada. Jalankan SQL migration.', true);
+    return toast('Gagal: ' + error.message, true);
+  }
+  toast('✅ Foto ditambahkan');
+  resetGalleryForm();
+  await loadGalleryItems();
+};
+window.delGalleryItem = async function(id) {
+  if (!confirm('Hapus foto ini?')) return;
+  const { error } = await sb.from('partner_products').delete().eq('id', id);
+  if (error) return toast(error.message, true);
+  toast('Foto dihapus');
+  await loadGalleryItems();
+};
+document.getElementById('galleryModal')?.addEventListener('click', (e) => {
+  if (e.target.id === 'galleryModal') closeGalleryModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeGalleryModal();
+});
+
+/* TEKS */
+const TEKS_KEYS = [
+  ['hero_headline', 'Hero — Headline'],
+  ['hero_sub', 'Hero — Subheadline'],
+  ['hero_eyebrow', 'Hero — Eyebrow'],
+  ['layanan_title', 'Layanan — Judul'],
+  ['katalog_title', 'Katalog — Judul'],
+  ['aroma_title', 'Jelajahi Aroma — Judul'],
+  ['lab_title', 'Lab — Judul'],
+  ['portofolio_title', 'Portofolio — Judul']
+];
+async function loadTeks() {
+  const { data } = await sb.from('site_content').select('*');
+  const map = Object.fromEntries((data || []).map(s => [s.key, s.value]));
+  const wrap = document.getElementById('teksContent');
+  wrap.innerHTML = TEKS_KEYS.map(([key, label]) => `
+    <div class="card">
+      <div class="field"><label>${label}</label><input type="text" data-key="${key}" value="${escapeHtml(map[key] || '')}" placeholder="(kosong = default)"></div>
+    </div>
+  `).join('') + `<button class="btn btn-gold" id="saveTeksBtn">Simpan Semua Teks</button>`;
+  document.getElementById('saveTeksBtn').onclick = async () => {
+    const inputs = wrap.querySelectorAll('input[data-key]');
+    for (const inp of inputs) {
+      const key = inp.dataset.key, value = inp.value;
+      if (value) await sb.from('site_content').upsert({ key, value }, { onConflict: 'key' });
+      else await sb.from('site_content').delete().eq('key', key);
+    }
+    toast('Teks disimpan');
+  };
+}
+
+/* LOAD ALL */
+async function loadAll() {
+  loadProducts();
+  loadShowcaseItems();
+  loadLogos();
+  loadLabPhotos();
+  loadFamilies();
+  loadFaq();
+  loadPromo();
+  loadInbox();
+  loadSettings();
+  loadTeks();
+  loadHtmlSections();
+}
+</script>
+</body>
+</html>

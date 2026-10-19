@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin-showcase.html
+
+Sitemap: https://scentia.id/sitemap.xml
