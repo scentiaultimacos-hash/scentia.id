@@ -7,6 +7,8 @@
 <title>Maklon Parfum Surabaya — King Parfum Indonesia | Scentia</title>
 <meta name="description" content="Pabrik maklon parfum Surabaya sejak 2015. Lab fragrance sendiri. MOQ 100 pcs promo. Custom formula, private label, BPOM & Halal MUI." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="icon" type="image/png" href="https://scentia.id/favicon.png" />
+<link rel="apple-touch-icon" href="https://scentia.id/favicon.png" />
 <meta name="author" content="King Parfum Indonesia" />
 <meta name="theme-color" content="#B08D4F" />
 <link rel="canonical" href="https://scentia.id/" />
@@ -27,13 +29,8 @@
 <meta name="twitter:description" content="Pabrik maklon parfum dengan lab sendiri di Surabaya. Marketing by Scentia Ultimacos." />
 <meta name="twitter:image" content="https://scentia.id/og-cover.jpg" />
 
-<!-- ====== FAVICON (SUDAH DIPERBAIKI) ====== -->
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
-<link rel="icon" type="image/png" sizes="144x144" href="/favicon.png" />
-<link rel="apple-touch-icon" href="/favicon.png" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<!-- ====== END FAVICON ====== -->
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="favicon.png">
 
 <link rel="preconnect" href="https://tjoyzlgdkhkhiggmealh.supabase.co" crossorigin>
 <link rel="dns-prefetch" href="https://tjoyzlgdkhkhiggmealh.supabase.co">
@@ -174,6 +171,14 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px}
+body.loading{overflow:hidden}
+#site-loader{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s}
+.loader-content{text-align:center;animation:pulse 1.5s infinite ease-in-out}
+.loader-logo{width:70px;height:70px;border-radius:18px;background:linear-gradient(135deg,var(--gold-lt),var(--gold));display:grid;place-items:center;color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:2rem;margin-bottom:20px;box-shadow:0 10px 30px rgba(176,141,79,0.2)}
+.loader-bar{width:120px;height:2px;background:var(--line);border-radius:2px;overflow:hidden;margin:0 auto}
+.loader-progress{width:40%;height:100%;background:var(--gold);animation:loadProgress 1.2s infinite ease-in-out}
+@keyframes loadProgress{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}
+body.loaded #site-loader{opacity:0;visibility:hidden;pointer-events:none}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none;transition:color .2s}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
@@ -186,29 +191,125 @@ section{scroll-margin-top:90px}
 .announce .dot{width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.8s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-.nav{position:sticky;top:0;z-index:100;background:rgba(253,252,250,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2);transition:box-shadow .3s}
-.nav.scrolled{box-shadow:var(--shadow-sm)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
-.brand{display:flex;align-items:center;gap:12px;user-select:none;-webkit-user-select:none}
-.brand-mark{width:40px;height:40px;border-radius:11px;flex-shrink:0;background:linear-gradient(135deg,var(--gold-lt),var(--gold));display:grid;place-items:center;font-family:'Playfair Display',serif;font-weight:700;font-size:1.2rem;color:#fff;overflow:hidden}
+/* ============ NAVBAR (diperbaiki) ============ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(253,252,250,.92);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line-2);
+  transition:box-shadow .3s, background .3s;
+}
+.nav.scrolled{
+  box-shadow:0 1px 3px rgba(28,26,23,.05), 0 8px 24px rgba(28,26,23,.05);
+  background:rgba(253,252,250,.97);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:12px 0;min-height:68px;
+}
+.brand{display:flex;align-items:center;gap:11px;user-select:none;-webkit-user-select:none;flex-shrink:0}
+.brand-mark{
+  width:40px;height:40px;border-radius:11px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--gold-lt),var(--gold));
+  display:grid;place-items:center;
+  font-family:'Playfair Display',serif;font-weight:700;font-size:1.2rem;color:#fff;
+  overflow:hidden;transition:transform .25s;
+}
+.brand:hover .brand-mark{transform:rotate(-4deg) scale(1.04)}
 .brand-mark img{width:100%;height:100%;object-fit:contain;padding:3px;background:#fff}
-.brand-text{display:flex;flex-direction:column;line-height:1.15}
-.brand-text strong{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);letter-spacing:.01em}
-.brand-text span{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:2px}
+.brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-text strong{
+  font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;
+  color:var(--text);letter-spacing:.01em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;
+}
+.brand-text span{
+  font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-top:3px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
 
-.nav-links{display:flex;align-items:center;gap:6px}
-.nav-links a{font-size:.87rem;color:var(--muted);font-weight:500;padding:8px 12px;border-radius:8px;transition:all .2s}
+/* --- Link list --- */
+.nav-links{
+  display:flex;align-items:center;gap:2px;
+  margin-left:auto;
+}
+.nav-links a{
+  position:relative;
+  font-size:.85rem;color:var(--muted);font-weight:500;
+  padding:9px 13px;border-radius:8px;
+  transition:color .2s, background .2s;
+  white-space:nowrap;
+}
+.nav-links a::after{
+  content:'';position:absolute;left:13px;right:13px;bottom:4px;
+  height:2px;border-radius:2px;background:var(--gold);
+  transform:scaleX(0);transform-origin:center;
+  transition:transform .28s cubic-bezier(.22,1,.36,1);
+}
 .nav-links a:hover{color:var(--text);background:var(--bg-alt)}
-.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-dk)) !important;color:#fff !important;padding:10px 20px !important;border-radius:999px !important;font-weight:500 !important;box-shadow:0 4px 14px rgba(176,141,79,.28)}
-.nav-cta:hover{box-shadow:0 6px 20px rgba(176,141,79,.4);transform:translateY(-1px)}
-.nav-toggle{display:none;width:42px;height:42px;border-radius:10px;position:relative;border:1px solid var(--line)}
-.nav-toggle span{position:absolute;left:11px;width:20px;height:1.5px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
-.nav-toggle span:nth-child(1){top:14px}
-.nav-toggle span:nth-child(2){top:20px}
-.nav-toggle span:nth-child(3){top:26px}
-.nav.open .nav-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.nav.open .nav-toggle span:nth-child(2){opacity:0}
-.nav.open .nav-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.nav-links a:hover::after,
+.nav-links a[data-active="true"]::after{transform:scaleX(1)}
+.nav-links a[data-active="true"]{color:var(--text);font-weight:600}
+
+/* CTA pill — samakan height supaya sejajar */
+.nav-links .nav-cta{
+  margin-left:10px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dk));
+  color:#fff !important;
+  padding:10px 20px !important;
+  border-radius:999px !important;
+  font-weight:500 !important;
+  box-shadow:0 4px 14px rgba(176,141,79,.28);
+  transition:transform .2s, box-shadow .2s;
+}
+.nav-links .nav-cta::after{display:none}
+.nav-links .nav-cta:hover{
+  background:linear-gradient(135deg,var(--gold-lt),var(--gold));
+  box-shadow:0 6px 20px rgba(176,141,79,.4);
+  transform:translateY(-1px);
+  color:#fff !important;
+}
+
+/* focus state aksesibilitas */
+.nav-links a:focus-visible,
+.nav-cta:focus-visible,
+.nav-toggle:focus-visible,
+.brand:focus-visible{
+  outline:2px solid var(--gold);outline-offset:2px;border-radius:8px;
+}
+
+/* --- Burger --- */
+.nav-toggle{
+  display:none;width:44px;height:44px;border-radius:11px;
+  position:relative;border:1px solid var(--line);
+  background:var(--white);
+  transition:background .2s, border-color .2s;
+  flex-shrink:0;
+}
+.nav-toggle:hover{background:var(--bg-alt);border-color:var(--gold)}
+.nav-toggle span{
+  position:absolute;left:12px;width:20px;height:2px;
+  background:var(--text);border-radius:2px;
+  transition:transform .3s ease, opacity .2s ease, top .3s ease;
+}
+.nav-toggle span:nth-child(1){top:15px}
+.nav-toggle span:nth-child(2){top:21px}
+.nav-toggle span:nth-child(3){top:27px}
+.nav.open .nav-toggle span:nth-child(1){top:21px;transform:rotate(45deg)}
+.nav.open .nav-toggle span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav.open .nav-toggle span:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+/* --- Backdrop (BARU) --- */
+.nav-backdrop{
+  position:fixed;inset:0;z-index:90;
+  background:rgba(28,26,23,.45);
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  opacity:0;visibility:hidden;
+  transition:opacity .3s ease, visibility .3s;
+}
+.nav-backdrop.show{opacity:1;visibility:visible}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;font-size:.9rem;font-weight:500;letter-spacing:.01em;cursor:pointer;border:1px solid transparent;transition:all .25s cubic-bezier(.22,1,.36,1);white-space:nowrap;font-family:inherit}
 .btn-gold{background:linear-gradient(135deg,var(--gold-lt),var(--gold));color:#fff;box-shadow:0 8px 24px rgba(176,141,79,.3)}
@@ -228,7 +329,7 @@ section{scroll-margin-top:90px}
 .hero .lead{color:var(--muted);font-size:1.02rem;max-width:540px;margin-bottom:32px;font-weight:400;line-height:1.7}
 .hero .lead strong{color:var(--text);font-weight:600}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px}
-.hero-trust{display:flex;flex-wrap:wrap;gap:8px 20px;padding-top:24px;border-top:1px solid var(--line-2)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:8px 20px;padding-top:24px;border-top:1px solid var(--line-2);list-style:none}
 .hero-trust li{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);font-weight:500}
 .hero-trust li::before{content:'';width:16px;height:16px;border-radius:50%;background:rgba(176,141,79,.15) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B08D4F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/10px no-repeat;flex-shrink:0}
 .hero-art{position:relative;display:grid;place-items:center;min-height:420px}
@@ -433,7 +534,7 @@ footer{background:var(--bg-dark);color:rgba(247,243,236,.7);padding:56px 0 0;fon
 .foot-entity{font-size:.76rem;padding:12px 14px;background:rgba(212,184,117,.08);border-left:2px solid #D4B875;border-radius:4px;line-height:1.65;color:rgba(247,243,236,.7)}
 .foot-entity strong{color:#D4B875;font-weight:600}
 .foot-col h4{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:#D4B875;font-weight:600;margin-bottom:18px}
-.foot-col ul{display:grid;gap:10px}
+.foot-col ul{display:grid;gap:10px;list-style:none}
 .foot-col li{font-size:.86rem;line-height:1.6;opacity:.75}
 .foot-col a:hover{color:#D4B875;opacity:1}
 .foot-bottom{padding:24px 0;text-align:center;font-size:.78rem;color:rgba(247,243,236,.4);letter-spacing:.02em}
@@ -454,6 +555,11 @@ footer{background:var(--bg-dark);color:rgba(247,243,236,.7);padding:56px 0 0;fon
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
 .reveal.in{opacity:1;transform:none}
 
+@media(max-width:1024px){
+  .nav-links a{font-size:.8rem;padding:8px 10px}
+  .nav-links a::after{left:10px;right:10px}
+  .nav-links .nav-cta{padding:9px 16px !important;margin-left:6px}
+}
 @media(max-width:980px){
   .hero-inner{grid-template-columns:1fr;gap:48px}
   .hero-art{order:-1;min-height:300px}
@@ -465,12 +571,49 @@ footer{background:var(--bg-dark);color:rgba(247,243,236,.7);padding:56px 0 0;fon
   .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
   .pabrik-inner{grid-template-columns:1fr;gap:40px}
 }
-@media(max-width:860px){
+@media(max-width:900px){
   .nav-toggle{display:block}
-  .nav-links{position:fixed;inset:0;flex-direction:column;justify-content:center;gap:8px;background:rgba(253,252,250,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transform:translateX(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);z-index:-1;padding:40px}
+
+  /* Panel mobile: slide dari kanan, di atas konten (z-index benar) */
+  .nav-links{
+    position:fixed;
+    top:0;right:0;bottom:0;
+    width:min(340px,86vw);
+    height:100vh;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:stretch;
+    gap:4px;
+    background:var(--bg);
+    border-left:1px solid var(--line);
+    padding:88px 22px 32px;
+    transform:translateX(100%);
+    transition:transform .38s cubic-bezier(.22,1,.36,1);
+    z-index:99;
+    overflow-y:auto;
+    box-shadow:-20px 0 60px rgba(28,26,23,.12);
+    margin-left:0;
+  }
   .nav.open .nav-links{transform:translateX(0)}
-  .nav-links a{font-size:1.05rem;padding:14px 20px;width:100%;text-align:center}
-  .nav-cta{margin-top:12px;padding:14px 28px !important}
+
+  .nav-links a{
+    font-size:1rem;
+    padding:14px 16px;
+    width:100%;
+    border-radius:10px;
+    color:var(--text);
+  }
+  .nav-links a::after{display:none}
+  .nav-links a:hover,
+  .nav-links a[data-active="true"]{background:var(--bg-alt);color:var(--gold-dk)}
+
+  .nav-links .nav-cta{
+    margin:16px 0 0;
+    padding:14px 22px !important;
+    width:100%;
+    text-align:center;
+    font-size:.95rem !important;
+  }
 }
 @media(max-width:600px){
   .sec{padding:68px 0}
@@ -499,7 +642,14 @@ footer{background:var(--bg-dark);color:rgba(247,243,236,.7);padding:56px 0 0;fon
 }
 </style>
 </head>
-<body>
+<body class="loading">
+
+<div id="site-loader">
+  <div class="loader-content">
+    <div class="loader-logo" id="loaderLogo">S</div>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+  </div>
+</div>
 
 <div class="announce">
   <span class="dot"></span>
@@ -515,20 +665,25 @@ footer{background:var(--bg-dark);color:rgba(247,243,236,.7);padding:56px 0 0;fon
         <span id="brandTagline">by King Parfum Indonesia</span>
       </div>
     </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#pabrik">Pabrik</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#katalog">Katalog</a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Navigasi utama">
+      <a href="#pabrik" data-nav>Pabrik</a>
+      <a href="#layanan" data-nav>Layanan</a>
+      <a href="#katalog" data-nav>Katalog</a>
       <a href="showcase.html">Showcase</a>
-      <a href="#simulasi">Simulasi</a>
-      <a href="#aroma">Aroma</a>
-      <a href="#portofolio">Portofolio</a>
-      <a href="#faq">FAQ</a>
+      <a href="#simulasi" data-nav>Simulasi</a>
+      <a href="#aroma" data-nav>Aroma</a>
+      <a href="#portofolio" data-nav>Portofolio</a>
+      <a href="#faq" data-nav>FAQ</a>
       <a href="#kontak" class="nav-cta">Konsultasi</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+<div class="nav-backdrop" id="navBackdrop"></div>
 
 <script>
 (function(){
@@ -536,8 +691,10 @@ footer{background:var(--bg-dark);color:rgba(247,243,236,.7);padding:56px 0 0;fon
   if (c.logo) {
     var m = document.getElementById('brandMark');
     var f = document.getElementById('footerMark');
+    var l = document.getElementById('loaderLogo');
     if (m) { m.innerHTML = '<img src="' + c.logo + '" alt="Logo Scentia Ultimacos" decoding="async">'; m.style.background = '#fff'; m.style.border = '1px solid var(--line)'; }
     if (f) { f.innerHTML = '<img src="' + c.logo + '" alt="Logo Scentia Ultimacos" decoding="async">'; }
+    if (l) { l.innerHTML = '<img src="' + c.logo + '" alt="Logo Scentia" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;padding:3px">'; l.style.background = '#fff'; }
   }
   if (c.name) {
     var bn = document.getElementById('brandName');
@@ -1121,10 +1278,42 @@ const QUIZ_DESC = {
 const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
-window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
-navToggle?.addEventListener('click', () => { const open = navbar.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open); });
-navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navbar.classList.remove('open')));
 
+/* --- Scroll shadow --- */
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
+
+/* --- Menu mobile + backdrop + body lock + ESC --- */
+const navBackdrop = document.getElementById('navBackdrop');
+function setMenuOpen(open){
+  navbar.classList.toggle('open', open);
+  navToggle?.setAttribute('aria-expanded', open ? 'true' : 'false');
+  navToggle?.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+  navBackdrop?.classList.toggle('show', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+navToggle?.addEventListener('click', () => setMenuOpen(!navbar.classList.contains('open')));
+navBackdrop?.addEventListener('click', () => setMenuOpen(false));
+navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenuOpen(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenuOpen(false); });
+
+/* --- Scrollspy: highlight link sesuai section terlihat --- */
+(function(){
+  const navItems = [...document.querySelectorAll('#navLinks a[data-nav]')];
+  const sections = navItems
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  if(!sections.length) return;
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      const id = '#' + entry.target.id;
+      navItems.forEach(a => a.dataset.active = (a.getAttribute('href') === id) ? 'true' : 'false');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sections.forEach(s => spy.observe(s));
+})();
+
+/* --- Easter egg: 5 klik brand → admin --- */
 let brandClicks = 0, brandTimer;
 document.getElementById('brandLogo')?.addEventListener('click', (e) => {
   brandClicks++;
@@ -1499,16 +1688,19 @@ async function loadCustomSections() {
     inject('simulasiContent', map.simulasi);
     inject('aromaQuizContent', map.aroma_quiz);
     inject('aromaExplorerContent', map.aroma_explorer);
-  } catch (e) { console.warn('Custom sections:', e); }
+  } catch (e) {}
 }
 
-renderProducts();
-renderFamilies();
-renderMarquee(DEFAULT_LOGOS);
-loadFromSupabase().then(() => {
-  loadCustomSections();
-  loadBranding();
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.body.classList.remove('loading');
+    document.body.classList.add('loaded');
+  }, 1000);
 });
+
+loadBranding();
+loadFromSupabase();
+loadCustomSections();
 </script>
 </body>
 </html>
